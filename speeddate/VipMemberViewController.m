@@ -11,6 +11,7 @@
 #import <StoreKit/StoreKit.h>
 //#import "PurchaseHelper.h"
 #import "SWRevealViewController.h"
+#import <Parse/Parse.h>
 
 @interface VipMemberViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>{
     
@@ -117,6 +118,17 @@
     
     NSLog(@"%@", self.selectedRowsArray);
     
+}
+
+#pragma mark - UIBUTTON
+
+- (IBAction)doneButton:(UIBarButtonItem *)sender
+{
+    NSLog(@"button pressed");
+    
+
+    [[PFUser currentUser] setObject:self.selectedRowsArray forKey:@"interests"];
+    [[PFUser currentUser] saveInBackground];
 }
 
 
