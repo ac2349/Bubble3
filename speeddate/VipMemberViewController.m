@@ -21,6 +21,7 @@
 
 @property (nonatomic,retain) IBOutlet UIBarButtonItem  *menuBtn;
 @property NSMutableArray *categoriesArray;
+@property NSMutableArray *selectedRowsArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -41,6 +42,7 @@
 
     
     self.categoriesArray = [[NSMutableArray alloc] initWithObjects:@"Happy Hour", @"Dining", @"Outdoors", @"Travelers", @"Fitness",  nil];
+    self.selectedRowsArray = [NSMutableArray new];
     
 //    [self.tableView reloadData];
     
@@ -67,16 +69,6 @@
     cell.textLabel.text = self.categoriesArray[indexPath.row];
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
-//    
-//    if ([self.categoriesArray containsObject:indexPath])
-//    {
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    }
-//    else
-//    {
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//    }
-    
     return cell;
     
 }
@@ -89,33 +81,17 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
-    if (cell.accessoryType == UITableViewCellAccessoryCheckmark)
+    if (cell.accessoryType == UITableViewCellAccessoryNone)
     {
-        <#statements#>
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//
-//    if ([self.categoriesArray containsObject:indexPath])
-//    {
-//        [self.categoriesArray removeObject:indexPath];
-//    }
-//    else
-//    {
-//        [self.categoriesArray addObject:indexPath];
-//    }
-//    
-//    [self.tableView reloadData];
 }
-
-//-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-////    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    cell.accessoryType = UITableViewCellAccessoryNone;
-//}
 
 
 @end
