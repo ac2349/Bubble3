@@ -10,10 +10,10 @@
 ///SIDEBAR MENU SECTION
 
 "start_match"      = "Start Match";
-"menu_message"     = "Message";
+"menu_message"     = "Matches";
 "menu_profile"     = "Profile";
-"menu_share"       = "Share&Invite";
-"menu_vip"         = "Vip member";
-"menu_terms"       = "Terms";
-"menu_app"         = "Useful applications";
-"menu_logout"      = "Logout";
+"menu_share"       = "Invite";
+"menu_vip"         = "Categories";  #TODO: change menu_vip
+"Terms"       = "Terms";
+//"menu_app"         = "Useful applications";
+"Logout"      = "Logout";

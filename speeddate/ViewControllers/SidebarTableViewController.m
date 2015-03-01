@@ -81,9 +81,9 @@
     self.profileLableInCell.text = NSLocalizedString(@"menu_profile", nil);
     self.shareLableInCell.text = NSLocalizedString(@"menu_share", nil);
     self.VipLableInCell.text = NSLocalizedString(@"menu_vip", nil);
-    self.termsLableInCell.text = NSLocalizedString(@"menu_terms", nil);
+    self.termsLableInCell.text = NSLocalizedString(@"Terms", nil);
     self.appLableInCell.text = NSLocalizedString(@"menu_app", nil);
-    self.logoutLableInCell.text = NSLocalizedString(@"menu_logout", nil);
+    self.logoutLableInCell.text = NSLocalizedString(@"Logout", nil);
     
 }
 
