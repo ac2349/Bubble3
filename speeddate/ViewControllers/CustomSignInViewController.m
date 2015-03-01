@@ -424,6 +424,7 @@
          user[@"sexuality"] = [NSNumber numberWithInt:2];
          user[@"age"] = [NSNumber numberWithInt:30];
          user[@"isMale"] = @"true";
+         user[@"gender"] = userData[@"gender"];
          user[@"desc"] = @"Hi all))) I am now with you !!!";
          user[@"photo"] = filePicture;
          user[@"membervip"] = @"vip";

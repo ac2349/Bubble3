@@ -152,12 +152,14 @@
     
     [query whereKey:@"geoPoint" nearGeoPoint:userGeoPoint];
     
-    if (self.segmentedControl.selectedSegmentIndex == 0) {
-        [query whereKey:@"isMale" equalTo:@"true"];
+    if (self.segmentedControl.selectedSegmentIndex == 0) //male
+    {
+        [query whereKey:@"gender" equalTo:@"male"];
         
     }
-    if (self.segmentedControl.selectedSegmentIndex== 1) {
-       [query whereKey:@"isMale" equalTo:@"false"];
+    if (self.segmentedControl.selectedSegmentIndex== 1) //female
+    {
+       [query whereKey:@"gender" equalTo:@"female"];
        
     }
 
