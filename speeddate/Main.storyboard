@@ -1488,22 +1488,17 @@
                                     <action selector="bothLikeSelect:" destination="mLc-67-Pcw" eventType="touchUpInside" id="0VN-4T-dEF"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="s7T-xV-R58" userLabel="Banner">
-                                <rect key="frame" x="0.0" y="453" width="321" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.31372550129999999" green="0.91372555489999996" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
-                            </view>
                             <view contentMode="scaleToFill" id="vHT-wH-KTs">
                                 <rect key="frame" x="0.0" y="399" width="320" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" id="Woe-ej-OEH">
-                                <rect key="frame" x="0.0" y="560" width="320" height="216"/>
+                            <view contentMode="scaleToFill" id="Woe-ej-OEH" userLabel="EditView">
+                                <rect key="frame" x="0.0" y="100" width="320" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rxO-k9-phI">
-                                        <rect key="frame" x="16" y="183" width="50" height="21"/>
+                                        <rect key="frame" x="16" y="260" width="50" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1512,12 +1507,12 @@
                                         <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
                                     <view contentMode="scaleToFill" id="HkK-9Y-WTX">
-                                        <rect key="frame" x="109" y="169" width="77" height="28"/>
+                                        <rect key="frame" x="109" y="246" width="77" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0uA-Nx-Paq">
-                                        <rect key="frame" x="120" y="167" width="55" height="30"/>
+                                        <rect key="frame" x="120" y="244" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                         <state key="normal" title="Male">
@@ -1529,7 +1524,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="33o-Ug-5d9">
-                                        <rect key="frame" x="214" y="167" width="56" height="32"/>
+                                        <rect key="frame" x="214" y="244" width="56" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                         <state key="normal" title="Female">
@@ -1541,7 +1536,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" id="x7Q-bj-fN5" customClass="V8HorizontalPickerView">
-                                        <rect key="frame" x="78" y="92" width="208" height="38"/>
+                                        <rect key="frame" x="78" y="169" width="208" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" id="pc2-A2-sAQ">
@@ -1549,14 +1544,14 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="genderz.png" id="faU-Pg-Vey">
-                                        <rect key="frame" x="26" y="156" width="30" height="30"/>
+                                        <rect key="frame" x="26" y="233" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KQV-J9-M6I">
-                                        <rect key="frame" x="16" y="115" width="50" height="21"/>
+                                        <rect key="frame" x="16" y="192" width="50" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1565,7 +1560,7 @@
                                         <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="birthday" id="lr2-H0-cdp">
-                                        <rect key="frame" x="26" y="88" width="30" height="30"/>
+                                        <rect key="frame" x="26" y="165" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xSf-hZ-0Dm">
@@ -1581,13 +1576,13 @@
                                         <rect key="frame" x="26" y="23" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" id="tjo-dC-f8d">
-                                        <rect key="frame" x="0.0" y="75" width="320" height="1"/>
+                                    <view contentMode="scaleToFill" id="X5d-xl-ON4">
+                                        <rect key="frame" x="0.0" y="221" width="320" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.94509803920000002" green="0.35686274509999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="X5d-xl-ON4">
-                                        <rect key="frame" x="0.0" y="144" width="320" height="1"/>
+                                    <view contentMode="scaleToFill" id="I9e-US-qGD">
+                                        <rect key="frame" x="0.0" y="155" width="320" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.94509803920000002" green="0.35686274509999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -1609,6 +1604,42 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seeking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sjQ-qa-vcY">
+                                        <rect key="frame" x="8" y="126" width="67" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about.png" id="CJZ-6M-p1l">
+                                        <rect key="frame" x="26" y="98" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hellooooooooo!!!!!!" id="IbK-ta-EmG">
+                                        <rect key="frame" x="83" y="80" width="217" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="mLc-67-Pcw" id="eRZ-CX-KYa"/>
+                                        </connections>
+                                    </textView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LEk-B9-KzS">
+                                        <rect key="frame" x="229" y="131" width="65" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" id="tjo-dC-f8d">
+                                        <rect key="frame" x="0.0" y="75" width="320" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.94509803920000002" green="0.35686274509999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8901960784313725" green="0.16862745098039217" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -1621,6 +1652,11 @@
                                     <segue destination="wcp-wp-pyC" kind="embed" id="mW5-ra-woy"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" id="s7T-xV-R58" userLabel="Banner">
+                                <rect key="frame" x="0.0" y="453" width="321" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.31372550129999999" green="0.91372555489999996" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1653,6 +1689,7 @@
                         <outlet property="location" destination="Y1g-0g-bWh" id="81H-mh-pJf"/>
                         <outlet property="maleButton" destination="0uA-Nx-Paq" id="Qzz-KT-joC"/>
                         <outlet property="profileBackground" destination="sMT-GS-Whu" id="727-LQ-aHz"/>
+                        <outlet property="seekingTextView" destination="IbK-ta-EmG" id="xNB-I8-Jaf"/>
                         <outlet property="sidebarButton" destination="iif-kW-GK8" id="14a-i3-onM"/>
                         <outlet property="switchTouchId" destination="fGs-2I-718" id="UjG-w8-ggq"/>
                         <outlet property="vipLocation" destination="OFq-4u-ClT" id="VMh-GR-IHI"/>

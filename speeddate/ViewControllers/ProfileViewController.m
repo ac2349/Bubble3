@@ -45,6 +45,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property NSUInteger selectedPhoto;
 
+@property (weak, nonatomic) IBOutlet UITextView *seekingTextView;
+
+
 @property (weak, nonatomic) IBOutlet UIView *editView;
 @property (weak, nonatomic) IBOutlet UIView *profileBackground;
 @property (weak, nonatomic) IBOutlet UIImageView *femaleImageView;
@@ -196,6 +199,9 @@
     self.editView.frame = CGRectMake(0, self.view.frame.size.height, self.editView.frame.size.width, self.editView.frame.size.height);
     self.descriptionTextView.textColor = WHITE_COLOR;
     self.descriptionTextView.textAlignment = NSTextAlignmentJustified;
+    self.seekingTextView.textColor = WHITE_COLOR;
+    self.seekingTextView.textAlignment = NSTextAlignmentJustified;
+    
 
 }
 
@@ -222,6 +228,12 @@
          } else {
              self.descriptionTextView.text = DEFAULT_DESCRIPTION;
          }
+         if (![self.user.seeking isEqualToString:@""]) {
+             self.seekingTextView.text = self.user.seeking;
+         } else {
+             self.seekingTextView.text = DEFAULT_DESCRIPTION;
+         }
+         
 
          if ([self.user.isMale isEqualToString:@"true"]) {
              

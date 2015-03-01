@@ -17,6 +17,7 @@
 @property PFFile* photo3;
 @property PFFile* photo4;
 @property NSString *desc;
+@property NSString *seeking;
 @property NSNumber *distance;
 @property NSNumber* sexuality;
 @property NSMutableArray* matches;
