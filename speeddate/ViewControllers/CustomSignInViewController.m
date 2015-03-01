@@ -426,6 +426,7 @@
          user[@"isMale"] = @"true";
          user[@"desc"] = @"Hi all))) I am now with you !!!";
          user[@"photo"] = filePicture;
+         user[@"membervip"] = @"vip";
          user[PF_USER_FACEBOOKID] = userData[@"id"];
        //  user[PF_USER_FULLNAME] = userData[@"name"];
         // user[PF_USER_FULLNAME_LOWER] = [userData[@"name"] lowercaseString];
