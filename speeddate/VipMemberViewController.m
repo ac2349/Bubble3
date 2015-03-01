@@ -62,6 +62,18 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+//-(NSArray *)getSelections
+//{
+//    NSMutableArray *selections = [NSMutableArray new];
+//    
+//    for (NSIndexPath *indexPath in self.selectedRowsArray)
+//    {
+//        [selections addObject:[self.categoriesArray objectAtIndex:indexPath.row]];
+//    }
+//    
+//    return selections;
+//}
+
 #pragma mark - UITABLEVIEW DELEGATE
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -69,6 +81,16 @@
     cell.textLabel.text = self.categoriesArray[indexPath.row];
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
+    
+//    if ([self.selectedRowsArray containsObject:indexPath])
+//    {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    }
+//    else
+//    {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    }
+//    
     return cell;
     
 }
@@ -84,12 +106,16 @@
     if (cell.accessoryType == UITableViewCellAccessoryNone)
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.selectedRowsArray addObject:cell.textLabel.text];
     }
     else
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
+        [self.selectedRowsArray removeObject:cell.textLabel.text];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSLog(@"%@", self.selectedRowsArray);
     
 }
 
