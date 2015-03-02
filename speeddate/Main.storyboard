@@ -1332,7 +1332,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="sMT-GS-Whu">
-                                <rect key="frame" x="0.0" y="72" width="320" height="191"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZXc-ch-9e5">
@@ -1382,33 +1382,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="fGs-2I-718">
-                                        <rect key="frame" x="8" y="143" width="51" height="31"/>
+                                        <rect key="frame" x="8" y="182" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="onOffSwitch:" destination="mLc-67-Pcw" eventType="valueChanged" id="1of-DQ-JPw"/>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch Id" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ovm-oP-0NL">
-                                        <rect key="frame" x="65" y="148" width="71" height="21"/>
+                                        <rect key="frame" x="65" y="187" width="71" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1JB-87-g2M">
-                                        <rect key="frame" x="183" y="143" width="129" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" title="Who watched me?">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="ujh-52-gwL" kind="push" id="lDN-8D-OrI"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OLP-X3-TRt">
-                                        <rect key="frame" x="183" y="143" width="129" height="31"/>
+                                        <rect key="frame" x="183" y="182" width="129" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <state key="normal" title="Who watched me*?">
@@ -1419,11 +1407,20 @@
                                             <action selector="whooseevips:" destination="mLc-67-Pcw" eventType="touchUpInside" id="7Ws-YP-qaQ"/>
                                         </connections>
                                     </button>
+                                    <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seeking" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vNj-fu-au0">
+                                        <rect key="frame" x="8" y="115" width="304" height="59"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QvS-dq-8CD">
-                                <rect key="frame" x="39" y="306" width="60" height="30"/>
+                                <rect key="frame" x="39" y="332" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="male">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1446,7 +1443,7 @@
                                 </connections>
                             </button>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm interested:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LNG-cC-lfu">
-                                <rect key="frame" x="-1" y="271" width="320" height="33"/>
+                                <rect key="frame" x="-1" y="297" width="320" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1467,7 +1464,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XxC-5i-FAs">
-                                <rect key="frame" x="129" y="306" width="60" height="30"/>
+                                <rect key="frame" x="129" y="332" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="female">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1478,7 +1475,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MIs-9o-YqM">
-                                <rect key="frame" x="213" y="306" width="60" height="30"/>
+                                <rect key="frame" x="213" y="332" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="both">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1494,7 +1491,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="Woe-ej-OEH" userLabel="EditView">
-                                <rect key="frame" x="0.0" y="100" width="320" height="340"/>
+                                <rect key="frame" x="0.0" y="560" width="320" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rxO-k9-phI">
@@ -1652,11 +1649,6 @@
                                     <segue destination="wcp-wp-pyC" kind="embed" id="mW5-ra-woy"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" id="s7T-xV-R58" userLabel="Banner">
-                                <rect key="frame" x="0.0" y="453" width="321" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.31372550129999999" green="0.91372555489999996" blue="0.53725492949999998" alpha="1" colorSpace="deviceRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1675,7 +1667,6 @@
                     <connections>
                         <outlet property="ageLabel" destination="ZXc-ch-9e5" id="vcL-c1-fND"/>
                         <outlet property="agePickerView" destination="x7Q-bj-fN5" id="gnq-Hr-6De"/>
-                        <outlet property="bannerView" destination="s7T-xV-R58" id="bTf-SA-H28"/>
                         <outlet property="charactersLabel" destination="BGo-5M-7jI" id="xRY-Ul-tE4"/>
                         <outlet property="cityLable" destination="wzd-zD-TMS" id="3Fg-Rh-Utg"/>
                         <outlet property="descriptionLabel" destination="Y7e-R2-z92" id="SBi-99-0l1"/>
@@ -1689,11 +1680,11 @@
                         <outlet property="location" destination="Y1g-0g-bWh" id="81H-mh-pJf"/>
                         <outlet property="maleButton" destination="0uA-Nx-Paq" id="Qzz-KT-joC"/>
                         <outlet property="profileBackground" destination="sMT-GS-Whu" id="727-LQ-aHz"/>
+                        <outlet property="seekingLabel" destination="vNj-fu-au0" id="N3d-dj-DQR"/>
                         <outlet property="seekingTextView" destination="IbK-ta-EmG" id="xNB-I8-Jaf"/>
                         <outlet property="sidebarButton" destination="iif-kW-GK8" id="14a-i3-onM"/>
                         <outlet property="switchTouchId" destination="fGs-2I-718" id="UjG-w8-ggq"/>
                         <outlet property="vipLocation" destination="OFq-4u-ClT" id="VMh-GR-IHI"/>
-                        <outlet property="whosee" destination="1JB-87-g2M" id="xLY-Nd-cwR"/>
                         <outlet property="whoseeVip" destination="OLP-X3-TRt" id="DeK-56-2cf"/>
                         <segue destination="vXZ-lx-hvc" kind="modal" identifier="logOut" id="Xdh-ls-6MD"/>
                     </connections>

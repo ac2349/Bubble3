@@ -41,6 +41,8 @@
 @property (weak, nonatomic) IBOutlet UIView *genderLikeSelect;
 
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *seekingLabel;
+
 
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property NSUInteger selectedPhoto;
@@ -365,6 +367,11 @@
     if ([self.descriptionTextView.text isEqualToString:DEFAULT_DESCRIPTION]) {
         self.descriptionTextView.text = @"";
     }
+    
+    if ([self.seekingTextView.text isEqualToString:DEFAULT_DESCRIPTION]) {
+        self.seekingTextView.text = @"";
+    }
+    
     [UIView animateWithDuration:1.2 delay:0 usingSpringWithDamping:0.3 initialSpringVelocity:0.2 options:UIViewAnimationOptionCurveEaseIn animations:^{
             self.editView.frame = CGRectMake(0, self.editView.frame.origin.y-80, self.editView.frame.size.width, self.editView.frame.size.height);
     } completion:^(BOOL finished) {
@@ -377,6 +384,8 @@
 {
     self.descriptionLabel.text = self.descriptionTextView.text;
     self.user.desc =self.descriptionTextView.text;
+    self.seekingLabel.text = self.seekingTextView.text;
+    self.user.seeking = self.seekingTextView.text;
     [self.user saveInBackground];
     [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseIn animations:^{
         self.editView.frame = CGRectMake(0, self.editView.frame.origin.y+80, self.editView.frame.size.width, self.editView.frame.size.height);
