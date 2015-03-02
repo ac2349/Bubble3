@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Custom Sign Up View Controller-->
@@ -936,8 +935,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbg-JZ-uJY">
-                                <rect key="frame" x="0.0" y="94" width="320" height="238"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xbg-JZ-uJY">
+                                <rect key="frame" x="0.0" y="94" width="320" height="280"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJr-7o-Xbw">
                                         <rect key="frame" x="8" y="8" width="67" height="21"/>
@@ -970,30 +969,19 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="v7K-tJ-11i">
-                                        <rect key="frame" x="14" y="93" width="292" height="31"/>
-                                    </slider>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ihc-6e-FFz">
-                                        <rect key="frame" x="0.0" y="131" width="320" height="1"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ihc-6e-FFz">
+                                        <rect key="frame" x="0.0" y="170" width="320" height="1"/>
                                         <color key="backgroundColor" red="0.94509803920000002" green="0.35686274509999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pR6-MS-5Gt">
-                                        <rect key="frame" x="8" y="140" width="44" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="Oxk-rB-dR1"/>
-                                            <constraint firstAttribute="height" constant="21" id="TtM-KZ-5aX"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pR6-MS-5Gt">
+                                        <rect key="frame" x="8" y="182" width="44" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="rq2-uy-nG3">
-                                        <rect key="frame" x="16" y="169" width="288" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="rq2-uy-nG3">
+                                        <rect key="frame" x="16" y="211" width="288" height="29"/>
                                         <color key="backgroundColor" red="0.94509803920000002" green="0.35686274509999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="288" id="FYa-TI-Zcq"/>
-                                            <constraint firstAttribute="height" constant="28" id="JnX-jO-ra6"/>
-                                        </constraints>
                                         <segments>
                                             <segment title="Male"/>
                                             <segment title="Female"/>
@@ -1004,26 +992,15 @@
                                             <action selector="changeSex:" destination="HgO-Gf-JRB" eventType="valueChanged" id="fvf-Ke-Afe"/>
                                         </connections>
                                     </segmentedControl>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rDc-QA-RA8" customClass="NMRangeSlider">
+                                        <rect key="frame" x="16" y="105" width="288" height="34"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.81000000000000005" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="rq2-uy-nG3" firstAttribute="leading" secondItem="Xbg-JZ-uJY" secondAttribute="leading" constant="16" id="CvC-jQ-zTF"/>
-                                    <constraint firstItem="pR6-MS-5Gt" firstAttribute="top" secondItem="Ihc-6e-FFz" secondAttribute="bottom" constant="8" id="FYK-aA-rhM"/>
-                                    <constraint firstAttribute="width" constant="320" id="GcP-Jc-ZHT"/>
-                                    <constraint firstAttribute="height" constant="238" id="P0U-U8-n7Z"/>
-                                    <constraint firstAttribute="trailing" secondItem="rq2-uy-nG3" secondAttribute="trailing" constant="16" id="V3T-9m-LJE"/>
-                                    <constraint firstAttribute="bottom" secondItem="rq2-uy-nG3" secondAttribute="bottom" constant="41" id="gkv-vU-edm"/>
-                                    <constraint firstItem="pR6-MS-5Gt" firstAttribute="leading" secondItem="Xbg-JZ-uJY" secondAttribute="leading" constant="8" id="ujB-7k-GOM"/>
-                                    <constraint firstItem="rq2-uy-nG3" firstAttribute="top" secondItem="pR6-MS-5Gt" secondAttribute="bottom" constant="8" id="yu5-GY-vdp"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.35686274509999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Xbg-JZ-uJY" secondAttribute="trailing" constant="-16" id="2NL-UB-mNC"/>
-                            <constraint firstItem="Xbg-JZ-uJY" firstAttribute="leading" secondItem="E1e-6l-w1I" secondAttribute="leadingMargin" constant="-16" id="DrU-rO-lmg"/>
-                            <constraint firstItem="Xbg-JZ-uJY" firstAttribute="top" secondItem="Zzr-wM-QCU" secondAttribute="bottom" constant="30" id="g6O-Ck-Ab9"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Discovery Settings" id="R8O-R6-lHI">

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NMRangeSlider.h"
 #import "UserNearCollectionViewCell.h"
 
 @interface UserNearMeViewController : UIViewController{
