@@ -146,7 +146,7 @@
   
     
     self.navigationController.navigationBar.barTintColor = RED_LIGHT;
-    self.navigationItem.title = @"Speed Dating";
+    self.navigationItem.title = @"Discover Settings";
     inAnimation = NO;
     waveLayer=[CALayer layer];
     if (IS_IPHONE_5) {

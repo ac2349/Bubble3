@@ -58,7 +58,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     self.navigationController.navigationBar.barTintColor = RED_LIGHT;
-    self.navigationItem.title = @"Speed Dating";
+    self.navigationItem.title = @"Discovery Preferences";
     
     self.photoArray =[[NSMutableArray alloc]init];
     
