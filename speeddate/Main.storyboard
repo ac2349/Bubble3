@@ -1399,12 +1399,12 @@
                                         <rect key="frame" x="183" y="182" width="129" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" title="Who watched me*?">
+                                        <state key="normal" title="Who viewed me?">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="whooseevips:" destination="mLc-67-Pcw" eventType="touchUpInside" id="7Ws-YP-qaQ"/>
+                                            <segue destination="ujh-52-gwL" kind="push" id="Cg7-sL-CpJ"/>
                                         </connections>
                                     </button>
                                     <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seeking" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vNj-fu-au0">
@@ -1685,7 +1685,7 @@
                         <outlet property="sidebarButton" destination="iif-kW-GK8" id="14a-i3-onM"/>
                         <outlet property="switchTouchId" destination="fGs-2I-718" id="UjG-w8-ggq"/>
                         <outlet property="vipLocation" destination="OFq-4u-ClT" id="VMh-GR-IHI"/>
-                        <outlet property="whoseeVip" destination="OLP-X3-TRt" id="DeK-56-2cf"/>
+                        <outlet property="whosee" destination="OLP-X3-TRt" id="CLg-ku-wt1"/>
                         <segue destination="vXZ-lx-hvc" kind="modal" identifier="logOut" id="Xdh-ls-6MD"/>
                     </connections>
                 </viewController>
