@@ -2235,6 +2235,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aTc-aH-fsT">
                                         <rect key="frame" x="14" y="28" width="292" height="31"/>
+                                        <connections>
+                                            <action selector="distanceSliderValueChanged:" destination="c1u-Uo-oFq" eventType="valueChanged" id="atL-R6-KgA"/>
+                                        </connections>
                                     </slider>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmS-WA-uhh">
                                         <rect key="frame" x="0.0" y="67" width="320" height="1"/>
@@ -2290,14 +2293,23 @@
                         <barButtonItem key="leftBarButtonItem" image="bubble" id="vDZ-md-F6x">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="RT7-wx-AF2"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="RT7-wx-AF2">
+                            <connections>
+                                <action selector="onDoneButtonPressed:" destination="c1u-Uo-oFq" id="aFD-wZ-XR9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="distanceLabel" destination="RTS-pF-V3g" id="Xdq-R2-wDi"/>
+                        <outlet property="distanceSlider" destination="aTc-aH-fsT" id="VTa-Fi-cET"/>
+                        <outlet property="sidebarButton" destination="vDZ-md-F6x" id="rba-0M-80r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTc-K8-0Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752" y="995"/>
+            <point key="canvasLocation" x="790" y="982"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XpZ-AF-3Hm">

@@ -22,7 +22,9 @@
 #define YELLOW_COLOR [UIColor colorWithRed:0.82 green:0.91 blue:0.32 alpha:1]
 #define RED_COLOR [UIColor colorWithRed:0.82 green:0.91 blue:0.32 alpha:1] /*#cb0048*/
 #define BLACK_COLOR [UIColor blackColor]
-#define BLUE_COLOR [UIColor colorWithRed:0.0/255.0 green:168.0/255.0 blue:255.0/255.0 alpha:1.0]
+#define BLUE_COLOR [UIColor colorWithRed:241.0/255.0 green:91.0/255.0 blue:78.0/255.0 alpha:1.0]
+//#define BLUE_COLOR [UIColor colorWithRed:0.0/255.0 green:168.0/255.0 blue:255.0/255.0 alpha:1.0]
+
 #define BLUEDARK_COLOR [UIColor colorWithRed:34.0/255.0 green:213.0/255.0 blue:181.0/255.0 alpha:1.0]
 #define WHITE_COLOR [UIColor whiteColor]
 #define GRAY_COLOR [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1]
@@ -44,7 +46,8 @@
 #define DEFAULT_DISTANCE 20
 
 #define MENU_GRAY_DEEP        [UIColor colorWithRed:52.0/255.0 green:56.0/255.0 blue:60.0/255.0 alpha:1.0]
-#define MENU_BLUE             [UIColor colorWithRed:61.0/255.0 green:191.0/255.0 blue:217.0/255.0 alpha:1.0]
+#define MENU_BLUE             [UIColor colorWithRed:241.0/255.0 green:91.0/255.0 blue:78.0/255.0 alpha:1.0]
+
 #define MENU_GRAY_LIGHT       [UIColor colorWithRed:60.0/255.0 green:64.0/255.0 blue:68.0/255.0 alpha:1.0]
 
 #define RED_LIGHT             [UIColor colorWithRed:241.0/255.0 green:91.0/255.0 blue:78.0/255.0 alpha:1.0]

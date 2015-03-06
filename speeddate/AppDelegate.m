@@ -43,7 +43,7 @@
     }
     
    
-    [[UINavigationBar appearance] setBarTintColor:BLUE_COLOR];
+    [[UINavigationBar appearance] setBarTintColor:RED_LIGHT];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
      setTitleTextAttributes:[NSDictionary
