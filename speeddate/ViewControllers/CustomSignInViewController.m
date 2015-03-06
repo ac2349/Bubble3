@@ -441,8 +441,8 @@
                   [ProgressHUD dismiss];
                 //  [self dismissViewControllerAnimated:YES completion:nil];
                    [self performSegueWithIdentifier:@"login" sender:self];
-                //  _startScreen =[[MainViewController alloc]initWithNibName:@"Main" bundle:nil];
-                 // [self presentViewController:_startScreen animated:YES completion:nil];
+//                  _startScreen =[[MainViewController alloc]initWithNibName:@"Main" bundle:nil];
+//                  [self presentViewController:_startScreen animated:YES completion:nil];
               }
               else
               {
@@ -467,8 +467,8 @@
     [ProgressHUD showSuccess:[NSString stringWithFormat:@"Welcome back %@!", user[PF_USER_NICKNAME]]];
    // [self dismissViewControllerAnimated:YES completion:nil];
      [self performSegueWithIdentifier:@"login" sender:self];
-    //_startScreen =[[MainViewController alloc]initWithNibName:@"Main" bundle:nil];
-   // [self presentViewController:_startScreen animated:YES completion:nil];
+//    _startScreen =[[MainViewController alloc]initWithNibName:@"Main" bundle:nil];
+//    [self presentViewController:_startScreen animated:YES completion:nil];
 }
 
 

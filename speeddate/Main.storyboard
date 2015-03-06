@@ -365,7 +365,7 @@
                     </view>
                     <connections>
                         <segue destination="luz-uj-uyd" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegue" id="UDo-Z5-FwT"/>
-                        <segue destination="xss-bd-IcG" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="6vU-sy-Qey"/>
+                        <segue destination="V52-hf-5cz" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="xGT-3z-laj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ge8-Sp-xkE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -627,7 +627,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="822" y="-591"/>
+            <point key="canvasLocation" x="881" y="-505"/>
         </scene>
         <!--Locations-->
         <scene sceneID="FFb-s2-uwJ">
@@ -807,7 +807,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ki1-Uz-LU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1180" y="327"/>
+            <point key="canvasLocation" x="506" y="291"/>
         </scene>
         <!--Applications-->
         <scene sceneID="9Xr-ZS-IUi">
@@ -885,7 +885,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nJ-ws-5nA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2342" y="877"/>
+            <point key="canvasLocation" x="2566" y="747"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2AV-06-Mvh">
@@ -904,7 +904,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTR-7U-6v7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="383"/>
+            <point key="canvasLocation" x="368" y="935"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sc0-VA-FxC">
@@ -2315,7 +2315,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cuj-WH-mBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="220" y="995"/>
+            <point key="canvasLocation" x="266" y="1087"/>
         </scene>
     </scenes>
     <resources>
@@ -2352,11 +2352,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="obm-2b-dPx"/>
-        <segue reference="MHJ-Yn-gep"/>
-        <segue reference="Qh3-Ge-Ehw"/>
-        <segue reference="U3T-S3-jZm"/>
-        <segue reference="gPx-w2-9WG"/>
+        <segue reference="oXm-ri-1Lw"/>
+        <segue reference="yRc-2z-5JR"/>
         <segue reference="QOt-cj-Bjn"/>
+        <segue reference="gPx-w2-9WG"/>
+        <segue reference="VlF-20-DHW"/>
+        <segue reference="Qh3-Ge-Ehw"/>
     </inferredMetricsTieBreakers>
 </document>
