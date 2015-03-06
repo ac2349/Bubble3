@@ -165,6 +165,7 @@
 		C2A90ED719F49CE900FC0D04 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A90ED619F49CE900FC0D04 /* UserProfileViewController.m */; };
 		C2CC355819F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CC355719F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
 		C2CC355A19F58ACD00AC86D1 /* mask_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CC355919F58ACD00AC86D1 /* mask_profile.png */; };
+		FBB67E9D1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB67E9C1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m */; };
 		FBFB1C421AA3FE280068B1D5 /* slider-default7-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFB1C3A1AA3FE280068B1D5 /* slider-default7-handle.png */; };
 		FBFB1C431AA3FE280068B1D5 /* slider-default7-handle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFB1C3B1AA3FE280068B1D5 /* slider-default7-handle@2x.png */; };
 		FBFB1C441AA3FE280068B1D5 /* slider-default7-track.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFB1C3C1AA3FE280068B1D5 /* slider-default7-track.png */; };
@@ -452,6 +453,8 @@
 		C2CC355619F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIActivityIndicatorForSDWebImage.h"; sourceTree = "<group>"; };
 		C2CC355719F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIActivityIndicatorForSDWebImage.m"; sourceTree = "<group>"; };
 		C2CC355919F58ACD00AC86D1 /* mask_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask_profile.png; sourceTree = "<group>"; };
+		FBB67E9B1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryPreferencesViewController.h; sourceTree = "<group>"; };
+		FBB67E9C1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryPreferencesViewController.m; sourceTree = "<group>"; };
 		FBFB1C3A1AA3FE280068B1D5 /* slider-default7-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-handle.png"; sourceTree = "<group>"; };
 		FBFB1C3B1AA3FE280068B1D5 /* slider-default7-handle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-handle@2x.png"; sourceTree = "<group>"; };
 		FBFB1C3C1AA3FE280068B1D5 /* slider-default7-track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-track.png"; sourceTree = "<group>"; };
@@ -684,6 +687,8 @@
 				C2A90ED619F49CE900FC0D04 /* UserProfileViewController.m */,
 				C254F8A119F6C4B000473836 /* WhoSeeViewController.h */,
 				C254F8A219F6C4B000473836 /* WhoSeeViewController.m */,
+				FBB67E9B1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.h */,
+				FBB67E9C1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -1205,6 +1210,7 @@
 				C25E75E519EF28D700779C23 /* CHTumblrMenuView.m in Sources */,
 				0BA4ECB219AE1EE200302E92 /* SidebarTableViewController.m in Sources */,
 				C237018119D974390024F856 /* AFHTTPRequestOperation.m in Sources */,
+				FBB67E9D1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m in Sources */,
 				C254F8A019F6C28F00473836 /* WhoSeeMeHelper.m in Sources */,
 				C237018919D974390024F856 /* AFURLSessionManager.m in Sources */,
 				C2300F8919E190700044A4E5 /* TermsViewController.m in Sources */,
