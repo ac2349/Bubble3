@@ -61,8 +61,8 @@
     self.ageSlider.minimumValue = 18;
     self.ageSlider.maximumValue = 100;
 
-    self.ageSlider.lowerValue = 18;
     self.ageSlider.upperValue = 100;
+    self.ageSlider.lowerValue = 18;
     
     self.ageSlider.minimumRange = 1;
     
@@ -90,17 +90,8 @@
 
 - (void)updateSliderLabels
 {
-    
-    CGPoint lowerCenter;
-    lowerCenter.x = (self.ageSlider.lowerCenter.x + self.ageSlider.frame.origin.x);
-    lowerCenter.y = (self.ageSlider.center.y - 30.0f);
-    self.minAge.center = lowerCenter;
     self.minAge.text = [NSString stringWithFormat:@"%d", (int)self.ageSlider.lowerValue];
     
-    CGPoint upperCenter;
-    upperCenter.x = (self.ageSlider.upperCenter.x + self.ageSlider.frame.origin.x);
-    upperCenter.y = (self.ageSlider.center.y - 30.0f);
-    self.maxAge.center = upperCenter;
     self.maxAge.text = [NSString stringWithFormat:@"%d", (int)self.ageSlider.upperValue];
 }
 @end
