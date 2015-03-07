@@ -2249,8 +2249,8 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18-35" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzP-7d-T3e">
-                                        <rect key="frame" x="267" y="76" width="45" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzP-7d-T3e">
+                                        <rect key="frame" x="183" y="76" width="46" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2278,9 +2278,24 @@
                                             <action selector="changeSex:" destination="HgO-Gf-JRB" eventType="valueChanged" id="RmB-Qa-l5J"/>
                                         </connections>
                                     </segmentedControl>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="omP-6b-f9e" customClass="NMRangeSlider">
-                                        <rect key="frame" x="16" y="105" width="288" height="34"/>
-                                        <color key="backgroundColor" red="0.16820004111842105" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="35" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgj-vn-aY6">
+                                        <rect key="frame" x="269" y="76" width="43" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWe-0x-Bin">
+                                        <rect key="frame" x="247" y="81" width="9" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfE-bA-qHo" customClass="NMRangeSlider">
+                                        <rect key="frame" x="107" y="105" width="191" height="34"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="ageSliderValueChanged:" destination="c1u-Uo-oFq" eventType="valueChanged" id="NEl-jD-TxC"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.81000000000000005" colorSpace="calibratedRGB"/>
@@ -2302,14 +2317,17 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ageSlider" destination="gfE-bA-qHo" id="1fL-0V-sec"/>
                         <outlet property="distanceLabel" destination="RTS-pF-V3g" id="Xdq-R2-wDi"/>
                         <outlet property="distanceSlider" destination="aTc-aH-fsT" id="VTa-Fi-cET"/>
+                        <outlet property="maxAge" destination="lgj-vn-aY6" id="jXv-Xh-0xx"/>
+                        <outlet property="minAge" destination="EzP-7d-T3e" id="KeI-IW-7O2"/>
                         <outlet property="sidebarButton" destination="vDZ-md-F6x" id="rba-0M-80r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTc-K8-0Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="790" y="982"/>
+            <point key="canvasLocation" x="817" y="982"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XpZ-AF-3Hm">
