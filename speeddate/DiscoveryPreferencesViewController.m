@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *minAge;
 @property (weak, nonatomic) IBOutlet UILabel *maxAge;
 @property (weak, nonatomic) IBOutlet NMRangeSlider *ageSlider;
+@property NSMutableArray *discoverySettings;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sexSegmentedControl;
+@property NSString *selectedSex;
 
 
 
@@ -36,6 +39,7 @@
     
     [self configureSliders];
     
+    self.discoverySettings = [NSMutableArray new];
 }
 
 - (IBAction)onDoneButtonPressed:(UIBarButtonItem *)sender
@@ -46,7 +50,35 @@
     // 1) Remember settings within app.
     // 2) Save to phone (NSUserDefaults/Persistence).
     
+    [self.discoverySettings addObject:self.distanceLabel.text];
+    [self.discoverySettings addObject:[NSNumber numberWithInt:self.ageSlider.lowerValue]];
+    [self.discoverySettings addObject:[NSNumber numberWithInt:self.ageSlider.upperValue]];
+
+    NSLog(@"%@", self.discoverySettings);
 }
+
+- (IBAction)segmentedControlAction:(UISegmentedControl *)sender
+{
+    if (self.sexSegmentedControl.selectedSegmentIndex == 0)
+    {
+        self.selectedSex = @"male";
+        NSLog(@"%@", self.selectedSex);
+    }
+    else if (self.sexSegmentedControl.selectedSegmentIndex == 1)
+    {
+        self.selectedSex = @"female";
+        NSLog(@"%@", self.selectedSex);
+    }
+    else
+    {
+        self.selectedSex = @"both";
+        NSLog(@"%@", self.selectedSex);
+    }
+    
+}
+
+
+#pragma mark - UISLIDER CODE
 
 -(void)configureSliders
 {
@@ -59,9 +91,9 @@
     
     // Age slider code
     self.ageSlider.minimumValue = 18;
-    self.ageSlider.maximumValue = 100;
+    self.ageSlider.maximumValue = 99;
 
-    self.ageSlider.upperValue = 100;
+    self.ageSlider.upperValue = 99;
     self.ageSlider.lowerValue = 18;
     
     self.ageSlider.minimumRange = 1;
@@ -79,7 +111,7 @@
     
     NSString *result = [formatter stringFromNumber:[NSNumber numberWithFloat:sender.value]];
     
-    self.distanceLabel.text = [NSString stringWithFormat:@"%@mi.", result];
+    self.distanceLabel.text = result;
 }
 
 
