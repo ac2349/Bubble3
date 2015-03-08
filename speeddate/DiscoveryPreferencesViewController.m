@@ -9,6 +9,7 @@
 #import "DiscoveryPreferencesViewController.h"
 #import "SWRevealViewController.h"
 #import "NMRangeSlider.h"
+#import "MainViewController.h"
 
 @interface DiscoveryPreferencesViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
@@ -44,7 +45,7 @@
 
 - (IBAction)onDoneButtonPressed:(UIBarButtonItem *)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
     
 // #TODO: Save data.
     // 1) Remember settings within app.
@@ -125,5 +126,22 @@
     self.minAge.text = [NSString stringWithFormat:@"%d", (int)self.ageSlider.lowerValue];
     
     self.maxAge.text = [NSString stringWithFormat:@"%d", (int)self.ageSlider.upperValue];
+}
+
+
+#pragma mark - SEGUE
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    int miDistance = [self.distanceLabel.text intValue];
+    [self.discoverySettings addObject:self.distanceLabel.text];
+    [self.discoverySettings addObject:[NSNumber numberWithInt:self.ageSlider.lowerValue]];
+    [self.discoverySettings addObject:[NSNumber numberWithInt:self.ageSlider.upperValue]];
+    
+    if ([segue.identifier   isEqualToString:@"discoverySettingsSegue"])
+    {
+        MainViewController *vc = segue.destinationViewController;
+        vc.discoverySettingsArray = self.discoverySettings;
+    }
 }
 @end

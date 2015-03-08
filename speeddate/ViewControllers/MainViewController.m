@@ -90,6 +90,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property UILabel* imageCountLabel;
 @property UserParseHelper *otherUser;
+@property NSString *distance;
 
 
 
@@ -160,6 +161,7 @@
    
     [waveLayer setHidden:NO];
 
+
 }
 
 - (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
@@ -172,6 +174,8 @@
 
 - (void)checkFirstTime
 {
+// #TODO: hitting the edit button doesn't actually bring you to the edit page at the moment.
+    
     if(![[NSUserDefaults standardUserDefaults] objectForKey:@"first"]) {
         [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"first"];
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -229,12 +233,27 @@
     [checkQuery whereKey:@"email" matchesKey:@"fromUserEmail" inQuery:queryInside];
     PFQuery* userQuery = [UserParseHelper query];
     [userQuery whereKey:@"objectId" doesNotMatchKey:@"objectId" inQuery:checkQuery];
+    
+    
+    for (id object in self.discoverySettingsArray)
+    {
+        self.distance = [self.discoverySettingsArray objectAtIndex:0];
+        int minAge = [self.discoverySettingsArray objectAtIndex:1];
+        int maxAge = [self.discoverySettingsArray objectAtIndex:2];
+    }
+    
+    // convert mi to km
+    NSInteger value = [self.distance integerValue];
+    NSLog(@"%i, %g", value, (double)value);
    
     
     if (self.curUser.distance.doubleValue == 0.0) {
         self.curUser.distance = [NSNumber numberWithInt:100];
     }
-    [userQuery whereKey:@"geoPoint" nearGeoPoint:self.curUser.geoPoint withinKilometers:self.curUser.distance.doubleValue];
+
+    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:20 longitude:-10];
+    
+
     [userQuery whereKey:@"email" matchesKey:@"fromUserEmail" inQuery:query];
     if (self.curUser.sexuality.integerValue == 0) {
         [userQuery whereKey:@"isMale" equalTo:@"true"];
@@ -271,7 +290,9 @@
             self.curUser.distance = [NSNumber numberWithInt:10000];
         }
         [userQuery whereKey:@"objectId" doesNotMatchKey:@"objectId" inQuery:checkQuery];
-        [userQuery whereKey:@"geoPoint" nearGeoPoint:self.curUser.geoPoint withinKilometers:self.curUser.distance.doubleValue];
+//        [userQuery whereKey:@"geoPoint" nearGeoPoint:point withinKilometers:self.curUser.distance.doubleValue];
+
+        [userQuery whereKey:@"geoPoint" nearGeoPoint:self.curUser.geoPoint withinKilometers:(double)value];
         [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             [self.posibleMatchesArray addObjectsFromArray:objects];
        

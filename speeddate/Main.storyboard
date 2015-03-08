@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0nu-LK-2zr">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -807,7 +807,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ki1-Uz-LU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506" y="291"/>
+            <point key="canvasLocation" x="620" y="265"/>
         </scene>
         <!--Applications-->
         <scene sceneID="9Xr-ZS-IUi">
@@ -892,6 +892,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V52-hf-5cz" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="oO4-Mv-hr2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Zgs-ht-j3d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2218,6 +2219,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="RT7-wx-AF2">
                             <connections>
                                 <action selector="onDoneButtonPressed:" destination="c1u-Uo-oFq" id="aFD-wZ-XR9"/>
+                                <segue destination="aqZ-SE-PFE" kind="push" identifier="discoverySettingsSegue" id="Bmi-bo-f09"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2235,7 +2237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTc-K8-0Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="817" y="982"/>
+            <point key="canvasLocation" x="802" y="935"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XpZ-AF-3Hm">
@@ -2253,7 +2255,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cuj-WH-mBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266" y="1087"/>
+            <point key="canvasLocation" x="638" y="1727"/>
         </scene>
     </scenes>
     <resources>
@@ -2291,10 +2293,10 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="oXm-ri-1Lw"/>
-        <segue reference="yRc-2z-5JR"/>
-        <segue reference="QOt-cj-Bjn"/>
+        <segue reference="Bmi-bo-f09"/>
+        <segue reference="P3d-BW-UHp"/>
+        <segue reference="43A-2r-DhM"/>
         <segue reference="gPx-w2-9WG"/>
-        <segue reference="VlF-20-DHW"/>
-        <segue reference="Qh3-Ge-Ehw"/>
+        <segue reference="QOt-cj-Bjn"/>
     </inferredMetricsTieBreakers>
 </document>
