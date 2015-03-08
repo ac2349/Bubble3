@@ -93,6 +93,7 @@
 @property NSString *distance;
 @property NSString *minAge;
 @property NSString *maxAge;
+@property NSString *preferredSex;
 
 
 
@@ -242,6 +243,7 @@
         self.distance = [self.discoverySettingsArray objectAtIndex:0];
         self.minAge = [self.discoverySettingsArray objectAtIndex:1];
         self.maxAge = [self.discoverySettingsArray objectAtIndex:2];
+        self.preferredSex = [self.discoverySettingsArray objectAtIndex:3];
         
         NSLog(@"%@", object);
     }
@@ -250,17 +252,29 @@
     NSInteger value = [self.distance integerValue];
     NSLog(@"%li, %g", (long)value, (double)value);
    
-//    Keep below for testing purposes.
-//    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:20 longitude:-10];
+//    Keep below for testing purposes.  Beijing 39.904456,116.407496
+//                                      Palo Alto 37.441883,-122.143019
+    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:37.441883 longitude:-122.143019];
     
 
     [userQuery whereKey:@"email" matchesKey:@"fromUserEmail" inQuery:query];
-    if (self.curUser.sexuality.integerValue == 0) {
-        [userQuery whereKey:@"isMale" equalTo:@"true"];
+    
+    if ([self.preferredSex isEqualToString:@"male"])
+    {
+        [userQuery whereKey:@"gender" equalTo:@"male"];
     }
-    if (self.curUser.sexuality.integerValue == 1) {
-        [userQuery whereKey:@"isMale" equalTo:@"false"];
+    else if ([self.preferredSex isEqualToString:@"female"])
+    {
+        [userQuery whereKey:@"gender" equalTo:@"female"];
     }
+    [userQuery whereKey:@"age" greaterThanOrEqualTo:self.minAge];
+    [userQuery whereKey:@"age" lessThanOrEqualTo:self.maxAge];
+    [userQuery whereKey:@"geoPoint" nearGeoPoint:point withinKilometers:(double)value];
+
+
+    
+    
+
     NSUserDefaults *mainUser = [NSUserDefaults standardUserDefaults];
     [mainUser setInteger:self.curUser.sexuality.integerValue forKey:@"sex"];
     [mainUser synchronize];
@@ -286,19 +300,15 @@
             [userQuery whereKey:@"isMale" equalTo:@"false"];
         }
         
- 
-        [userQuery whereKey:@"age" greaterThanOrEqualTo:self.minAge];
-        [userQuery whereKey:@"age" lessThanOrEqualTo:self.maxAge];
-        
-        
+
+
 //
         if (self.curUser.distance.doubleValue == 0.0) {
             self.curUser.distance = [NSNumber numberWithInt:10000];
         }
         [userQuery whereKey:@"objectId" doesNotMatchKey:@"objectId" inQuery:checkQuery];
-//        [userQuery whereKey:@"geoPoint" nearGeoPoint:point withinKilometers:self.curUser.distance.doubleValue];
 
-        [userQuery whereKey:@"geoPoint" nearGeoPoint:self.curUser.geoPoint withinKilometers:(double)value];
+//        [userQuery whereKey:@"geoPoint" nearGeoPoint:self.curUser.geoPoint withinKilometers:(double)value];
         [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             [self.posibleMatchesArray addObjectsFromArray:objects];
        

@@ -43,20 +43,6 @@
     self.discoverySettings = [NSMutableArray new];
 }
 
-- (IBAction)onDoneButtonPressed:(UIBarButtonItem *)sender
-{
-//    [self dismissViewControllerAnimated:YES completion:nil];
-    
-// #TODO: Save data.
-    // 1) Remember settings within app.
-    // 2) Save to phone (NSUserDefaults/Persistence).
-    
-    [self.discoverySettings addObject:self.distanceLabel.text];
-    [self.discoverySettings addObject:[NSNumber numberWithInt:self.ageSlider.lowerValue]];
-    [self.discoverySettings addObject:[NSNumber numberWithInt:self.ageSlider.upperValue]];
-
-    NSLog(@"%@", self.discoverySettings);
-}
 
 - (IBAction)segmentedControlAction:(UISegmentedControl *)sender
 {
@@ -133,10 +119,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    int miDistance = [self.distanceLabel.text intValue];
     [self.discoverySettings addObject:self.distanceLabel.text];
     [self.discoverySettings addObject:[NSNumber numberWithInt:self.ageSlider.lowerValue]];
     [self.discoverySettings addObject:[NSNumber numberWithInt:self.ageSlider.upperValue]];
+    
+// TODO:  fix bug for nil object
+    [self.discoverySettings addObject:self.selectedSex];
     
     if ([segue.identifier   isEqualToString:@"discoverySettingsSegue"])
     {
