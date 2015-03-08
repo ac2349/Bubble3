@@ -91,6 +91,8 @@
 @property UILabel* imageCountLabel;
 @property UserParseHelper *otherUser;
 @property NSString *distance;
+@property NSString *minAge;
+@property NSString *maxAge;
 
 
 
@@ -238,20 +240,18 @@
     for (id object in self.discoverySettingsArray)
     {
         self.distance = [self.discoverySettingsArray objectAtIndex:0];
-        int minAge = [self.discoverySettingsArray objectAtIndex:1];
-        int maxAge = [self.discoverySettingsArray objectAtIndex:2];
+        self.minAge = [self.discoverySettingsArray objectAtIndex:1];
+        self.maxAge = [self.discoverySettingsArray objectAtIndex:2];
+        
+        NSLog(@"%@", object);
     }
     
     // convert mi to km
     NSInteger value = [self.distance integerValue];
-    NSLog(@"%i, %g", value, (double)value);
+    NSLog(@"%li, %g", (long)value, (double)value);
    
-    
-    if (self.curUser.distance.doubleValue == 0.0) {
-        self.curUser.distance = [NSNumber numberWithInt:100];
-    }
-
-    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:20 longitude:-10];
+//    Keep below for testing purposes.
+//    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:20 longitude:-10];
     
 
     [userQuery whereKey:@"email" matchesKey:@"fromUserEmail" inQuery:query];
@@ -285,7 +285,13 @@
         if (self.curUser.sexuality.integerValue == 1) {
             [userQuery whereKey:@"isMale" equalTo:@"false"];
         }
-      
+        
+ 
+        [userQuery whereKey:@"age" greaterThanOrEqualTo:self.minAge];
+        [userQuery whereKey:@"age" lessThanOrEqualTo:self.maxAge];
+        
+        
+//
         if (self.curUser.distance.doubleValue == 0.0) {
             self.curUser.distance = [NSNumber numberWithInt:10000];
         }
