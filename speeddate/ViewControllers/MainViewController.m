@@ -177,12 +177,11 @@
 
 - (void)checkFirstTime
 {
-// #TODO: hitting the edit button doesn't actually bring you to the edit page at the moment.
     
     if(![[NSUserDefaults standardUserDefaults] objectForKey:@"first"]) {
         [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"first"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Edit profile" message:@"Please edit your profile before matching" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Edit", nil];
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Edit Discovery Settings" message:@"Please edit your Discovery Settings before matching" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Edit", nil];
         [av show];
     }
 }

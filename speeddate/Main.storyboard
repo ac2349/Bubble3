@@ -627,7 +627,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="881" y="-505"/>
+            <point key="canvasLocation" x="1047" y="117"/>
         </scene>
         <!--Locations-->
         <scene sceneID="FFb-s2-uwJ">
@@ -2237,7 +2237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTc-K8-0Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802" y="935"/>
+            <point key="canvasLocation" x="787" y="982"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XpZ-AF-3Hm">
@@ -2292,11 +2292,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oXm-ri-1Lw"/>
-        <segue reference="Bmi-bo-f09"/>
+        <segue reference="obm-2b-dPx"/>
         <segue reference="P3d-BW-UHp"/>
-        <segue reference="43A-2r-DhM"/>
+        <segue reference="U3T-S3-jZm"/>
         <segue reference="gPx-w2-9WG"/>
+        <segue reference="Qh3-Ge-Ehw"/>
         <segue reference="QOt-cj-Bjn"/>
     </inferredMetricsTieBreakers>
 </document>
