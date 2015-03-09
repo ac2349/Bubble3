@@ -259,18 +259,18 @@
 
     [userQuery whereKey:@"email" matchesKey:@"fromUserEmail" inQuery:query];
     
-    if ([self.preferredSex isEqualToString:@"male"])
-    {
-        [userQuery whereKey:@"gender" equalTo:@"male"];
-    }
-    else if ([self.preferredSex isEqualToString:@"female"])
-    {
-        [userQuery whereKey:@"gender" equalTo:@"female"];
-    }
-    [userQuery whereKey:@"age" greaterThanOrEqualTo:self.minAge];
-    [userQuery whereKey:@"age" lessThanOrEqualTo:self.maxAge];
-    [userQuery whereKey:@"geoPoint" nearGeoPoint:point withinKilometers:(double)value];
-
+//    if ([self.preferredSex isEqualToString:@"male"])
+//    {
+//        [userQuery whereKey:@"gender" equalTo:@"male"];
+//    }
+//    else if ([self.preferredSex isEqualToString:@"female"])
+//    {
+//        [userQuery whereKey:@"gender" equalTo:@"female"];
+//    }
+//    [userQuery whereKey:@"age" greaterThanOrEqualTo:self.minAge];
+//    [userQuery whereKey:@"age" lessThanOrEqualTo:self.maxAge];
+//    [userQuery whereKey:@"geoPoint" nearGeoPoint:point withinKilometers:(double)value];
+//
 
     
     
@@ -309,6 +309,22 @@
         [userQuery whereKey:@"objectId" doesNotMatchKey:@"objectId" inQuery:checkQuery];
 
 //        [userQuery whereKey:@"geoPoint" nearGeoPoint:self.curUser.geoPoint withinKilometers:(double)value];
+        
+        if ([self.preferredSex isEqualToString:@"male"])
+        {
+            [userQuery whereKey:@"gender" equalTo:@"male"];
+        }
+        else if ([self.preferredSex isEqualToString:@"female"])
+        {
+            [userQuery whereKey:@"gender" equalTo:@"female"];
+        }
+        [userQuery whereKey:@"age" greaterThanOrEqualTo:self.minAge];
+        [userQuery whereKey:@"age" lessThanOrEqualTo:self.maxAge];
+        [userQuery whereKey:@"geoPoint" nearGeoPoint:point withinKilometers:(double)value];
+        
+
+        
+        
         [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             [self.posibleMatchesArray addObjectsFromArray:objects];
        
