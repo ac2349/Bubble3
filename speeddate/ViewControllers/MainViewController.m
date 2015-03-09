@@ -223,7 +223,6 @@
 
 - (void)getMatches
 {
-  ;
     PFQuery *query = [PossibleMatchHelper query];
     [query whereKey:@"toUser" equalTo:self.curUser];
     [query whereKey:@"match" equalTo:@"YES"];
@@ -258,26 +257,13 @@
 
     [userQuery whereKey:@"email" matchesKey:@"fromUserEmail" inQuery:query];
     
-//    if ([self.preferredSex isEqualToString:@"male"])
-//    {
-//        [userQuery whereKey:@"gender" equalTo:@"male"];
-//    }
-//    else if ([self.preferredSex isEqualToString:@"female"])
-//    {
-//        [userQuery whereKey:@"gender" equalTo:@"female"];
-//    }
-//    [userQuery whereKey:@"age" greaterThanOrEqualTo:self.minAge];
-//    [userQuery whereKey:@"age" lessThanOrEqualTo:self.maxAge];
-//    [userQuery whereKey:@"geoPoint" nearGeoPoint:point withinKilometers:(double)value];
-//
-
-    
     
 
     NSUserDefaults *mainUser = [NSUserDefaults standardUserDefaults];
     [mainUser setInteger:self.curUser.sexuality.integerValue forKey:@"sex"];
     [mainUser synchronize];
-    [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    {
         [self.posibleMatchesArray addObjectsFromArray:objects];
         [self.willBeMatches addObjectsFromArray:objects];
       
@@ -291,23 +277,9 @@
         [userQuery whereKey:@"objectId" notEqualTo:[UserParseHelper currentUser].objectId];
         [userQuery whereKey:@"email" doesNotMatchKey:@"toUserEmail" inQuery:query];
         [checkQuery whereKey:@"email" matchesKey:@"fromUserEmail" inQuery:queryTwo];
-        if (self.curUser.sexuality.integerValue == 0) {
-            [userQuery whereKey:@"isMale" equalTo:@"true"];
-        }
-    
-        if (self.curUser.sexuality.integerValue == 1) {
-            [userQuery whereKey:@"isMale" equalTo:@"false"];
-        }
-        
 
 
-//
-        if (self.curUser.distance.doubleValue == 0.0) {
-            self.curUser.distance = [NSNumber numberWithInt:10000];
-        }
         [userQuery whereKey:@"objectId" doesNotMatchKey:@"objectId" inQuery:checkQuery];
-
-//        [userQuery whereKey:@"geoPoint" nearGeoPoint:self.curUser.geoPoint withinKilometers:(double)value];
         
         if ([self.preferredSex isEqualToString:@"male"])
         {
@@ -322,8 +294,7 @@
         [userQuery whereKey:@"geoPoint" nearGeoPoint:point withinKilometers:(double)value];
         
 
-        
-        
+    
         [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             [self.posibleMatchesArray addObjectsFromArray:objects];
        
@@ -1226,7 +1197,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
        if(buttonIndex == 1) {
-        [self performSegueWithIdentifier:@"config" sender:nil];
+        [self performSegueWithIdentifier:@"discoverySettings" sender:nil];
 
     }
 

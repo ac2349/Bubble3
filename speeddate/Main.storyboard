@@ -803,6 +803,7 @@
                         <outlet property="sidebarButton" destination="7Gj-y8-gJo" id="2XD-pa-WrM"/>
                         <segue destination="rDU-7y-piv" kind="modal" identifier="match" id="BiY-fr-kOo"/>
                         <segue destination="mLc-67-Pcw" kind="push" identifier="config" id="oXm-ri-1Lw"/>
+                        <segue destination="c1u-Uo-oFq" kind="push" identifier="discoverySettings" id="duv-oz-RVZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ki1-Uz-LU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2292,11 +2293,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="obm-2b-dPx"/>
-        <segue reference="P3d-BW-UHp"/>
         <segue reference="U3T-S3-jZm"/>
-        <segue reference="gPx-w2-9WG"/>
-        <segue reference="Qh3-Ge-Ehw"/>
+        <segue reference="P3d-BW-UHp"/>
+        <segue reference="oXm-ri-1Lw"/>
         <segue reference="QOt-cj-Bjn"/>
+        <segue reference="Qh3-Ge-Ehw"/>
+        <segue reference="gPx-w2-9WG"/>
+        <segue reference="duv-oz-RVZ"/>
     </inferredMetricsTieBreakers>
 </document>
