@@ -124,6 +124,8 @@
 #endif
 
     [self.activityIndicator startAnimating];
+
+    
     PFQuery* curQuery = [UserParseHelper query];
     [curQuery whereKey:@"username" equalTo:[UserParseHelper currentUser].username];
     [curQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -131,7 +133,14 @@
         [self.curUser.photo getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             self.userPhoto = [UIImage imageWithData:data];
         }];
-        if (self.curUser.geoPoint != nil) {
+        if (self.curUser.geoPoint != nil)
+        {
+           
+            if (!self.discoverySettingsArray || !self.discoverySettingsArray.count)
+            {
+                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                self.discoverySettingsArray = [userDefaults objectForKey:@"discoverySettings"];
+            }
             [self getMatches];
         } else {
             [self currentLocationIdentifier];
@@ -151,6 +160,7 @@
     
     self.navigationController.navigationBar.barTintColor = RED_LIGHT;
     self.navigationItem.title = @"Discover Settings";
+
     inAnimation = NO;
     waveLayer=[CALayer layer];
     if (IS_IPHONE_5) {
@@ -223,6 +233,7 @@
 
 - (void)getMatches
 {
+    
     PFQuery *query = [PossibleMatchHelper query];
     [query whereKey:@"toUser" equalTo:self.curUser];
     [query whereKey:@"match" equalTo:@"YES"];
@@ -259,9 +270,11 @@
     
     
 
-    NSUserDefaults *mainUser = [NSUserDefaults standardUserDefaults];
-    [mainUser setInteger:self.curUser.sexuality.integerValue forKey:@"sex"];
-    [mainUser synchronize];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:self.discoverySettingsArray forKey:@"discoverySettings"];
+    [userDefaults synchronize];
+    
+    
     [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     {
         [self.posibleMatchesArray addObjectsFromArray:objects];

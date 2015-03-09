@@ -131,5 +131,8 @@
         MainViewController *vc = segue.destinationViewController;
         vc.discoverySettingsArray = self.discoverySettings;
     }
+    
 }
+
+
 @end

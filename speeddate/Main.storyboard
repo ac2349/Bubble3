@@ -763,7 +763,7 @@
                                     <action selector="dislikeButtonHit:" destination="aqZ-SE-PFE" eventType="touchUpInside" id="UdX-bs-GB3"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Scaning..." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVY-JI-f2V">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Scanning..." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVY-JI-f2V">
                                 <rect key="frame" x="20" y="202" width="280" height="42"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
@@ -808,7 +808,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ki1-Uz-LU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="265"/>
+            <point key="canvasLocation" x="588" y="199"/>
         </scene>
         <!--Applications-->
         <scene sceneID="9Xr-ZS-IUi">
