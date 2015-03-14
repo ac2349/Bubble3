@@ -41,6 +41,8 @@
     [self configureSliders];
     
     self.discoverySettings = [NSMutableArray new];
+    
+
 }
 
 
