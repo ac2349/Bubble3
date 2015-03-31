@@ -53,5 +53,9 @@
 #define RED_LIGHT             [UIColor colorWithRed:241.0/255.0 green:91.0/255.0 blue:78.0/255.0 alpha:1.0]
 #define RED_DEEP              [UIColor colorWithRed:194.0/255.0 green:69.0/255.0 blue:59.0/255.0 alpha:1.0]
 #define RED_OMNY              [UIColor colorWithRed:255.0/255.0 green:178.0/255.0 blue:171.0/255.0 alpha:1.0]
+#define BLUE_DEEP              [UIColor colorWithRed:100.0/255.0 green:169.0/255.0 blue:239.0/255.0 alpha:1.0]
+#define BLUE_LIGHT              [UIColor colorWithRed:169.0/255.0 green:207.0/255.0 blue:246.0/255.0 alpha:1.0]
+
+
 
 

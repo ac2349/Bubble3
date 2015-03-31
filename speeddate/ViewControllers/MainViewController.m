@@ -155,10 +155,10 @@
     self.photoArrayIndex = 1;
     self.firstTime = YES;
     self.isRotating = YES;
-    self.view.backgroundColor = RED_LIGHT;
+    self.view.backgroundColor = BLUE_LIGHT;
   
     
-    self.navigationController.navigationBar.barTintColor = RED_LIGHT;
+    self.navigationController.navigationBar.barTintColor = BLUE_DEEP;
     self.navigationItem.title = @"Discover Settings";
 
     inAnimation = NO;
@@ -389,7 +389,7 @@
             distance = 1;
         }
         self.foregroundLabel.text = [NSString stringWithFormat:@"%@", nickname];
-        self.foregroundLabel.textColor = RED_LIGHT;
+        self.foregroundLabel.textColor = BLUE_LIGHT;
         self.foregroundLabel.clipsToBounds = YES;
        [self.foregroundLabel setFont:[UIFont fontWithName:@"Helvetica" size:16]];
         UIFont *descFont = [UIFont fontWithName:[NSString stringWithFormat:@"%@-Bold",self.foregroundLabel.font.fontName] size: 12];
@@ -419,7 +419,7 @@
         [self.profileView bringSubviewToFront:self.foregroundLabelLocation];
         [self.profileView bringSubviewToFront:self.profileImageLocation];
         UILabel* boundaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.profileImage.frame.size.height+self.foregroundLabel.frame.size.height+23, self.profileView.frame.size.width, 1)];
-        boundaryLabel.backgroundColor = RED_DEEP;
+        boundaryLabel.backgroundColor = BLUE_DEEP;
         boundaryLabel.alpha = 0.6;
         [self.profileView addSubview:boundaryLabel];
         [self.profileView bringSubviewToFront:boundaryLabel];
@@ -509,7 +509,7 @@
             distance = 1;
         }
         self.backgroundLabel.text = [NSString stringWithFormat:@"%@", nickname];
-        self.backgroundLabel.textColor = RED_LIGHT;
+        self.backgroundLabel.textColor = BLUE_LIGHT;
         self.backgroundLabel.clipsToBounds = YES;
         self.backgroundLabel.layer.cornerRadius = cornRadius;
         [self.backgroundLabel setFont:[UIFont fontWithName:@"Helvetica" size:16]];
