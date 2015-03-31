@@ -6,14 +6,13 @@
 //  Copyright (c) 2014 ivan. All rights reserved.
 //
 
-#import "VipMemberViewController.h"
+#import "CategoriesViewController.h"
 #import "RageIAPHelper.h"
 #import <StoreKit/StoreKit.h>
-//#import "PurchaseHelper.h"
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
 
-@interface VipMemberViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>{
+@interface CategoriesViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>{
     
     SKProduct *findProduct;
     UIImageView *logoMember;
@@ -27,7 +26,7 @@
 
 @end
 
-@implementation VipMemberViewController
+@implementation CategoriesViewController
 
 
 - (void)viewDidLoad {
@@ -45,7 +44,6 @@
     self.categoriesArray = [[NSMutableArray alloc] initWithObjects:@"Happy Hour", @"Dining", @"Outdoors", @"Travelers", @"Fitness",  nil];
     self.selectedRowsArray = [NSMutableArray new];
     
-//    [self.tableView reloadData];
     
     
 }
@@ -56,24 +54,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   
-//    [self.tableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-//-(NSArray *)getSelections
-//{
-//    NSMutableArray *selections = [NSMutableArray new];
-//    
-//    for (NSIndexPath *indexPath in self.selectedRowsArray)
-//    {
-//        [selections addObject:[self.categoriesArray objectAtIndex:indexPath.row]];
-//    }
-//    
-//    return selections;
-//}
+
 
 #pragma mark - UITABLEVIEW DELEGATE
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,15 +70,6 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
     
-//    if ([self.selectedRowsArray containsObject:indexPath])
-//    {
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    }
-//    else
-//    {
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//    }
-//    
     return cell;
     
 }

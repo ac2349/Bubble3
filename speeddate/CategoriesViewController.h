@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VipMemberViewController : UIViewController{
+@interface CategoriesViewController : UIViewController{
     
     int count;
     

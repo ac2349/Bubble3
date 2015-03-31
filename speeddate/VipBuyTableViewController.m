@@ -7,7 +7,7 @@
 //
 
 #import "VipBuyTableViewController.h"
-#import "VipMemberViewController.h"
+#import "CategoriesViewController.h"
 
 #import "RageIAPHelper.h"
 #import <StoreKit/StoreKit.h>
@@ -15,7 +15,7 @@
 @interface VipBuyTableViewController () {
     NSArray *_products;
     NSNumberFormatter * _priceFormatter;
-    VipMemberViewController *vpm;
+    CategoriesViewController *vpm;
 }
 
 

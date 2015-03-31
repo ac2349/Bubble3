@@ -74,7 +74,7 @@
 		C2300FA019E1A96C0044A4E5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2300F9F19E1A96C0044A4E5 /* AVFoundation.framework */; };
 		C2300FA819E1C93A0044A4E5 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2300FA519E1C93A0044A4E5 /* IAPHelper.m */; };
 		C2300FA919E1C93A0044A4E5 /* RageIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2300FA719E1C93A0044A4E5 /* RageIAPHelper.m */; };
-		C2300FB019E26E700044A4E5 /* VipMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2300FAF19E26E700044A4E5 /* VipMemberViewController.m */; };
+		C2300FB019E26E700044A4E5 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2300FAF19E26E700044A4E5 /* CategoriesViewController.m */; };
 		C2300FB319E27DC80044A4E5 /* VipBuyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2300FB219E27DC80044A4E5 /* VipBuyTableViewController.m */; };
 		C237015A19D974260024F856 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C237015619D974260024F856 /* MBProgressHUD.m */; };
 		C237015B19D974260024F856 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C237015719D974260024F856 /* ProgressHUD.bundle */; };
@@ -287,8 +287,8 @@
 		C2300FA519E1C93A0044A4E5 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		C2300FA619E1C93A0044A4E5 /* RageIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RageIAPHelper.h; sourceTree = "<group>"; };
 		C2300FA719E1C93A0044A4E5 /* RageIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RageIAPHelper.m; sourceTree = "<group>"; };
-		C2300FAE19E26E700044A4E5 /* VipMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipMemberViewController.h; sourceTree = "<group>"; };
-		C2300FAF19E26E700044A4E5 /* VipMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VipMemberViewController.m; sourceTree = "<group>"; };
+		C2300FAE19E26E700044A4E5 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		C2300FAF19E26E700044A4E5 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		C2300FB119E27DC80044A4E5 /* VipBuyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VipBuyTableViewController.h; sourceTree = "<group>"; };
 		C2300FB219E27DC80044A4E5 /* VipBuyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VipBuyTableViewController.m; sourceTree = "<group>"; };
 		C237015519D974260024F856 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -675,8 +675,8 @@
 				4283BD8219B9584300AD1F63 /* MatchViewController.m */,
 				0BAE8A9819BBBD75009B3A52 /* MatchLocationViewController.h */,
 				0BAE8A9919BBBD75009B3A52 /* MatchLocationViewController.m */,
-				C2300FAE19E26E700044A4E5 /* VipMemberViewController.h */,
-				C2300FAF19E26E700044A4E5 /* VipMemberViewController.m */,
+				C2300FAE19E26E700044A4E5 /* CategoriesViewController.h */,
+				C2300FAF19E26E700044A4E5 /* CategoriesViewController.m */,
 				C2300FB119E27DC80044A4E5 /* VipBuyTableViewController.h */,
 				C2300FB219E27DC80044A4E5 /* VipBuyTableViewController.m */,
 				C25E760819EF5A4E00779C23 /* MyAppViewController.h */,
@@ -1202,7 +1202,7 @@
 				0BAE8A9A19BBBD75009B3A52 /* MatchLocationViewController.m in Sources */,
 				C25E762D19EF5C1200779C23 /* MKAnnotationView+WebCache.m in Sources */,
 				C25E760A19EF5A4E00779C23 /* MyAppViewController.m in Sources */,
-				C2300FB019E26E700044A4E5 /* VipMemberViewController.m in Sources */,
+				C2300FB019E26E700044A4E5 /* CategoriesViewController.m in Sources */,
 				426107E319B4AA700000536C /* V8HorizontalPickerView.m in Sources */,
 				42236F2919B7DEEE00539466 /* CInterpolator.mm in Sources */,
 				FBFB1C4C1AA3FE320068B1D5 /* NMRangeSlider.m in Sources */,
