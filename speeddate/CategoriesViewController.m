@@ -22,7 +22,7 @@
 @property (nonatomic,retain) IBOutlet UIBarButtonItem  *menuBtn;
 @property NSMutableArray *categoriesArray;
 @property NSMutableArray *selectedRowsArray;
-//@property NSMutableArray *checkedArray;
+@property NSMutableArray *selectedIndexPathsMutableArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSIndexPath *lastIndexPath;
 
@@ -46,8 +46,7 @@
     self.categoriesArray = [[NSMutableArray alloc] initWithObjects:@"Happy Hour", @"Dining", @"Outdoors", @"Travelers", @"Fitness",  nil];
     self.selectedRowsArray = [NSMutableArray new];
     
-//    self.checkedArray = [NSMutableArray new];
-
+    self.selectedIndexPathsMutableArray = [NSMutableArray new];
     
 }
 
@@ -57,10 +56,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *lastRow = [defaults objectForKey:@"selectedCell"];
-    if (lastRow) {
-        self.lastIndexPath = [NSIndexPath indexPathForRow:lastRow.integerValue inSection:0];
-    }
+    NSData *data = [defaults objectForKey:@"selectedCells"];
+    NSArray *retrievedArray = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    NSLog(@"%@", retrievedArray);
+
+//    NSNumber *lastRow = [defaults objectForKey:@"selectedCells"];
+//    if (lastRow) {
+//        self.lastIndexPath = [NSIndexPath indexPathForRow:lastRow.integerValue inSection:0];
+//    }
   
 }
 
@@ -104,20 +107,20 @@
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         [self.selectedRowsArray addObject:cell.textLabel.text];
         self.lastIndexPath = indexPath;
-//        [self.checkedArray addObject:indexPath];
+        [self.selectedIndexPathsMutableArray addObject:self.lastIndexPath];
+        
     }
     else
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
-        self.lastIndexPath = nil;
+//        self.lastIndexPath = nil;
         [self.selectedRowsArray removeObject:cell.textLabel.text];
-//        [self.checkedArray removeObject:indexPath];
+        [self.selectedIndexPathsMutableArray removeObject:indexPath];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSLog(@"%@", self.selectedRowsArray);
-//    NSLog(@"%@", self.checkedArray);
-    NSLog(@"%@", self.lastIndexPath);
+    NSLog(@"%@", self.selectedIndexPathsMutableArray);
 }
 
 #pragma mark - UIBUTTON
@@ -126,8 +129,10 @@
 {
     NSLog(@"button pressed");
     
+//    NSArray *selectedIndexPathsArray = self.selectedIndexPathsMutableArray;
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[NSNumber numberWithInt:(int)self.lastIndexPath.row] forKey:@"selectedCell"];
+    [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:self.selectedIndexPathsMutableArray] forKey:@"selectedCells"];
     [defaults synchronize];
     
 
