@@ -22,7 +22,9 @@
 @property (nonatomic,retain) IBOutlet UIBarButtonItem  *menuBtn;
 @property NSMutableArray *categoriesArray;
 @property NSMutableArray *selectedRowsArray;
+//@property NSMutableArray *checkedArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSIndexPath *lastIndexPath;
 
 @end
 
@@ -44,7 +46,8 @@
     self.categoriesArray = [[NSMutableArray alloc] initWithObjects:@"Happy Hour", @"Dining", @"Outdoors", @"Travelers", @"Fitness",  nil];
     self.selectedRowsArray = [NSMutableArray new];
     
-    
+//    self.checkedArray = [NSMutableArray new];
+
     
 }
 
@@ -53,6 +56,11 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *lastRow = [defaults objectForKey:@"selectedCell"];
+    if (lastRow) {
+        self.lastIndexPath = [NSIndexPath indexPathForRow:lastRow.integerValue inSection:0];
+    }
   
 }
 
@@ -70,6 +78,15 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
     
+    if (self.lastIndexPath == indexPath)
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
     
 }
@@ -86,16 +103,21 @@
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         [self.selectedRowsArray addObject:cell.textLabel.text];
+        self.lastIndexPath = indexPath;
+//        [self.checkedArray addObject:indexPath];
     }
     else
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
+        self.lastIndexPath = nil;
         [self.selectedRowsArray removeObject:cell.textLabel.text];
+//        [self.checkedArray removeObject:indexPath];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSLog(@"%@", self.selectedRowsArray);
-    
+//    NSLog(@"%@", self.checkedArray);
+    NSLog(@"%@", self.lastIndexPath);
 }
 
 #pragma mark - UIBUTTON
@@ -103,6 +125,10 @@
 - (IBAction)doneButton:(UIBarButtonItem *)sender
 {
     NSLog(@"button pressed");
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[NSNumber numberWithInt:(int)self.lastIndexPath.row] forKey:@"selectedCell"];
+    [defaults synchronize];
     
 
     [[PFUser currentUser] setObject:self.selectedRowsArray forKey:@"interests"];
