@@ -25,6 +25,7 @@
 @property NSMutableArray *selectedIndexPathsMutableArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSIndexPath *lastIndexPath;
+@property NSArray *retrievedIndexPaths;
 
 @end
 
@@ -57,8 +58,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *data = [defaults objectForKey:@"selectedCells"];
-    NSArray *retrievedArray = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    NSLog(@"%@", retrievedArray);
+    self.retrievedIndexPaths = [[NSArray alloc] initWithObjects:[NSKeyedUnarchiver unarchiveObjectWithData:data], nil];
+                                                                                                                      
+    NSLog(@"%@", self.retrievedIndexPaths);
 
 //    NSNumber *lastRow = [defaults objectForKey:@"selectedCells"];
 //    if (lastRow) {
@@ -81,14 +83,27 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
     
-    if (self.lastIndexPath == indexPath)
+    for (NSIndexPath *retrievedIndexPath in self.retrievedIndexPaths)
     {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        if (retrievedIndexPath == indexPath)
+        {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        else
+        {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
     }
-    else
-    {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+    
+    
+//    if (self.lastIndexPath == indexPath)
+//    {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    }
+//    else
+//    {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    }
     
     return cell;
     
