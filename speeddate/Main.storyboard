@@ -1122,21 +1122,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2E-rO-HMh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="524"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BeN-8D-YRx">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="252"/>
+                                        <rect key="frame" x="0.0" y="8" width="320" height="116"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.25882352939999997" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="252" id="71t-e2-Tr6"/>
+                                            <constraint firstAttribute="height" constant="116" id="71t-e2-Tr6"/>
                                             <constraint firstAttribute="width" constant="320" id="yts-oM-Swh"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="BeN-8D-YRx" firstAttribute="leading" secondItem="x2E-rO-HMh" secondAttribute="leading" id="0oX-qq-Cd0"/>
-                                    <constraint firstItem="BeN-8D-YRx" firstAttribute="top" secondItem="x2E-rO-HMh" secondAttribute="top" id="2E4-9C-dxJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="BeN-8D-YRx" secondAttribute="bottom" constant="316" id="DAb-hm-2nJ"/>
+                                    <constraint firstItem="BeN-8D-YRx" firstAttribute="top" secondItem="x2E-rO-HMh" secondAttribute="top" constant="8" id="2E4-9C-dxJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="BeN-8D-YRx" secondAttribute="bottom" constant="400" id="DAb-hm-2nJ"/>
                                     <constraint firstAttribute="trailing" secondItem="BeN-8D-YRx" secondAttribute="trailing" id="ZLW-uS-vzG"/>
                                 </constraints>
                             </scrollView>
@@ -1145,8 +1145,8 @@
                         <constraints>
                             <constraint firstItem="x2E-rO-HMh" firstAttribute="leading" secondItem="fvJ-pf-AHV" secondAttribute="leadingMargin" constant="-16" id="7Rz-Zg-uCR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="x2E-rO-HMh" secondAttribute="trailing" constant="-16" id="UYt-KF-dof"/>
-                            <constraint firstItem="jMU-Jt-DAh" firstAttribute="top" secondItem="x2E-rO-HMh" secondAttribute="bottom" id="be9-W9-WeC"/>
-                            <constraint firstItem="x2E-rO-HMh" firstAttribute="top" secondItem="fvJ-pf-AHV" secondAttribute="topMargin" id="nxJ-Yt-QNh"/>
+                            <constraint firstItem="jMU-Jt-DAh" firstAttribute="top" secondItem="x2E-rO-HMh" secondAttribute="bottom" constant="-20" id="be9-W9-WeC"/>
+                            <constraint firstItem="x2E-rO-HMh" firstAttribute="top" secondItem="fvJ-pf-AHV" secondAttribute="topMargin" constant="64" id="nxJ-Yt-QNh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="06h-Ku-e8I">
