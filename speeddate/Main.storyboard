@@ -483,7 +483,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="mLc-67-Pcw" kind="custom" identifier="MyProfile" customClass="SWRevealViewControllerSegue" id="obm-2b-dPx"/>
+                                            <segue destination="hov-PG-l4A" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="dZp-md-eIC"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="FqD-hF-WIP">
@@ -1014,7 +1014,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAK-Qi-QxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2316" y="-1555"/>
+            <point key="canvasLocation" x="2848" y="-1555"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="By3-mq-bGB">
@@ -1108,6 +1108,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiK-9G-PdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1211" y="995"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="A1z-Rk-4uN">
+            <objects>
+                <viewController title="Profile" id="LeE-9H-J1M" customClass="MyProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RCf-bE-tDj"/>
+                        <viewControllerLayoutGuide type="bottom" id="jMU-Jt-DAh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fvJ-pf-AHV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="06h-Ku-e8I">
+                        <barButtonItem key="leftBarButtonItem" image="bubble" id="26j-PY-Sz3">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="9TQ-rC-kZk">
+                            <connections>
+                                <action selector="editProfile:" destination="mLc-67-Pcw" id="H5o-V4-AiW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sidebarButton" destination="26j-PY-Sz3" id="5RD-ri-3h5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q90-s4-Vqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1911" y="-1518"/>
         </scene>
         <!--Your Profile-->
         <scene sceneID="ugs-0I-qKD">
@@ -1489,7 +1520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlF-EL-km9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1726" y="-1555"/>
+            <point key="canvasLocation" x="2504" y="-1555"/>
         </scene>
         <!--Demo Collection View Controller-->
         <scene sceneID="Fgc-sO-ioH">
@@ -1629,7 +1660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xe2-gd-ULk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2808" y="-1208"/>
+            <point key="canvasLocation" x="3340" y="-1208"/>
         </scene>
         <!--Vip Buy Table View Controller-->
         <scene sceneID="zxs-Fz-65T">
@@ -1673,7 +1704,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bx-ZY-xnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3335" y="-1225"/>
+            <point key="canvasLocation" x="3867" y="-1225"/>
         </scene>
         <!--MESSAGES-->
         <scene sceneID="Cjt-Fa-Ymn">
@@ -2328,6 +2359,24 @@
             </objects>
             <point key="canvasLocation" x="638" y="1727"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gdc-9E-aqw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hov-PG-l4A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZHH-0g-UOh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LeE-9H-J1M" kind="relationship" relationship="rootViewController" id="nnd-1u-EtO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCO-ok-jz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1544" y="-1518"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about.png" width="36" height="36"/>
@@ -2364,11 +2413,10 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="P3d-BW-UHp"/>
-        <segue reference="oXm-ri-1Lw"/>
-        <segue reference="Bmi-bo-f09"/>
+        <segue reference="U3T-S3-jZm"/>
+        <segue reference="Qh3-Ge-Ehw"/>
+        <segue reference="gPx-w2-9WG"/>
         <segue reference="duv-oz-RVZ"/>
         <segue reference="QOt-cj-Bjn"/>
-        <segue reference="gPx-w2-9WG"/>
-        <segue reference="Qh3-Ge-Ehw"/>
     </inferredMetricsTieBreakers>
 </document>
