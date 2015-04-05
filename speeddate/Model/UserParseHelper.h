@@ -24,7 +24,7 @@
 @property NSString* address;
 @property PFGeoPoint* geoPoint;
 @property NSNumber *report;
-@property NSString* useAddress;
+@property NSString* useAddress; 
 @property PFInstallation *installation;
 @property NSString *nickname;
 @property NSString *membervip;

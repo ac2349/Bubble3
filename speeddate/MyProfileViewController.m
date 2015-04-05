@@ -29,7 +29,6 @@
     
     [[UserParseHelper currentUser].photo getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
     {
-        UIImage *image = [UIImage imageWithData:data];
         self.profileImageView.image = [[UIImage alloc] initWithData:data];
     }];
 

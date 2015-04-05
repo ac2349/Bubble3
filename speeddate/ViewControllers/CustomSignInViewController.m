@@ -388,7 +388,9 @@
 - (void)processFacebook:(PFUser *)user UserData:(NSDictionary *)userData
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
-    NSString *link = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large", userData[@"id"]];
+    // http://graph.facebook.com/[page id/profile id]/picture?width=[number]&height=[number]
+
+    NSString *link = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?width=400&height=400", userData[@"id"]];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:link]];
     //---------------------------------------------------------------------------------------------------------------------------------------------
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -398,10 +400,11 @@
      {
          UIImage *image = (UIImage *)responseObject;
          //-----------------------------------------------------------------------------------------------------------------------------------------
-         if (image.size.width > 140) image = ResizeImage(image, 140, 140);
+         if (image.size.width > 140) image = ResizeImage(image, 400, 400);
          //-----------------------------------------------------------------------------------------------------------------------------------------
-         PFFile *filePicture = [PFFile fileWithName:@"picture.jpg" data:UIImageJPEGRepresentation(image, 0.9)];
+         PFFile *filePicture = [PFFile fileWithName:@"picture.jpg" data:UIImageJPEGRepresentation(image, 1.0)];
          [filePicture saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+          
           {
               if (error != nil) [ProgressHUD showError:@"Network error."];
           }];
