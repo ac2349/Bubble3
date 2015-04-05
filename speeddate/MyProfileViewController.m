@@ -11,22 +11,29 @@
 #import "SWRevealViewController.h"
 
 @interface MyProfileViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property UserParseHelper *user;
 @end
 
 @implementation MyProfileViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.navigationItem.title = [UserParseHelper currentUser].nickname;
     
     self.sidebarButton.target = self.revealViewController;
     self.sidebarButton.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    [[UserParseHelper currentUser].photo getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
+    {
+        UIImage *image = [UIImage imageWithData:data];
+        self.profileImageView.image = [[UIImage alloc] initWithData:data];
+    }];
+
+
 }
-
-
-
 
 @end

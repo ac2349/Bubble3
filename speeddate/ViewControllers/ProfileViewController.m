@@ -414,7 +414,6 @@
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
-
 - (IBAction)editProfile:(id)sender
 {
     if (!self.editing) {
