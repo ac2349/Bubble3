@@ -13,6 +13,8 @@
 @interface MyProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property UserParseHelper *user;
 @end
 
@@ -33,6 +35,13 @@
     }];
 
 
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self.scrollView layoutIfNeeded];
+    self.scrollView.contentSize = self.contentView.bounds.size;
 }
 
 @end
