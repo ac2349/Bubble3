@@ -83,27 +83,10 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
     
-//    for (NSIndexPath *retrievedIndexPath in self.categoriesArray)
-//    {
-//        if (indexPath)
-//        {
-//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//        }
-//    }
-    
     if ([self.retrievedIndexPaths containsObject:indexPath])
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
-    NSLog(@"%@", indexPath);
-//    if (self.lastIndexPath == indexPath)
-//    {
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    }
-//    else
-//    {
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//    }
     
     return cell;
     
