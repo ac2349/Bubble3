@@ -285,7 +285,7 @@
                                   
                                   [ProgressHUD show:@"Signing in..." Interaction:NO];
                                   
-                                  [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"email", @"user_friends"] block:^(PFUser *user, NSError *error)
+                                  [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"email", @"user_friends", @"user_photos"] block:^(PFUser *user, NSError *error)
                                    {
                                        if (user != nil)
                                        {
@@ -323,7 +323,7 @@
         
         [ProgressHUD show:@"Signing in..." Interaction:NO];
         
-        [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"email", @"user_friends"] block:^(PFUser *user, NSError *error)
+        [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"email", @"user_friends", @"user_photos"] block:^(PFUser *user, NSError *error)
          {
              if (user != nil)
              {
@@ -349,7 +349,7 @@
     
     [ProgressHUD show:@"Signing in..." Interaction:NO];
     
-    [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"email", @"user_friends"] block:^(PFUser *user, NSError *error)
+    [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"email", @"user_friends", @"user_photos"] block:^(PFUser *user, NSError *error)
      {
          if (user != nil)
          {
@@ -388,6 +388,11 @@
 - (void)processFacebook:(PFUser *)user UserData:(NSDictionary *)userData
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
+    
+    NSString *test = [[[FBSession activeSession] accessTokenData] accessToken];
+    NSString *urlString1=[NSString stringWithFormat:@"https://graph.facebook.com/%@/albums?access_token=%@",userData[@"id"],test];
+
+
     // http://graph.facebook.com/[page id/profile id]/picture?width=[number]&height=[number]
 
     NSString *link = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?width=400&height=400", userData[@"id"]];

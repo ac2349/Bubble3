@@ -1134,11 +1134,31 @@
                                                     <constraint firstAttribute="height" constant="274" id="YVb-wE-74f"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pu-Df-TxE">
+                                                <rect key="frame" x="30" y="281" width="310" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="brF-lW-edS"/>
+                                                    <constraint firstAttribute="width" constant="310" id="i1i-BU-1d4"/>
+                                                </constraints>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Name, Age">
+                                                        <attributes>
+                                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="7Pu-Df-TxE" firstAttribute="top" secondItem="hHE-J7-mEP" secondAttribute="bottom" constant="3" id="4I6-UQ-YN1"/>
                                             <constraint firstAttribute="height" constant="564" id="DUb-EE-DhC"/>
                                             <constraint firstItem="hHE-J7-mEP" firstAttribute="top" secondItem="CTR-zY-bvc" secondAttribute="top" constant="4" id="faW-bS-dhU"/>
+                                            <constraint firstItem="7Pu-Df-TxE" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="30" id="nJR-V5-dkV"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Pu-Df-TxE" secondAttribute="trailing" constant="20" id="tgP-kp-nJb"/>
                                             <constraint firstItem="hHE-J7-mEP" firstAttribute="centerX" secondItem="CTR-zY-bvc" secondAttribute="centerX" id="yCP-BE-XAT"/>
                                         </constraints>
                                     </view>
