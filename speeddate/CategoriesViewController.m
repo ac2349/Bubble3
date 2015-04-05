@@ -48,7 +48,7 @@
     self.selectedRowsArray = [NSMutableArray new];
     
     self.selectedIndexPathsMutableArray = [NSMutableArray new];
-    
+    self.retrievedIndexPaths = [NSArray new];
 }
 
 
@@ -58,7 +58,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *data = [defaults objectForKey:@"selectedCells"];
-    self.retrievedIndexPaths = [[NSArray alloc] initWithObjects:[NSKeyedUnarchiver unarchiveObjectWithData:data], nil];
+    self.retrievedIndexPaths = [NSKeyedUnarchiver unarchiveObjectWithData:data];
                                                                                                                       
     NSLog(@"%@", self.retrievedIndexPaths);
 
@@ -83,19 +83,19 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
     
-    for (NSIndexPath *retrievedIndexPath in self.retrievedIndexPaths)
+//    for (NSIndexPath *retrievedIndexPath in self.categoriesArray)
+//    {
+//        if (indexPath)
+//        {
+//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//        }
+//    }
+    
+    if ([self.retrievedIndexPaths containsObject:indexPath])
     {
-        if (retrievedIndexPath == indexPath)
-        {
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        }
-        else
-        {
-            cell.accessoryType = UITableViewCellAccessoryNone;
-        }
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
-    
-    
+    NSLog(@"%@", indexPath);
 //    if (self.lastIndexPath == indexPath)
 //    {
 //        cell.accessoryType = UITableViewCellAccessoryCheckmark;
