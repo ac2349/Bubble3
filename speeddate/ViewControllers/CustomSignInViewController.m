@@ -431,6 +431,12 @@
     }
     
     NSLog(@"%@", profilePicturesMutableArray);
+    
+    NSArray *subArray = [[NSArray alloc]init];
+    subArray = [profilePicturesMutableArray subarrayWithRange:NSMakeRange(0, 6)];
+    
+    
+    
 
     // http://graph.facebook.com/[page id/profile id]/picture?width=[number]&height=[number]
 
