@@ -35,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UIView *containerViewPassword;
 @property (nonatomic,retain) MainViewController *startScreen;
+@property NSDictionary *response1;
 @end
 #ifdef __APPLE__
 #include "TargetConditionals.h"
@@ -55,6 +56,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardWillHideNotification object:nil];
 
+    self.response1 = [[NSDictionary alloc] init];
 }
 
 #pragma mark - Resign the textField's keyboard
@@ -388,10 +390,47 @@
 - (void)processFacebook:(PFUser *)user UserData:(NSDictionary *)userData
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
+    NSString *accessToken = [[[FBSession activeSession] accessTokenData] accessToken];
+    NSString *profilePictureAlbumURL;
+    NSMutableArray *profilePicturesMutableArray = [[NSMutableArray alloc]init];
     
-    NSString *test = [[[FBSession activeSession] accessTokenData] accessToken];
-    NSString *urlString1=[NSString stringWithFormat:@"https://graph.facebook.com/%@/albums?access_token=%@",userData[@"id"],test];
-
+    // Parse for all my albums
+    NSString *urlString1=[NSString stringWithFormat:@"https://graph.facebook.com/%@/albums?access_token=%@",userData[@"id"],accessToken];
+    NSURL *albumsURL = [NSURL URLWithString:urlString1];
+    NSData *albumsData = [NSData dataWithContentsOfURL:albumsURL];
+    NSMutableDictionary *albumsJSON = [NSJSONSerialization JSONObjectWithData:albumsData options:NSJSONReadingMutableContainers error:nil];
+    NSArray *albumsResponseArray = albumsJSON[@"data"];
+    for (NSDictionary *dict in albumsResponseArray)
+    {
+        NSString *album = [dict objectForKey:@"name"];
+        if ([album isEqualToString:@"Profile Pictures"])
+        {
+            NSString *albumID = [dict objectForKey:@"id"];
+            profilePictureAlbumURL= [NSString stringWithFormat:@"https://graph.facebook.com/%@/photos?type=album&access_token=%@",albumID,accessToken];
+            
+        }
+        
+    }
+    
+    // Parse for all my Profile Pictures
+    NSURL *profilePicturesURL = [NSURL URLWithString:profilePictureAlbumURL];
+    NSData *profilePicturesData = [NSData dataWithContentsOfURL:profilePicturesURL];
+    NSMutableDictionary *profilePicturesJSON = [NSJSONSerialization JSONObjectWithData:profilePicturesData options:NSJSONReadingMutableContainers error:nil];
+    NSArray *profilePicturesResponseArray = profilePicturesJSON[@"data"];
+    for (NSDictionary *dict in profilePicturesResponseArray)
+    {
+        if ([dict objectForKey:@"images"])
+        {
+            NSArray *profilePicturesArray = [dict objectForKey:@"images"];
+            NSDictionary *highestResProfileDict = [profilePicturesArray objectAtIndex:0];
+            NSString *highestResProfileURL = [highestResProfileDict objectForKey:@"source"];
+            [profilePicturesMutableArray addObject:highestResProfileURL];
+            
+        }
+    
+    }
+    
+    NSLog(@"%@", profilePicturesMutableArray);
 
     // http://graph.facebook.com/[page id/profile id]/picture?width=[number]&height=[number]
 
