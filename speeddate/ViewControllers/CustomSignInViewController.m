@@ -438,24 +438,26 @@
         subArray = [profilePicturesMutableArray subarrayWithRange:NSMakeRange(0, 6)];
         
         // put to parse
+        NSUInteger count = 0;
         for (NSString *url in subArray)
         {
             NSURL *profilePictureNSURL = [NSURL URLWithString:url];
             NSData *data = [[NSData alloc] initWithContentsOfURL:profilePictureNSURL];
             UIImage *profileImage = [[UIImage alloc] initWithData:data];
             
-            PFFile *imageFile = [PFFile fileWithName:@"photo1.jpg" data:UIImageJPEGRepresentation(profileImage, 1.0)];
+            PFFile *imageFile = [PFFile fileWithName:[NSString stringWithFormat:@"photo%lu", (unsigned long)count] data:UIImageJPEGRepresentation(profileImage, 1.0)];
             [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error)
                 {
                     if (succeeded)
                     {
                         PFUser *user = [PFUser currentUser];
-                        user[@"photo1"] = imageFile;
+                        user[[NSString stringWithFormat:@"photo%lu", count]] = imageFile;
                         [user saveInBackground];
                     }
                 }
             }];
+            count++;
         }
     }
     else
