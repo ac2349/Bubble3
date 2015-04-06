@@ -431,9 +431,39 @@
     }
     
     NSLog(@"%@", profilePicturesMutableArray);
+
+    if (profilePicturesMutableArray.count > 6)
+    {
+        NSArray *subArray = [[NSArray alloc]init];
+        subArray = [profilePicturesMutableArray subarrayWithRange:NSMakeRange(0, 6)];
+        
+        // put to parse
+        for (NSString *url in subArray)
+        {
+            NSURL *profilePictureNSURL = [NSURL URLWithString:url];
+            NSData *data = [[NSData alloc] initWithContentsOfURL:profilePictureNSURL];
+            UIImage *profileImage = [[UIImage alloc] initWithData:data];
+            
+            PFFile *imageFile = [PFFile fileWithName:@"photo1.jpg" data:UIImageJPEGRepresentation(profileImage, 1.0)];
+            [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error)
+                {
+                    if (succeeded)
+                    {
+                        PFUser *user = [PFUser currentUser];
+                        user[@"photo1"] = imageFile;
+                        [user saveInBackground];
+                    }
+                }
+            }];
+        }
+    }
+    else
+    {
+        // put to parse
+    }
+
     
-    NSArray *subArray = [[NSArray alloc]init];
-    subArray = [profilePicturesMutableArray subarrayWithRange:NSMakeRange(0, 6)];
     
     
     
