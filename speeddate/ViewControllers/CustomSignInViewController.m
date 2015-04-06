@@ -445,7 +445,7 @@
             NSData *data = [[NSData alloc] initWithContentsOfURL:profilePictureNSURL];
             UIImage *profileImage = [[UIImage alloc] initWithData:data];
             
-            PFFile *imageFile = [PFFile fileWithName:[NSString stringWithFormat:@"photo%lu", (unsigned long)count] data:UIImageJPEGRepresentation(profileImage, 1.0)];
+            PFFile *imageFile = [PFFile fileWithName:[NSString stringWithFormat:@"photo%lu.jpg", (unsigned long)count] data:UIImageJPEGRepresentation(profileImage, 1.0)];
             [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error)
                 {
