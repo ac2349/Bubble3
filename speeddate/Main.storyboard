@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0nu-LK-2zr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0nu-LK-2zr">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -1121,45 +1121,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VvM-6u-HLm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VvM-6u-HLm">
                                 <rect key="frame" x="-20" y="64" width="360" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTR-zY-bvc" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="-68" width="360" height="564"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hHE-J7-mEP">
-                                                <rect key="frame" x="20" y="4" width="320" height="274"/>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fd2-0p-sRV">
+                                                <rect key="frame" x="-5" y="0.0" width="365" height="274"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="320" id="8Ta-ZQ-bzF"/>
-                                                    <constraint firstAttribute="height" constant="274" id="YVb-wE-74f"/>
+                                                    <constraint firstAttribute="height" constant="274" id="G6N-cp-h0w"/>
+                                                    <constraint firstAttribute="width" constant="365" id="fNN-jY-onV"/>
                                                 </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pu-Df-TxE">
-                                                <rect key="frame" x="30" y="281" width="310" height="21"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="LeE-9H-J1M" id="PuQ-Hs-ye9"/>
+                                                </connections>
+                                            </scrollView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Veq-vU-hQt">
+                                                <rect key="frame" x="20" y="282" width="320" height="37"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="brF-lW-edS"/>
-                                                    <constraint firstAttribute="width" constant="310" id="i1i-BU-1d4"/>
+                                                    <constraint firstAttribute="height" constant="37" id="eA9-iS-EKK"/>
+                                                    <constraint firstAttribute="width" constant="320" id="pld-bF-BBl"/>
                                                 </constraints>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Name, Age">
-                                                        <attributes>
-                                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <connections>
+                                                    <action selector="changePage:" destination="LeE-9H-J1M" eventType="valueChanged" id="l4a-Uw-1aG"/>
+                                                </connections>
+                                            </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="7Pu-Df-TxE" firstAttribute="top" secondItem="hHE-J7-mEP" secondAttribute="bottom" constant="3" id="4I6-UQ-YN1"/>
+                                            <constraint firstItem="Veq-vU-hQt" firstAttribute="top" secondItem="fd2-0p-sRV" secondAttribute="bottom" constant="8" id="BOC-No-hRD"/>
                                             <constraint firstAttribute="height" constant="564" id="DUb-EE-DhC"/>
-                                            <constraint firstItem="hHE-J7-mEP" firstAttribute="top" secondItem="CTR-zY-bvc" secondAttribute="top" constant="4" id="faW-bS-dhU"/>
-                                            <constraint firstItem="7Pu-Df-TxE" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="30" id="nJR-V5-dkV"/>
-                                            <constraint firstAttribute="trailing" secondItem="7Pu-Df-TxE" secondAttribute="trailing" constant="20" id="tgP-kp-nJb"/>
-                                            <constraint firstItem="hHE-J7-mEP" firstAttribute="centerX" secondItem="CTR-zY-bvc" secondAttribute="centerX" id="yCP-BE-XAT"/>
+                                            <constraint firstItem="fd2-0p-sRV" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="-5" id="Dhd-Is-ECx"/>
+                                            <constraint firstAttribute="trailing" secondItem="fd2-0p-sRV" secondAttribute="trailing" id="Usn-fM-2K4"/>
+                                            <constraint firstItem="Veq-vU-hQt" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="V0J-AN-U0t"/>
+                                            <constraint firstAttribute="trailing" secondItem="Veq-vU-hQt" secondAttribute="trailing" constant="20" id="VYu-wa-XNe"/>
+                                            <constraint firstItem="fd2-0p-sRV" firstAttribute="top" secondItem="CTR-zY-bvc" secondAttribute="top" id="XmI-uF-9RQ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1197,7 +1195,8 @@
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="contentView" destination="CTR-zY-bvc" id="D4n-ll-mzr"/>
-                        <outlet property="profileImageView" destination="hHE-J7-mEP" id="Qrj-tn-Jzd"/>
+                        <outlet property="innerScrollView" destination="fd2-0p-sRV" id="ty7-Ms-xw3"/>
+                        <outlet property="pageControl" destination="Veq-vU-hQt" id="aXx-cq-5R8"/>
                         <outlet property="scrollView" destination="VvM-6u-HLm" id="DHD-Y7-MKx"/>
                         <outlet property="sidebarButton" destination="26j-PY-Sz3" id="5RD-ri-3h5"/>
                     </connections>
