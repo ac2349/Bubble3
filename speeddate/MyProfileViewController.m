@@ -9,6 +9,7 @@
 #import "MyProfileViewController.h"
 #import "UserParseHelper.h"
 #import "SWRevealViewController.h"
+#import "MyProfileCollectionViewCell.h"
 
 @interface MyProfileViewController () <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
@@ -33,9 +34,8 @@
     self.sidebarButton.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    self.pageImages = [NSMutableArray new];
-    
-    [self queryImages];
+    self.pageImages = [[PFUser currentUser] objectForKey:@"photosArray"];
+
     
 }
 
@@ -55,19 +55,23 @@
     layout.itemSize = CGSizeMake(self.scrollView.frame.size.width, self.collectionView.frame.size.height);
 }
 
-- (void)queryImages
-{
 
-}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    return self.pageImages.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    MyProfileCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"profileCell" forIndexPath:indexPath];
+    NSString *urlJPG = [self.pageImages objectAtIndex:indexPath.row];
+    NSURL *url = [NSURL URLWithString:urlJPG];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        cell.imageView.image = [UIImage imageWithData:data];
+    }];
+    return cell;
 }
 
 @end

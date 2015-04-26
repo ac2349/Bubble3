@@ -166,6 +166,7 @@
 		C2CC355819F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CC355719F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
 		C2CC355A19F58ACD00AC86D1 /* mask_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CC355919F58ACD00AC86D1 /* mask_profile.png */; };
 		FB4DE5CB1AD0C8B000904A7C /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */; };
+		FB8C588C1AEC6C860098E997 /* MyProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C588B1AEC6C860098E997 /* MyProfileCollectionViewCell.m */; };
 		FBB67E9D1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB67E9C1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m */; };
 		FBFB1C421AA3FE280068B1D5 /* slider-default7-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFB1C3A1AA3FE280068B1D5 /* slider-default7-handle.png */; };
 		FBFB1C431AA3FE280068B1D5 /* slider-default7-handle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFB1C3B1AA3FE280068B1D5 /* slider-default7-handle@2x.png */; };
@@ -456,6 +457,8 @@
 		C2CC355919F58ACD00AC86D1 /* mask_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask_profile.png; sourceTree = "<group>"; };
 		FB4DE5C91AD0C8B000904A7C /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		FB8C588A1AEC6C860098E997 /* MyProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		FB8C588B1AEC6C860098E997 /* MyProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		FBB67E9B1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryPreferencesViewController.h; sourceTree = "<group>"; };
 		FBB67E9C1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryPreferencesViewController.m; sourceTree = "<group>"; };
 		FBFB1C3A1AA3FE280068B1D5 /* slider-default7-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-default7-handle.png"; sourceTree = "<group>"; };
@@ -676,6 +679,8 @@
 				42DBCCD119ACCD9A00CE6C93 /* ProfileViewController.m */,
 				FB4DE5C91AD0C8B000904A7C /* MyProfileViewController.h */,
 				FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */,
+				FB8C588A1AEC6C860098E997 /* MyProfileCollectionViewCell.h */,
+				FB8C588B1AEC6C860098E997 /* MyProfileCollectionViewCell.m */,
 				4283BD8119B9584300AD1F63 /* MatchViewController.h */,
 				4283BD8219B9584300AD1F63 /* MatchViewController.m */,
 				0BAE8A9819BBBD75009B3A52 /* MatchLocationViewController.h */,
@@ -1249,6 +1254,7 @@
 				C237018D19D974390024F856 /* UIButton+AFNetworking.m in Sources */,
 				42236F2A19B7DEEE00539466 /* CReflectionView.m in Sources */,
 				42DBCCC519AC4E4200CE6C93 /* StarterViewController.m in Sources */,
+				FB8C588C1AEC6C860098E997 /* MyProfileCollectionViewCell.m in Sources */,
 				42236F3119B7F30000539466 /* CDemoCollectionViewController.m in Sources */,
 				42236F2619B7DEEE00539466 /* CBetterCollectionViewCell.m in Sources */,
 				4281F25C19B22F72007724C6 /* UserCollectionViewCell.m in Sources */,

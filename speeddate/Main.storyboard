@@ -1148,15 +1148,29 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ctP-K7-G8p">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCell" id="ctP-K7-G8p" customClass="MyProfileCollectionViewCell">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="282"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hve-0i-6CB">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="282"/>
+                                                                </imageView>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottomMargin" secondItem="Hve-0i-6CB" secondAttribute="bottom" constant="-8" id="8jF-4j-Svo"/>
+                                                            <constraint firstItem="Hve-0i-6CB" firstAttribute="leading" secondItem="ctP-K7-G8p" secondAttribute="leadingMargin" constant="-8" id="DoE-wa-bx6"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="Hve-0i-6CB" secondAttribute="trailing" constant="-8" id="EQz-JI-aAL"/>
+                                                            <constraint firstItem="Hve-0i-6CB" firstAttribute="top" secondItem="ctP-K7-G8p" secondAttribute="topMargin" constant="-8" id="RPw-3m-1yF"/>
+                                                        </constraints>
                                                         <size key="customSize" width="320" height="282"/>
+                                                        <connections>
+                                                            <outlet property="imageView" destination="Hve-0i-6CB" id="uOA-ex-T7v"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>
