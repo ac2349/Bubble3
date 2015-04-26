@@ -21,6 +21,8 @@
 @property (strong, nonatomic) NSMutableArray *pageViews;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
 @property UserParseHelper *user;
+@property BOOL pageControlBeingUsed;
+
 @end
 
 @implementation MyProfileViewController
@@ -35,6 +37,9 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     self.pageImages = [[PFUser currentUser] objectForKey:@"photosArray"];
+    
+    self.pageControlBeingUsed = NO;
+
 
     
 }
@@ -71,11 +76,29 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         cell.imageView.image = [UIImage imageWithData:data];
     }];
+    
+    int pages = floor(self.collectionView.contentSize.width / self.collectionView.frame.size.width);
+    [self.pageControl setNumberOfPages:pages];
+    
     return cell;
 }
 
+#pragma mark - UISCROLLVIEWDELEGATE FOR UIPAGECONTROL
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    int pageNumber = roundf(self.collectionView.contentOffset.x/self.collectionView.frame.size.width);
+    self.pageControl.currentPage = pageNumber;
+
+}
+
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    self.pageControlBeingUsed = NO;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    self.pageControlBeingUsed = NO;
     int pageNumber = roundf(self.collectionView.contentOffset.x/self.collectionView.frame.size.width);
     self.pageControl.currentPage = pageNumber;
 }
