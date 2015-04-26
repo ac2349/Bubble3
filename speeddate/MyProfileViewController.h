@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MyProfileViewController : UIViewController
-
+@property NSArray *arrayOfProfileImages;
 @end

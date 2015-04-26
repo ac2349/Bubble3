@@ -28,6 +28,7 @@
 @dynamic installation;
 @dynamic nickname;
 @dynamic membervip;
+@dynamic photosArray;
 
 ////thumb photo
 @dynamic photo_thumb;

@@ -17,6 +17,7 @@
 #import "utilities.h"
 #import "AppConstant.h"
 #import "MainViewController.h"
+#import "MyProfileViewController.h"
 
 #ifdef __IPHONE_8_0
 #import <LocalAuthentication/LocalAuthentication.h>
@@ -36,6 +37,8 @@
 @property (weak, nonatomic) IBOutlet UIView *containerViewPassword;
 @property (nonatomic,retain) MainViewController *startScreen;
 @property NSDictionary *response1;
+@property NSArray *subArray;
+@property NSMutableArray *testArray;
 @end
 #ifdef __APPLE__
 #include "TargetConditionals.h"
@@ -434,12 +437,14 @@
 
     if (profilePicturesMutableArray.count > 6)
     {
-        NSArray *subArray = [[NSArray alloc]init];
-        subArray = [profilePicturesMutableArray subarrayWithRange:NSMakeRange(0, 6)];
+        self.subArray = [[NSArray alloc]init];
+        self.subArray = [profilePicturesMutableArray subarrayWithRange:NSMakeRange(0, 6)];
+        
+        self.testArray = [[NSMutableArray alloc] init];
         
         // put to parse
         NSUInteger count = 0;
-        for (NSString *url in subArray)
+        for (NSString *url in self.subArray)
         {
             NSURL *profilePictureNSURL = [NSURL URLWithString:url];
             NSData *data = [[NSData alloc] initWithContentsOfURL:profilePictureNSURL];
@@ -453,6 +458,7 @@
                     {
                         PFUser *user = [PFUser currentUser];
                         user[[NSString stringWithFormat:@"photo%lu", count]] = imageFile;
+                        [self.testArray addObject:imageFile];
                         [user saveInBackground];
                     }
                 }
@@ -514,6 +520,7 @@
          user[@"photo"] = filePicture;
          user[@"membervip"] = @"vip";
          user[PF_USER_FACEBOOKID] = userData[@"id"];
+         user[@"photosArray"] = self.subArray;
        //  user[PF_USER_FULLNAME] = userData[@"name"];
         // user[PF_USER_FULLNAME_LOWER] = [userData[@"name"] lowercaseString];
         // user[PF_USER_FACEBOOKID] = userData[@"id"];
@@ -555,6 +562,16 @@
 //    _startScreen =[[MainViewController alloc]initWithNibName:@"Main" bundle:nil];
 //    [self presentViewController:_startScreen animated:YES completion:nil];
 }
+
+//#pragma mark - SEGUE
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier isEqualToString:@"login"])
+//    {
+//
+//        
+//    }
+//}
 
 
 @end

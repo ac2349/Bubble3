@@ -12,10 +12,12 @@
 @property NSNumber* age;
 @property NSString* isMale;
 @property PFFile* photo;
+@property PFFile* photo0;
 @property PFFile* photo1;
 @property PFFile* photo2;
 @property PFFile* photo3;
 @property PFFile* photo4;
+@property PFFile* photo5;
 @property NSString *desc;
 @property NSString *seeking;
 @property NSNumber *distance;
@@ -28,6 +30,7 @@
 @property PFInstallation *installation;
 @property NSString *nickname;
 @property NSString *membervip;
+@property NSArray *photosArray;
 
 ////thumb_photo
 @property PFFile* photo_thumb;

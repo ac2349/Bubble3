@@ -1121,22 +1121,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VvM-6u-HLm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VvM-6u-HLm">
                                 <rect key="frame" x="-20" y="64" width="360" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTR-zY-bvc" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="-68" width="360" height="564"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fd2-0p-sRV">
-                                                <rect key="frame" x="-5" y="0.0" width="365" height="274"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="274" id="G6N-cp-h0w"/>
-                                                    <constraint firstAttribute="width" constant="365" id="fNN-jY-onV"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="delegate" destination="LeE-9H-J1M" id="PuQ-Hs-ye9"/>
-                                                </connections>
-                                            </scrollView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Veq-vU-hQt">
                                                 <rect key="frame" x="20" y="282" width="320" height="37"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1144,20 +1134,48 @@
                                                     <constraint firstAttribute="height" constant="37" id="eA9-iS-EKK"/>
                                                     <constraint firstAttribute="width" constant="320" id="pld-bF-BBl"/>
                                                 </constraints>
-                                                <connections>
-                                                    <action selector="changePage:" destination="LeE-9H-J1M" eventType="valueChanged" id="l4a-Uw-1aG"/>
-                                                </connections>
                                             </pageControl>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pse-Qb-CtH">
+                                                <rect key="frame" x="20" y="0.0" width="320" height="282"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="320" id="adB-Qg-EL1"/>
+                                                    <constraint firstAttribute="height" constant="282" id="emM-HO-cum"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hPg-21-OuQ">
+                                                    <size key="itemSize" width="50" height="50"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ctP-K7-G8p">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="282"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <size key="customSize" width="320" height="282"/>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="LeE-9H-J1M" id="Rs5-bv-7Zt"/>
+                                                    <outlet property="delegate" destination="LeE-9H-J1M" id="Mgm-hB-ghf"/>
+                                                </connections>
+                                            </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Veq-vU-hQt" firstAttribute="top" secondItem="fd2-0p-sRV" secondAttribute="bottom" constant="8" id="BOC-No-hRD"/>
+                                            <constraint firstAttribute="width" constant="360" id="0YG-nq-9O7"/>
+                                            <constraint firstItem="Veq-vU-hQt" firstAttribute="top" secondItem="Pse-Qb-CtH" secondAttribute="bottom" id="AbV-Bp-QPc"/>
                                             <constraint firstAttribute="height" constant="564" id="DUb-EE-DhC"/>
-                                            <constraint firstItem="fd2-0p-sRV" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="-5" id="Dhd-Is-ECx"/>
-                                            <constraint firstAttribute="trailing" secondItem="fd2-0p-sRV" secondAttribute="trailing" id="Usn-fM-2K4"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="564" id="Pq0-xZ-YDA"/>
                                             <constraint firstItem="Veq-vU-hQt" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="V0J-AN-U0t"/>
                                             <constraint firstAttribute="trailing" secondItem="Veq-vU-hQt" secondAttribute="trailing" constant="20" id="VYu-wa-XNe"/>
-                                            <constraint firstItem="fd2-0p-sRV" firstAttribute="top" secondItem="CTR-zY-bvc" secondAttribute="top" id="XmI-uF-9RQ"/>
+                                            <constraint firstItem="Pse-Qb-CtH" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="Ylb-w3-qy3"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pse-Qb-CtH" secondAttribute="trailing" constant="20" id="oHa-23-Tm6"/>
+                                            <constraint firstItem="Pse-Qb-CtH" firstAttribute="top" secondItem="CTR-zY-bvc" secondAttribute="top" id="pnY-pA-rqN"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1194,11 +1212,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="collectionView" destination="Pse-Qb-CtH" id="IeI-go-Zxb"/>
                         <outlet property="contentView" destination="CTR-zY-bvc" id="D4n-ll-mzr"/>
-                        <outlet property="innerScrollView" destination="fd2-0p-sRV" id="ty7-Ms-xw3"/>
                         <outlet property="pageControl" destination="Veq-vU-hQt" id="aXx-cq-5R8"/>
                         <outlet property="scrollView" destination="VvM-6u-HLm" id="DHD-Y7-MKx"/>
                         <outlet property="sidebarButton" destination="26j-PY-Sz3" id="5RD-ri-3h5"/>
+                        <outlet property="widthConstraint" destination="0YG-nq-9O7" id="hTy-1Y-yqv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q90-s4-Vqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2477,9 +2496,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="P3d-BW-UHp"/>
-        <segue reference="U3T-S3-jZm"/>
+        <segue reference="VlF-20-DHW"/>
         <segue reference="Qh3-Ge-Ehw"/>
+        <segue reference="U3T-S3-jZm"/>
         <segue reference="gPx-w2-9WG"/>
         <segue reference="duv-oz-RVZ"/>
         <segue reference="QOt-cj-Bjn"/>
