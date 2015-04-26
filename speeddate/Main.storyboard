@@ -1135,13 +1135,13 @@
                                                     <constraint firstAttribute="width" constant="320" id="pld-bF-BBl"/>
                                                 </constraints>
                                             </pageControl>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pse-Qb-CtH">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pse-Qb-CtH">
                                                 <rect key="frame" x="20" y="0.0" width="320" height="282"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="320" id="adB-Qg-EL1"/>
                                                     <constraint firstAttribute="height" constant="282" id="emM-HO-cum"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hPg-21-OuQ">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hPg-21-OuQ">
                                                     <size key="itemSize" width="50" height="50"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>

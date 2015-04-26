@@ -74,4 +74,10 @@
     return cell;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    int pageNumber = roundf(self.collectionView.contentOffset.x/self.collectionView.frame.size.width);
+    self.pageControl.currentPage = pageNumber;
+}
+
 @end
