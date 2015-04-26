@@ -77,7 +77,7 @@
         cell.imageView.image = [UIImage imageWithData:data];
     }];
     
-    int pages = floor(self.collectionView.contentSize.width / self.collectionView.frame.size.width);
+    int pages = floor(self.collectionView.contentSize.width / self.collectionView.frame.size.width) + 1;
     [self.pageControl setNumberOfPages:pages];
     
     return cell;
@@ -85,6 +85,8 @@
 
 #pragma mark - UISCROLLVIEWDELEGATE FOR UIPAGECONTROL
 
+
+// This method updates the page control status each time I scroll to a new pic.
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     int pageNumber = roundf(self.collectionView.contentOffset.x/self.collectionView.frame.size.width);
