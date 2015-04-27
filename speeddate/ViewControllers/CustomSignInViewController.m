@@ -513,7 +513,20 @@
          user[@"nickname"] = userData[@"first_name"];
          user[@"distance"] = [NSNumber numberWithInt:100];
          user[@"sexuality"] = [NSNumber numberWithInt:2];
-         user[@"age"] = [NSNumber numberWithInt:30];
+         
+         // Calculate age based on birthdate.
+         NSDate *birthday = userData[@"birthday"];
+         NSDate *currentDate = [NSDate date];
+         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+         [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+         int time = [currentDate timeIntervalSinceDate:[dateFormatter dateFromString:birthday]];
+         int allDays = (((time/60)/60)/24);
+         int days = allDays%365;
+         int years = (allDays-days)/365;
+         
+         NSLog(@"You've lived %i years and %i days", years, days);
+
+         user[@"age"] = [NSNumber numberWithInt:(int)years];
          user[@"isMale"] = @"true";
          user[@"gender"] = userData[@"gender"];
          user[@"desc"] = @"Hi all))) I am now with you !!!";

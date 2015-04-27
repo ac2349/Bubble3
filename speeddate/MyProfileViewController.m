@@ -20,8 +20,7 @@
 @property (strong, nonatomic) NSMutableArray *pageImages;
 @property (strong, nonatomic) NSMutableArray *pageViews;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
-@property UserParseHelper *user;
-@property BOOL pageControlBeingUsed;
+@property (weak, nonatomic) IBOutlet UILabel *nameAgeLabel;
 
 @end
 
@@ -38,8 +37,7 @@
     
     self.pageImages = [[PFUser currentUser] objectForKey:@"photosArray"];
     
-    self.pageControlBeingUsed = NO;
-
+    self.nameAgeLabel.text = [NSString stringWithFormat:@"%@, %@", [UserParseHelper currentUser].nickname, [UserParseHelper currentUser].age];
 
     
 }
@@ -94,13 +92,8 @@
 
 }
 
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    self.pageControlBeingUsed = NO;
-}
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    self.pageControlBeingUsed = NO;
+    
     int pageNumber = roundf(self.collectionView.contentOffset.x/self.collectionView.frame.size.width);
     self.pageControl.currentPage = pageNumber;
 }

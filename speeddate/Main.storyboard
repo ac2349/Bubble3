@@ -1141,7 +1141,7 @@
                                                     <constraint firstAttribute="width" constant="320" id="adB-Qg-EL1"/>
                                                     <constraint firstAttribute="height" constant="282" id="emM-HO-cum"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hPg-21-OuQ">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hPg-21-OuQ">
                                                     <size key="itemSize" width="50" height="50"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1178,18 +1178,31 @@
                                                     <outlet property="delegate" destination="LeE-9H-J1M" id="Mgm-hB-ghf"/>
                                                 </connections>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name, Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ac-2Z-zDn">
+                                                <rect key="frame" x="20" y="319" width="320" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="2Qs-wb-RQg"/>
+                                                    <constraint firstAttribute="width" constant="320" id="zEd-YE-Bjx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="360" id="0YG-nq-9O7"/>
                                             <constraint firstItem="Veq-vU-hQt" firstAttribute="top" secondItem="Pse-Qb-CtH" secondAttribute="bottom" id="AbV-Bp-QPc"/>
                                             <constraint firstAttribute="height" constant="564" id="DUb-EE-DhC"/>
+                                            <constraint firstItem="6Ac-2Z-zDn" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="Nut-cD-Um9"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="564" id="Pq0-xZ-YDA"/>
                                             <constraint firstItem="Veq-vU-hQt" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="V0J-AN-U0t"/>
                                             <constraint firstAttribute="trailing" secondItem="Veq-vU-hQt" secondAttribute="trailing" constant="20" id="VYu-wa-XNe"/>
                                             <constraint firstItem="Pse-Qb-CtH" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="Ylb-w3-qy3"/>
+                                            <constraint firstItem="6Ac-2Z-zDn" firstAttribute="top" secondItem="Veq-vU-hQt" secondAttribute="bottom" id="dY9-sS-z9n"/>
                                             <constraint firstAttribute="trailing" secondItem="Pse-Qb-CtH" secondAttribute="trailing" constant="20" id="oHa-23-Tm6"/>
                                             <constraint firstItem="Pse-Qb-CtH" firstAttribute="top" secondItem="CTR-zY-bvc" secondAttribute="top" id="pnY-pA-rqN"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Ac-2Z-zDn" secondAttribute="trailing" constant="20" id="s8P-41-thI"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1228,6 +1241,7 @@
                     <connections>
                         <outlet property="collectionView" destination="Pse-Qb-CtH" id="IeI-go-Zxb"/>
                         <outlet property="contentView" destination="CTR-zY-bvc" id="D4n-ll-mzr"/>
+                        <outlet property="nameAgeLabel" destination="6Ac-2Z-zDn" id="2vQ-IY-vFE"/>
                         <outlet property="pageControl" destination="Veq-vU-hQt" id="aXx-cq-5R8"/>
                         <outlet property="scrollView" destination="VvM-6u-HLm" id="DHD-Y7-MKx"/>
                         <outlet property="sidebarButton" destination="26j-PY-Sz3" id="5RD-ri-3h5"/>
