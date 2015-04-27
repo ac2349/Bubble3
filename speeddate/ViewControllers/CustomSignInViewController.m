@@ -514,6 +514,10 @@
          user[@"distance"] = [NSNumber numberWithInt:100];
          user[@"sexuality"] = [NSNumber numberWithInt:2];
          
+         NSArray *locationArray = [[userData objectForKey:@"location"][@"name"] componentsSeparatedByString:@","];
+         NSLog(@"City >>> %@", [locationArray objectAtIndex:0]);
+         user[@"location"] = [locationArray objectAtIndex:0];
+         
          // Calculate age based on birthdate.
          NSDate *birthday = userData[@"birthday"];
          NSDate *currentDate = [NSDate date];

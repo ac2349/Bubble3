@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSMutableArray *pageViews;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *nameAgeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end
 
@@ -38,6 +39,8 @@
     self.pageImages = [[PFUser currentUser] objectForKey:@"photosArray"];
     
     self.nameAgeLabel.text = [NSString stringWithFormat:@"%@, %@", [UserParseHelper currentUser].nickname, [UserParseHelper currentUser].age];
+    
+    self.locationLabel.text = [NSString stringWithFormat:@"Lives in %@", [[PFUser currentUser] objectForKey:@"location"] ];
 
     
 }

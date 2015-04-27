@@ -31,6 +31,7 @@
 @property NSString *nickname;
 @property NSString *membervip;
 @property NSArray *photosArray;
+@property NSString *location;
 
 ////thumb_photo
 @property PFFile* photo_thumb;
