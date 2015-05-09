@@ -78,7 +78,7 @@
         cell.imageView.image = [UIImage imageWithData:data];
     }];
     
-    int pages = floor(self.collectionView.contentSize.width / self.collectionView.frame.size.width) + 1;
+    int pages = floor(self.collectionView.contentSize.width / self.collectionView.frame.size.width);
     [self.pageControl setNumberOfPages:pages];
     
     return cell;

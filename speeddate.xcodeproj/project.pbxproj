@@ -166,6 +166,7 @@
 		C2CC355819F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CC355719F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
 		C2CC355A19F58ACD00AC86D1 /* mask_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CC355919F58ACD00AC86D1 /* mask_profile.png */; };
 		FB4DE5CB1AD0C8B000904A7C /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */; };
+		FB77702A1AF6E90700DDC264 /* EditMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7770291AF6E90700DDC264 /* EditMyProfileViewController.m */; };
 		FB8C588C1AEC6C860098E997 /* MyProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C588B1AEC6C860098E997 /* MyProfileCollectionViewCell.m */; };
 		FBB67E9D1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB67E9C1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m */; };
 		FBFB1C421AA3FE280068B1D5 /* slider-default7-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFB1C3A1AA3FE280068B1D5 /* slider-default7-handle.png */; };
@@ -457,6 +458,8 @@
 		C2CC355919F58ACD00AC86D1 /* mask_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask_profile.png; sourceTree = "<group>"; };
 		FB4DE5C91AD0C8B000904A7C /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		FB7770281AF6E90700DDC264 /* EditMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMyProfileViewController.h; sourceTree = "<group>"; };
+		FB7770291AF6E90700DDC264 /* EditMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMyProfileViewController.m; sourceTree = "<group>"; };
 		FB8C588A1AEC6C860098E997 /* MyProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileCollectionViewCell.h; sourceTree = "<group>"; };
 		FB8C588B1AEC6C860098E997 /* MyProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		FBB67E9B1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryPreferencesViewController.h; sourceTree = "<group>"; };
@@ -679,6 +682,8 @@
 				42DBCCD119ACCD9A00CE6C93 /* ProfileViewController.m */,
 				FB4DE5C91AD0C8B000904A7C /* MyProfileViewController.h */,
 				FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */,
+				FB7770281AF6E90700DDC264 /* EditMyProfileViewController.h */,
+				FB7770291AF6E90700DDC264 /* EditMyProfileViewController.m */,
 				FB8C588A1AEC6C860098E997 /* MyProfileCollectionViewCell.h */,
 				FB8C588B1AEC6C860098E997 /* MyProfileCollectionViewCell.m */,
 				4283BD8119B9584300AD1F63 /* MatchViewController.h */,
@@ -1229,6 +1234,7 @@
 				C25E763319EF5C1200779C23 /* SDWebImageDownloaderOperation.m in Sources */,
 				C25E763219EF5C1200779C23 /* SDWebImageDownloader.m in Sources */,
 				4281F25619B22D0D007724C6 /* UserMessagesViewController.m in Sources */,
+				FB77702A1AF6E90700DDC264 /* EditMyProfileViewController.m in Sources */,
 				C25E760619EF5A3A00779C23 /* MyappTableViewCell.m in Sources */,
 				C25E75F219EF29D500779C23 /* UIImage+RoundedCornerAdditions.m in Sources */,
 				42BD2AFE19AE5A1B00FCC817 /* UserTableViewCell.m in Sources */,
