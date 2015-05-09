@@ -1393,6 +1393,9 @@
                                                                 <state key="normal" image="delete2">
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="showActionSheetForPhotoSix:" destination="iQw-pK-9uS" eventType="touchUpInside" id="DfB-Lp-UA9"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1408,6 +1411,9 @@
                                                                 <state key="normal" image="delete2">
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="showActionSheetForPhotoFive:" destination="iQw-pK-9uS" eventType="touchUpInside" id="ZtX-hj-dVt"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1423,6 +1429,9 @@
                                                                 <state key="normal" image="delete2">
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="showActionSheetForPhotoTwo:" destination="iQw-pK-9uS" eventType="touchUpInside" id="c2h-h9-mh5"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1438,6 +1447,9 @@
                                                                 <state key="normal" image="delete2">
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="showActionSheetForPhotoThree:" destination="iQw-pK-9uS" eventType="touchUpInside" id="gVv-P8-kaW"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1453,6 +1465,9 @@
                                                                 <state key="normal" image="delete2">
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="showActionSheetForPhotoFour:" destination="iQw-pK-9uS" eventType="touchUpInside" id="GAE-2a-tru"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
