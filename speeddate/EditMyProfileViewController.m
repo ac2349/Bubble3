@@ -9,7 +9,7 @@
 #import "EditMyProfileViewController.h"
 #import "UserParseHelper.h"
 
-@interface EditMyProfileViewController ()
+@interface EditMyProfileViewController () <UIActionSheetDelegate>
 @property NSArray *photosArray;
 @property (weak, nonatomic) IBOutlet UIImageView *photoOneImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *photoTwoImageView;
@@ -104,6 +104,33 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 
+}
+
+- (IBAction)showActionSheetForPhotoOne:(id)sender
+{
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Action Sheet" delegate:self cancelButtonTitle:@"Cancel Button" destructiveButtonTitle:@"Destructive Button" otherButtonTitles:@"Other Button 1", nil];
+    
+    popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    
+    [popupQuery showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        NSLog(@"destructive button");
+    } else if (buttonIndex == 1) {
+        
+        NSLog(@"button index 1");
+    } else if (buttonIndex == 2) {
+        
+        NSLog(@"button index 2");
+        
+    } else if (buttonIndex == 3) {
+        
+        NSLog(@"button index 3");
+        
+    }
 }
 
 @end

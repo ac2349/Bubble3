@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditMyProfileViewController : UIViewController
+@interface EditMyProfileViewController : UIViewController <UIActionSheetDelegate>
+
+- (IBAction)showActionSheetForPhotoOne:(id)sender;
 
 @end
