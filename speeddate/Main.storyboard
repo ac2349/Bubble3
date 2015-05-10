@@ -1121,7 +1121,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VvM-6u-HLm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VvM-6u-HLm">
                                 <rect key="frame" x="-20" y="64" width="360" height="565"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTR-zY-bvc" userLabel="Content View">
@@ -1321,7 +1321,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="9TQ-rC-kZk">
                             <connections>
                                 <action selector="editProfile:" destination="mLc-67-Pcw" id="H5o-V4-AiW"/>
-                                <segue destination="iQw-pK-9uS" kind="push" id="0f8-mC-VqX"/>
+                                <segue destination="iQw-pK-9uS" kind="push" identifier="" id="0f8-mC-VqX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1366,7 +1366,7 @@
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5XH-dD-3Gm">
                                                         <rect key="frame" x="13" y="10" width="190" height="190"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="osZ-Bi-wbY">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="osZ-Bi-wbY">
                                                                 <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             </imageView>
@@ -1385,8 +1385,9 @@
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nmf-xz-XE5">
                                                         <rect key="frame" x="13" y="221" width="85" height="85"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j1e-Xm-wwX">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j1e-Xm-wwX">
                                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1G-fG-DPI">
                                                                 <rect key="frame" x="63" y="63" width="20" height="20"/>
@@ -1403,9 +1404,6 @@
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mMi-cX-dBk">
                                                         <rect key="frame" x="118" y="221" width="85" height="85"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lZF-Ks-Ojc">
-                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
-                                                            </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iQ-go-3qS">
                                                                 <rect key="frame" x="62" y="63" width="20" height="20"/>
                                                                 <state key="normal" image="delete2">
@@ -1415,14 +1413,19 @@
                                                                     <action selector="showActionSheetForPhotoFive:" destination="iQw-pK-9uS" eventType="touchUpInside" id="ZtX-hj-dVt"/>
                                                                 </connections>
                                                             </button>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lZF-Ks-Ojc">
+                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="htp-lB-dx6">
                                                         <rect key="frame" x="223" y="10" width="85" height="85"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LQJ-iL-wZR">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LQJ-iL-wZR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLZ-Lf-7EB">
                                                                 <rect key="frame" x="63" y="63" width="20" height="20"/>
@@ -1439,8 +1442,9 @@
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feB-V5-U1L">
                                                         <rect key="frame" x="223" y="115" width="85" height="85"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oeg-uQ-rOx">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oeg-uQ-rOx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4F-9f-Vrq">
                                                                 <rect key="frame" x="63" y="63" width="20" height="20"/>
@@ -1457,8 +1461,9 @@
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7M-kK-GZX">
                                                         <rect key="frame" x="223" y="221" width="85" height="85"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rxt-Yt-0oh">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rxt-Yt-0oh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TO-QM-Qb8">
                                                                 <rect key="frame" x="63" y="63" width="20" height="20"/>
@@ -1520,6 +1525,7 @@
                         <outlet property="photoSixImageView" destination="j1e-Xm-wwX" id="Wba-uF-RT6"/>
                         <outlet property="photoThreeImageView" destination="Oeg-uQ-rOx" id="UgW-ts-lbM"/>
                         <outlet property="photoTwoImageView" destination="LQJ-iL-wZR" id="Vcu-SQ-y1n"/>
+                        <segue destination="LeE-9H-J1M" kind="push" identifier="editProfileToProfileSegue" id="rg0-PE-x9p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11v-2r-3Th" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2799,11 +2805,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="yRc-2z-5JR"/>
         <segue reference="VlF-20-DHW"/>
         <segue reference="Qh3-Ge-Ehw"/>
         <segue reference="gPx-w2-9WG"/>
+        <segue reference="yRc-2z-5JR"/>
         <segue reference="duv-oz-RVZ"/>
         <segue reference="QOt-cj-Bjn"/>
+        <segue reference="rg0-PE-x9p"/>
     </inferredMetricsTieBreakers>
 </document>

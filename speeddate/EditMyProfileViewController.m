@@ -39,6 +39,82 @@
     self.photosArray = [NSMutableArray new];
     self.photosArray = [[PFUser currentUser] objectForKey:@"photosArray"];
     
+    if (self.photosArray.count == 1)
+    {
+        for (NSString *stringItem in self.photosArray)
+        {
+            if ([self.photosArray objectAtIndex:0])
+            {
+                self.photoOneURL = [self.photosArray objectAtIndex:0];
+            }
+            
+        }
+        
+    }
+    
+    if (self.photosArray.count == 2)
+    {
+        for (NSString *stringItem in self.photosArray)
+        {
+            if ([self.photosArray objectAtIndex:0])
+            {
+                self.photoOneURL = [self.photosArray objectAtIndex:0];
+            }
+            if ([self.photosArray objectAtIndex:1])
+            {
+                self.photoTwoURL = [self.photosArray objectAtIndex:1];
+            }
+            
+        }
+        
+    }
+    
+    if (self.photosArray.count == 3)
+    {
+        for (NSString *stringItem in self.photosArray)
+        {
+            if ([self.photosArray objectAtIndex:0])
+            {
+                self.photoOneURL = [self.photosArray objectAtIndex:0];
+            }
+            if ([self.photosArray objectAtIndex:1])
+            {
+                self.photoTwoURL = [self.photosArray objectAtIndex:1];
+            }
+            if ([self.photosArray objectAtIndex:2])
+            {
+                self.photoThreeURL = [self.photosArray objectAtIndex:2];
+            }
+            
+        }
+        
+    }
+    
+    if (self.photosArray.count == 4)
+    {
+        for (NSString *stringItem in self.photosArray)
+        {
+            if ([self.photosArray objectAtIndex:0])
+            {
+                self.photoOneURL = [self.photosArray objectAtIndex:0];
+            }
+            if ([self.photosArray objectAtIndex:1])
+            {
+                self.photoTwoURL = [self.photosArray objectAtIndex:1];
+            }
+            if ([self.photosArray objectAtIndex:2])
+            {
+                self.photoThreeURL = [self.photosArray objectAtIndex:2];
+            }
+            if ([self.photosArray objectAtIndex:3])
+            {
+                self.photoFourURL = [self.photosArray objectAtIndex:3];
+            }
+            
+        }
+
+    }
+    
     if (self.photosArray.count == 5)
     {
         for (NSString *stringItem in self.photosArray)
@@ -142,8 +218,8 @@
 
 - (IBAction)doneButton:(UIBarButtonItem *)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
     [[PFUser currentUser] saveInBackground];
+    [self performSegueWithIdentifier:@"editProfileToProfileSegue" sender:self];
 }
 
 - (IBAction)showActionSheetForPhotoOne:(id)sender
@@ -236,28 +312,83 @@
         {
             NSLog(@"PHOTO TWO SELECTED");
             self.photoTwoSelected = NO;
+            
+            // remove image
+            self.photoTwoImageView.image = nil;
+            
+            // update array locally
+            [self.photosArray removeObjectAtIndex:1];
+            NSLog(@"%@", self.photosArray);
+            
+            // update array on parse
+            [[PFUser currentUser] setObject:self.photosArray forKey:@"photosArray"];
+
         }
         else if (self.photoThreeSelected == YES)
         {
             NSLog(@"PHOTO THREE SELECTED");
             self.photoThreeSelected = NO;
+            
+            // remove image
+            self.photoThreeImageView.image = nil;
+            
+            // update array locally
+            [self.photosArray removeObjectAtIndex:2];
+            NSLog(@"%@", self.photosArray);
+            
+            // update array on parse
+            [[PFUser currentUser] setObject:self.photosArray forKey:@"photosArray"];
+
         }
         else if (self.photoFourSelected == YES)
         {
             NSLog(@"PHOTO FOUR SELECTED");
             self.photoFourSelected = NO;
+            
+            // remove image
+            self.photoFourImageView.image = nil;
+            
+            // update array locally
+            [self.photosArray removeObjectAtIndex:3];
+            NSLog(@"%@", self.photosArray);
+            
+            // update array on parse
+            [[PFUser currentUser] setObject:self.photosArray forKey:@"photosArray"];
+
 
         }
         else if (self.photoFiveSelected == YES)
         {
             NSLog(@"PHOTO FIVE SELECTED");
             self.photoFiveSelected = NO;
+            
+            // remove image
+            self.photoFiveImageView.image = nil;
+            
+            // update array locally
+            [self.photosArray removeObjectAtIndex:4];
+            NSLog(@"%@", self.photosArray);
+            
+            // update array on parse
+            [[PFUser currentUser] setObject:self.photosArray forKey:@"photosArray"];
+
 
         }
         else if (self.photoSixSelected == YES)
         {
             NSLog(@"PHOTO SIX SELECTED");
             self.photoSixSelected = NO;
+            
+            // remove image
+            self.photoSixImageView.image = nil;
+            
+            // update array locally
+            [self.photosArray removeObjectAtIndex:5];
+            NSLog(@"%@", self.photosArray);
+            
+            // update array on parse
+            [[PFUser currentUser] setObject:self.photosArray forKey:@"photosArray"];
+
 
         }
     }
