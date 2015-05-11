@@ -9,7 +9,7 @@
 #import "EditMyProfileViewController.h"
 #import "UserParseHelper.h"
 
-@interface EditMyProfileViewController () <UIActionSheetDelegate, UITextViewDelegate>
+@interface EditMyProfileViewController () <UIActionSheetDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *photosArray;
 @property (weak, nonatomic) IBOutlet UIImageView *photoOneImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *photoTwoImageView;
@@ -31,7 +31,11 @@
 @property BOOL photoSixSelected;
 @property (weak, nonatomic) IBOutlet UILabel *aboutMeLabel;
 @property (weak, nonatomic) IBOutlet UITextView *aboutMeTextView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *aboutMeTextViewHeight;
+@property (weak, nonatomic) IBOutlet UILabel *aboutMeCharacterLimitLabel;
+@property (weak, nonatomic) IBOutlet UITextView *lookingForTextView;
+@property (weak, nonatomic) IBOutlet UILabel *lookingForCharacterLimit;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSArray *editProfileArray;
 
 @end
 
@@ -40,6 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
+    self.editProfileArray = [[NSArray alloc] initWithObjects:@"Categories", @"Gender", nil];
     self.photosArray = [NSMutableArray new];
     self.photosArray = [[PFUser currentUser] objectForKey:@"photosArray"];
     
@@ -202,6 +207,8 @@
     
     self.aboutMeLabel.text = [NSString stringWithFormat:@"About %@", [UserParseHelper currentUser].nickname];
     [self.aboutMeTextView setScrollEnabled:NO];
+    
+    [self.lookingForTextView setScrollEnabled:NO];
     
 }
 
@@ -408,13 +415,29 @@
 #pragma mark - UITEXTVIEWDELEGATE
 - (void)textViewDidChange:(UITextView *)textView
 {
-    CGFloat fixedWidth = self.aboutMeTextView.frame.size.width;
-    CGSize newSize = [self.aboutMeTextView sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT)];
-    CGRect newFrame = self.aboutMeTextView.frame;
-    newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
-    self.aboutMeTextView.frame = newFrame;
+    // About Me Text View
+    CGFloat aboutMeFixedWidth = self.aboutMeTextView.frame.size.width;
+    CGSize aboutMeNewSize = [self.aboutMeTextView sizeThatFits:CGSizeMake(aboutMeFixedWidth, MAXFLOAT)];
+    CGRect aboutMeNewFrame = self.aboutMeTextView.frame;
+    aboutMeNewFrame.size = CGSizeMake(fmaxf(aboutMeNewSize.width, aboutMeFixedWidth), aboutMeNewSize.height);
+    self.aboutMeTextView.frame = aboutMeNewFrame;
     
     self.aboutMeTextView.scrollEnabled = NO;
+    
+    long aboutMeLength = self.aboutMeTextView.text.length;
+    self.aboutMeCharacterLimitLabel.text = [NSString stringWithFormat:@"%li", 500 - aboutMeLength];
+    
+    // Looking For Text View
+    CGFloat lookingForFixedWidth = self.lookingForTextView.frame.size.width;
+    CGSize lookingForNewSize = [self.lookingForTextView sizeThatFits:CGSizeMake(lookingForFixedWidth, MAXFLOAT)];
+    CGRect lookingForNewFrame = self.lookingForTextView.frame;
+    lookingForNewFrame.size = CGSizeMake(fmaxf(lookingForNewSize.width, lookingForFixedWidth), lookingForNewSize.height);
+    self.lookingForTextView.frame = lookingForNewFrame;
+    
+    self.lookingForTextView.scrollEnabled = NO;
+    
+    long lookingForLength = self.lookingForTextView.text.length;
+    self.lookingForCharacterLimit.text = [NSString stringWithFormat:@"%li", 500 - lookingForLength];
 }
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
@@ -426,4 +449,21 @@
     NSUInteger newLength = [textView.text length] + [text length] - range.length;
     return newLength <= 500;
 }
+
+#pragma mark - UITABLEVIEWDELEGATE
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.editProfileArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"editProfileCell"];
+    UIFont *font = [UIFont fontWithName:@"Helvetica Neue" size:12.0];
+    cell.textLabel.font = font;
+    cell.textLabel.text = self.editProfileArray[indexPath.row];
+    return cell;
+}
+
+
 @end
