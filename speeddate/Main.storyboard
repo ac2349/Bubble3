@@ -1404,8 +1404,12 @@
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mMi-cX-dBk">
                                                         <rect key="frame" x="118" y="221" width="85" height="85"/>
                                                         <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lZF-Ks-Ojc">
+                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iQ-go-3qS">
-                                                                <rect key="frame" x="62" y="63" width="20" height="20"/>
+                                                                <rect key="frame" x="65" y="65" width="20" height="20"/>
                                                                 <state key="normal" image="delete2">
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
@@ -1413,10 +1417,6 @@
                                                                     <action selector="showActionSheetForPhotoFive:" destination="iQw-pK-9uS" eventType="touchUpInside" id="ZtX-hj-dVt"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lZF-Ks-Ojc">
-                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
-                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
@@ -1484,11 +1484,70 @@
                                                     <constraint firstAttribute="height" constant="316" id="oih-ka-AEa"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYQ-YY-Nrf">
+                                                <rect key="frame" x="0.0" y="313" width="320" height="353"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About May" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0l1-mZ-WuW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="320" id="seL-CS-Kzv"/>
+                                                            <constraint firstAttribute="height" constant="21" id="yeK-Lk-BNd"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jht-rD-qoA">
+                                                        <rect key="frame" x="0.0" y="29" width="320" height="51"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="320" id="q2L-Xc-0PH"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="iQw-pK-9uS" id="bTs-5s-v8b"/>
+                                                        </connections>
+                                                    </textView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-Mk-ODl">
+                                                        <rect key="frame" x="0.0" y="88" width="320" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="320" id="8O2-kX-oSB"/>
+                                                            <constraint firstAttribute="height" constant="21" id="amo-ie-OrU"/>
+                                                        </constraints>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Label">
+                                                                <attributes>
+                                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <font key="NSFont" size="13" name="HelveticaNeue-Bold"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="0l1-mZ-WuW" firstAttribute="leading" secondItem="mYQ-YY-Nrf" secondAttribute="leading" id="BcV-g7-ehe"/>
+                                                    <constraint firstItem="S7l-Mk-ODl" firstAttribute="leading" secondItem="mYQ-YY-Nrf" secondAttribute="leading" id="CKi-pN-Txr"/>
+                                                    <constraint firstItem="0l1-mZ-WuW" firstAttribute="top" secondItem="mYQ-YY-Nrf" secondAttribute="top" id="Mq8-cu-Yun"/>
+                                                    <constraint firstItem="S7l-Mk-ODl" firstAttribute="top" secondItem="jht-rD-qoA" secondAttribute="bottom" constant="8" id="PaF-06-ZJC"/>
+                                                    <constraint firstItem="jht-rD-qoA" firstAttribute="leading" secondItem="mYQ-YY-Nrf" secondAttribute="leading" id="ZIo-rv-PSg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0l1-mZ-WuW" secondAttribute="trailing" id="cEv-p6-AD8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jht-rD-qoA" secondAttribute="trailing" id="geH-dX-Eg1"/>
+                                                    <constraint firstItem="jht-rD-qoA" firstAttribute="top" secondItem="0l1-mZ-WuW" secondAttribute="bottom" constant="8" id="hs1-FR-RIM"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="kKk-WT-rdM" secondAttribute="trailing" id="0Ro-xK-p7E"/>
+                                            <constraint firstItem="mYQ-YY-Nrf" firstAttribute="leading" secondItem="s5F-O2-YTr" secondAttribute="leading" id="5hf-ao-SYc"/>
+                                            <constraint firstItem="mYQ-YY-Nrf" firstAttribute="top" secondItem="kKk-WT-rdM" secondAttribute="bottom" constant="-3" id="KlS-TH-gOa"/>
                                             <constraint firstItem="kKk-WT-rdM" firstAttribute="top" secondItem="s5F-O2-YTr" secondAttribute="top" id="Pn7-6X-XoV"/>
+                                            <constraint firstAttribute="trailing" secondItem="mYQ-YY-Nrf" secondAttribute="trailing" id="SAM-uY-tP9"/>
+                                            <constraint firstAttribute="bottom" secondItem="mYQ-YY-Nrf" secondAttribute="bottom" constant="17" id="hYl-HA-ORX"/>
                                             <constraint firstItem="kKk-WT-rdM" firstAttribute="leading" secondItem="s5F-O2-YTr" secondAttribute="leading" id="uXV-tF-rzt"/>
                                         </constraints>
                                     </view>
@@ -1519,6 +1578,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="aboutMeLabel" destination="0l1-mZ-WuW" id="dXn-nA-R9j"/>
+                        <outlet property="aboutMeTextView" destination="jht-rD-qoA" id="cny-ft-FmX"/>
                         <outlet property="photoFiveImageView" destination="lZF-Ks-Ojc" id="TzV-MK-9qA"/>
                         <outlet property="photoFourImageView" destination="Rxt-Yt-0oh" id="xbX-kr-fZM"/>
                         <outlet property="photoOneImageView" destination="osZ-Bi-wbY" id="TZc-x6-azq"/>

@@ -9,7 +9,7 @@
 #import "EditMyProfileViewController.h"
 #import "UserParseHelper.h"
 
-@interface EditMyProfileViewController () <UIActionSheetDelegate>
+@interface EditMyProfileViewController () <UIActionSheetDelegate, UITextViewDelegate>
 @property NSMutableArray *photosArray;
 @property (weak, nonatomic) IBOutlet UIImageView *photoOneImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *photoTwoImageView;
@@ -29,6 +29,10 @@
 @property BOOL photoFourSelected;
 @property BOOL photoFiveSelected;
 @property BOOL photoSixSelected;
+@property (weak, nonatomic) IBOutlet UILabel *aboutMeLabel;
+@property (weak, nonatomic) IBOutlet UITextView *aboutMeTextView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *aboutMeTextViewHeight;
+
 @end
 
 @implementation EditMyProfileViewController
@@ -195,10 +199,13 @@
     [self downloadImageWithURL:[NSURL URLWithString:self.photoSixURL] completionBlock:^(BOOL succeeded, UIImage *image) {
         self.photoSixImageView.image = image;
     }];
-
     
+    self.aboutMeLabel.text = [NSString stringWithFormat:@"About %@", [UserParseHelper currentUser].nickname];
+    [self.aboutMeTextView setScrollEnabled:NO];
     
 }
+
+#pragma mark - ASYNCHRONOUS IMAGE DOWNLOAD HELPER
 
 - (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
 {
@@ -215,6 +222,8 @@
                                }
                            }];
 }
+
+#pragma mark - IBACTIONS
 
 - (IBAction)doneButton:(UIBarButtonItem *)sender
 {
@@ -289,6 +298,8 @@
     self.photoSixSelected = YES;
 }
 
+
+#pragma  mark - UIACTION SHEET DELEGATE METHODS
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -394,4 +405,25 @@
     }
 }
 
+#pragma mark - UITEXTVIEWDELEGATE
+- (void)textViewDidChange:(UITextView *)textView
+{
+    CGFloat fixedWidth = self.aboutMeTextView.frame.size.width;
+    CGSize newSize = [self.aboutMeTextView sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT)];
+    CGRect newFrame = self.aboutMeTextView.frame;
+    newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
+    self.aboutMeTextView.frame = newFrame;
+    
+    self.aboutMeTextView.scrollEnabled = NO;
+}
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if (range.length + range.location > textView.text.length)
+    {
+        return NO;
+    }
+    
+    NSUInteger newLength = [textView.text length] + [text length] - range.length;
+    return newLength <= 500;
+}
 @end
