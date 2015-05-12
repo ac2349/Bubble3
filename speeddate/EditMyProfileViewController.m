@@ -9,7 +9,7 @@
 #import "EditMyProfileViewController.h"
 #import "UserParseHelper.h"
 
-@interface EditMyProfileViewController () <UIActionSheetDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface EditMyProfileViewController () <UIActionSheetDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 @property NSMutableArray *photosArray;
 @property (weak, nonatomic) IBOutlet UIImageView *photoOneImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *photoTwoImageView;
@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lookingForCharacterLimit;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *editProfileArray;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -209,6 +210,29 @@
     [self.aboutMeTextView setScrollEnabled:NO];
     
     [self.lookingForTextView setScrollEnabled:NO];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+
+    
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    self.scrollView.delegate = self;
+    [self.scrollView setScrollEnabled:YES];
+
+    
+    CGRect contentRect = CGRectZero;
+    for (UIView *view in self.scrollView.subviews) {
+        contentRect = CGRectUnion(contentRect, view.frame);
+    }
+    self.scrollView.contentSize = contentRect.size;
     
 }
 
