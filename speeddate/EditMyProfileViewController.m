@@ -37,6 +37,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *editProfileArray;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
+@property NSString *interestOne;
+@property NSString *interestTwo;
 
 @end
 
@@ -217,16 +220,13 @@
 {
     [super viewDidAppear:YES];
 
+
     
 }
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    
-    self.scrollView.delegate = self;
-    [self.scrollView setScrollEnabled:YES];
-
     
     CGRect contentRect = CGRectZero;
     for (UIView *view in self.scrollView.subviews) {
@@ -462,6 +462,7 @@
     
     long lookingForLength = self.lookingForTextView.text.length;
     self.lookingForCharacterLimit.text = [NSString stringWithFormat:@"%li", 500 - lookingForLength];
+    
 }
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
@@ -486,8 +487,35 @@
     UIFont *font = [UIFont fontWithName:@"Helvetica Neue" size:12.0];
     cell.textLabel.font = font;
     cell.textLabel.text = self.editProfileArray[indexPath.row];
+    if (indexPath.row == 0)
+    {
+        if ([UserParseHelper currentUser].interests)
+        {
+            NSArray *interestsArray = [UserParseHelper currentUser].interests;
+            for (NSString *string in interestsArray)
+            {
+                self.interestOne = [interestsArray objectAtIndex:0];
+                self.interestTwo = [interestsArray objectAtIndex:1];
+                NSLog(@"%@", string);
+            }
+        }
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", self.interestOne, self.interestTwo];
+        cell.detailTextLabel.font = font;
+    }
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0)
+    {
+        [self performSegueWithIdentifier:@"editProfileToChooseCategories" sender:self];
+        NSLog(@"test");
+    }
+    else
+    {
+        
+    }
+}
 
 @end

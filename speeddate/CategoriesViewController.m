@@ -44,11 +44,12 @@
     self.tableView.backgroundColor = [UIColor clearColor];
 
     
-    self.categoriesArray = [[NSMutableArray alloc] initWithObjects:@"Happy Hour", @"Dining", @"Outdoors", @"Travelers", @"Fitness",  nil];
+    self.categoriesArray = [[NSMutableArray alloc] initWithObjects:@"Happy Hour", @"Dining", @"Outdoors", @"Travelers", @"Fitness", nil];
     self.selectedRowsArray = [NSMutableArray new];
     
     self.selectedIndexPathsMutableArray = [NSMutableArray new];
     self.retrievedIndexPaths = [NSArray new];
+    
 }
 
 
@@ -136,6 +137,9 @@
 
     [[PFUser currentUser] setObject:self.selectedRowsArray forKey:@"interests"];
     [[PFUser currentUser] saveInBackground];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 
