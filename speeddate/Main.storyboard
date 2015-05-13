@@ -1574,7 +1574,7 @@
                                                         </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iwi-xT-4pP">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="2" allowsSelectionDuringEditing="YES" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iwi-xT-4pP">
                                                         <rect key="frame" x="0.0" y="220" width="320" height="95"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -1707,6 +1707,7 @@
                         <outlet property="tableView" destination="iwi-xT-4pP" id="LSw-TQ-ayg"/>
                         <segue destination="LeE-9H-J1M" kind="push" identifier="editProfileToProfileSegue" id="rg0-PE-x9p"/>
                         <segue destination="f9S-fl-mSR" kind="push" identifier="editProfileToChooseCategories" id="rNz-65-7vb"/>
+                        <segue destination="KsH-PA-jOV" kind="push" identifier="editProfileToGenderVCSegue" id="8We-7q-V0S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11v-2r-3Th" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2216,9 +2217,6 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Choose Categories" id="pJt-90-cCp">
-                        <barButtonItem key="leftBarButtonItem" image="bubble" id="jDa-g7-x5Z">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Cvl-Y1-tD6">
                             <connections>
                                 <action selector="doneButton:" destination="f9S-fl-mSR" id="qGI-yr-wq9"/>
@@ -2227,14 +2225,61 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="menuBtn" destination="jDa-g7-x5Z" id="SNH-gy-bDt"/>
                         <outlet property="tableView" destination="FW2-Mc-F63" id="Ydz-df-kJz"/>
                         <segue destination="iQw-pK-9uS" kind="push" identifier="chooseCategoriesToEditInfo" id="qDK-xF-bnj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xe2-gd-ULk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2894" y="-1452"/>
+            <point key="canvasLocation" x="2957" y="-1518"/>
+        </scene>
+        <!--I Am-->
+        <scene sceneID="WS0-ge-gd0">
+            <objects>
+                <viewController title="I Am" id="KsH-PA-jOV" customClass="GenderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XRz-CK-Fhn"/>
+                        <viewControllerLayoutGuide type="bottom" id="SsA-LO-JMt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jSy-I8-MeE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DnB-kW-a8v">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="genderCell" id="6f5-82-og9">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6f5-82-og9" id="zTC-ss-cP0">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KsH-PA-jOV" id="L4C-xU-ycQ"/>
+                                    <outlet property="delegate" destination="KsH-PA-jOV" id="reU-Hg-N1Y"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="DnB-kW-a8v" secondAttribute="trailing" constant="-16" id="7B1-nJ-jUu"/>
+                            <constraint firstItem="DnB-kW-a8v" firstAttribute="top" secondItem="jSy-I8-MeE" secondAttribute="topMargin" id="7Yh-Pj-5Ek"/>
+                            <constraint firstItem="SsA-LO-JMt" firstAttribute="top" secondItem="DnB-kW-a8v" secondAttribute="bottom" id="DqG-Nn-QzK"/>
+                            <constraint firstItem="DnB-kW-a8v" firstAttribute="leading" secondItem="jSy-I8-MeE" secondAttribute="leadingMargin" constant="-16" id="fed-de-dWq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xAJ-Vv-Z8H"/>
+                    <connections>
+                        <outlet property="tableView" destination="DnB-kW-a8v" id="wyq-bk-moQ"/>
+                        <segue destination="iQw-pK-9uS" kind="push" identifier="genderToEditProfileSegue" id="ify-cd-njx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8QS-cN-ONk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3341" y="-1518"/>
         </scene>
         <!--Vip Buy Table View Controller-->
         <scene sceneID="zxs-Fz-65T">
@@ -2993,8 +3038,8 @@
         <segue reference="QOt-cj-Bjn"/>
         <segue reference="43A-2r-DhM"/>
         <segue reference="gPx-w2-9WG"/>
-        <segue reference="qDK-xF-bnj"/>
-        <segue reference="rNz-65-7vb"/>
+        <segue reference="ify-cd-njx"/>
         <segue reference="rg0-PE-x9p"/>
+        <segue reference="rNz-65-7vb"/>
     </inferredMetricsTieBreakers>
 </document>

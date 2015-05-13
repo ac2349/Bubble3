@@ -35,11 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _menuBtn.target = self.revealViewController;
-     _menuBtn.action = @selector(revealToggle:);
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-     UINavigationBar *navigationBar = self.navigationController.navigationBar;
-    [navigationBar setShadowImage:[UIImage new]];
+    [self.navigationItem setHidesBackButton:YES animated:YES];
     
     self.tableView.backgroundColor = [UIColor clearColor];
 

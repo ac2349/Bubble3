@@ -532,7 +532,9 @@
 
          user[@"age"] = [NSNumber numberWithInt:(int)years];
          user[@"isMale"] = @"true";
-         user[@"gender"] = userData[@"gender"];
+         NSString *userDataGender = userData[@"gender"];
+         userDataGender = [NSString stringWithFormat:@"%@%@",[[userDataGender substringToIndex:1] uppercaseString],[userDataGender substringFromIndex:1]];
+         user[@"gender"] = userDataGender;
          user[@"desc"] = @"Hi all))) I am now with you !!!";
          user[@"photo"] = filePicture;
          user[@"membervip"] = @"vip";

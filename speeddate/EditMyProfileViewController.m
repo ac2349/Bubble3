@@ -553,6 +553,10 @@
         }
 
     }
+    else
+    {
+        cell.detailTextLabel.text = [UserParseHelper currentUser].gender;
+    }
 
     
         cell.detailTextLabel.font = font;
@@ -567,9 +571,9 @@
         [self performSegueWithIdentifier:@"editProfileToChooseCategories" sender:self];
         NSLog(@"test");
     }
-    else
+    else if (indexPath.row == 1)
     {
-        
+        [self performSegueWithIdentifier:@"editProfileToGenderVCSegue" sender:self];
     }
     
 }

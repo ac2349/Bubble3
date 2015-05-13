@@ -33,6 +33,7 @@
 @property NSArray *photosArray;
 @property NSString *location;
 @property NSArray *interests;
+@property NSString *gender;
 
 ////thumb_photo
 @property PFFile* photo_thumb;
