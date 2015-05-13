@@ -50,6 +50,8 @@
     self.selectedIndexPathsMutableArray = [NSMutableArray new];
     self.retrievedIndexPaths = [NSArray new];
     
+    
+    
 }
 
 
@@ -62,11 +64,6 @@
     self.retrievedIndexPaths = [NSKeyedUnarchiver unarchiveObjectWithData:data];
                                                                                                                       
     NSLog(@"%@", self.retrievedIndexPaths);
-
-//    NSNumber *lastRow = [defaults objectForKey:@"selectedCells"];
-//    if (lastRow) {
-//        self.lastIndexPath = [NSIndexPath indexPathForRow:lastRow.integerValue inSection:0];
-//    }
   
 }
 
@@ -87,7 +84,11 @@
     if ([self.retrievedIndexPaths containsObject:indexPath])
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        // add this to self.selectedRowsArray;
+        [self.selectedIndexPathsMutableArray addObject:indexPath];
+        [self.selectedRowsArray addObject:cell.textLabel.text];
     }
+
     
     return cell;
     
@@ -112,7 +113,6 @@
     else
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
-//        self.lastIndexPath = nil;
         [self.selectedRowsArray removeObject:cell.textLabel.text];
         [self.selectedIndexPathsMutableArray removeObject:indexPath];
     }
@@ -138,7 +138,9 @@
     [[PFUser currentUser] setObject:self.selectedRowsArray forKey:@"interests"];
     [[PFUser currentUser] saveInBackground];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self performSegueWithIdentifier:@"chooseCategoriesToEditInfo" sender:self];
+    
+//    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

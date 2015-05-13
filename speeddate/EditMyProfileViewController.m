@@ -40,6 +40,10 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property NSString *interestOne;
 @property NSString *interestTwo;
+@property NSString *interestThree;
+@property NSString *interestFour;
+@property NSString *interestFive;
+@property NSArray *interestsArray;
 
 @end
 
@@ -49,6 +53,7 @@
     [super viewDidLoad];
     self.navigationItem.hidesBackButton = YES;
     self.editProfileArray = [[NSArray alloc] initWithObjects:@"Categories", @"Gender", nil];
+    self.interestsArray = [NSArray new];
     self.photosArray = [NSMutableArray new];
     self.photosArray = [[PFUser currentUser] objectForKey:@"photosArray"];
     
@@ -219,7 +224,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
-
 
     
 }
@@ -487,21 +491,72 @@
     UIFont *font = [UIFont fontWithName:@"Helvetica Neue" size:12.0];
     cell.textLabel.font = font;
     cell.textLabel.text = self.editProfileArray[indexPath.row];
+
     if (indexPath.row == 0)
     {
         if ([UserParseHelper currentUser].interests)
         {
-            NSArray *interestsArray = [UserParseHelper currentUser].interests;
-            for (NSString *string in interestsArray)
+            self.interestsArray = [UserParseHelper currentUser].interests;
+
+            if ([self.interestsArray count] == 0)
             {
-                self.interestOne = [interestsArray objectAtIndex:0];
-                self.interestTwo = [interestsArray objectAtIndex:1];
-                NSLog(@"%@", string);
+                cell.detailTextLabel.text = @"Add Categories";
             }
+            else
+            {
+                for (NSString *string in self.interestsArray)
+                {
+                    if (self.interestsArray.count == 1)
+                    {
+                        self.interestOne = [self.interestsArray objectAtIndex:0];
+                        cell.detailTextLabel.text = self.interestOne;
+                    }
+                    else if (self.interestsArray.count == 2)
+                    {
+                        self.interestOne = [self.interestsArray objectAtIndex:0];
+                        self.interestTwo = [self.interestsArray objectAtIndex:1];
+                        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", self.interestOne, self.interestTwo];
+                    }
+                    else if (self.interestsArray.count == 3)
+                    {
+                        self.interestOne = [self.interestsArray objectAtIndex:0];
+                        self.interestTwo = [self.interestsArray objectAtIndex:1];
+                        self.interestThree = [self.interestsArray objectAtIndex:2];
+                        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@, %@", self.interestOne, self.interestTwo, self.interestThree];
+                    }
+                    else if (self.interestsArray.count == 4)
+                    {
+                        self.interestOne = [self.interestsArray objectAtIndex:0];
+                        self.interestTwo = [self.interestsArray objectAtIndex:1];
+                        self.interestThree = [self.interestsArray objectAtIndex:2];
+                        self.interestFour = [self.interestsArray objectAtIndex:3];
+                        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@, %@, %@", self.interestOne, self.interestTwo, self.interestThree, self.interestFour];
+                    }
+                    else if (self.interestsArray.count == 5)
+                    {
+                        self.interestOne = [self.interestsArray objectAtIndex:0];
+                        self.interestTwo = [self.interestsArray objectAtIndex:1];
+                        self.interestThree = [self.interestsArray objectAtIndex:2];
+                        self.interestFour = [self.interestsArray objectAtIndex:3];
+                        self.interestFive = [self.interestsArray objectAtIndex:4];
+                        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@, %@, %@, %@", self.interestOne, self.interestTwo, self.interestThree, self.interestFour, self.interestFive];
+                    }
+                    
+                    
+                }
+
+            }
+                    }
+        else
+        {
+            cell.detailTextLabel.text = @"Add Categories";
         }
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", self.interestOne, self.interestTwo];
-        cell.detailTextLabel.font = font;
+
     }
+
+    
+        cell.detailTextLabel.font = font;
+    
     return cell;
 }
 
@@ -516,6 +571,7 @@
     {
         
     }
+    
 }
 
 @end
