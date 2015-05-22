@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *genderArray;
 @property NSIndexPath *checkedIndexPath;
+@property NSString *theNewSex;
 
 @end
 
@@ -32,6 +33,9 @@
 -(IBAction)doneButton:(id)sender
 {
     [self performSegueWithIdentifier:@"genderToEditProfileSegue" sender:self];
+    
+    [[UserParseHelper currentUser] setObject:self.theNewSex forKey:@"gender"];
+    [[UserParseHelper currentUser] saveInBackground];
 }
 
 #pragma mark - UITABLEVIEW DELEGATE METHODS
@@ -68,8 +72,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-//    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
     
     if(self.checkedIndexPath)
     {
@@ -80,10 +82,13 @@
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
     self.checkedIndexPath = indexPath;
+    
+    self.theNewSex = cell.textLabel.text;
+    NSLog(@"%@", self.theNewSex);
 
 
 }
-//
+
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
