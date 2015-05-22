@@ -232,12 +232,13 @@
 {
     [super viewDidLayoutSubviews];
     
-    CGRect contentRect = CGRectZero;
+    CGFloat scrollViewHeight = 0.0f;
     for (UIView *view in self.scrollView.subviews) {
-        contentRect = CGRectUnion(contentRect, view.frame);
+        scrollViewHeight += view.frame.size.height;
     }
-    self.scrollView.contentSize = contentRect.size;
-    
+   [self.scrollView setContentSize:(CGSizeMake(320, scrollViewHeight))];
+    NSLog(@"scrollview content size height is %f", self.scrollView.contentSize.height);
+    NSLog(@"%f", scrollViewHeight);
 }
 
 #pragma mark - ASYNCHRONOUS IMAGE DOWNLOAD HELPER
@@ -449,7 +450,16 @@
     CGRect aboutMeNewFrame = self.aboutMeTextView.frame;
     aboutMeNewFrame.size = CGSizeMake(fmaxf(aboutMeNewSize.width, aboutMeFixedWidth), aboutMeNewSize.height);
     self.aboutMeTextView.frame = aboutMeNewFrame;
+    NSLog(@"about me textview new height is %f", aboutMeNewFrame.size.height);
     
+    CGRect bottomViewNewFrame = self.bottomView.frame;
+    
+    bottomViewNewFrame.size.height = bottomViewNewFrame.size.height + aboutMeNewFrame.size.height;
+    NSLog(@"bottomview height new height is %f", bottomViewNewFrame.size.height);
+    
+//    [self.bottomView setFrame:bottomViewNewFrame];
+    
+
     self.aboutMeTextView.scrollEnabled = NO;
     
     long aboutMeLength = self.aboutMeTextView.text.length;
