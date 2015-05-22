@@ -238,8 +238,15 @@
     }
    [self.scrollView setContentSize:(CGSizeMake(320, scrollViewHeight))];
     NSLog(@"scrollview content size height is %f", self.scrollView.contentSize.height);
-    NSLog(@"%f", scrollViewHeight);
+    
+//    CGRect contentRect = CGRectZero;
+//    for (UIView *view in self.scrollView.subviews) {
+//        contentRect = CGRectUnion(contentRect, view.fram fe);
+//    }
+//    self.scrollView.contentSize = contentRect.size;
+//    NSLog(@"%f", self.scrollView.contentSize.height);
 }
+
 
 #pragma mark - ASYNCHRONOUS IMAGE DOWNLOAD HELPER
 
@@ -454,11 +461,11 @@
     
     CGRect bottomViewNewFrame = self.bottomView.frame;
     
-    bottomViewNewFrame.size.height = bottomViewNewFrame.size.height + aboutMeNewFrame.size.height;
-    NSLog(@"bottomview height new height is %f", bottomViewNewFrame.size.height);
-    
+//    bottomViewNewFrame.size.height = bottomViewNewFrame.size.height + aboutMeNewFrame.size.height;
+//    NSLog(@"bottomview height new height is %f", bottomViewNewFrame.size.height);
+//    
 //    [self.bottomView setFrame:bottomViewNewFrame];
-    
+//    
 
     self.aboutMeTextView.scrollEnabled = NO;
     
@@ -471,6 +478,14 @@
     CGRect lookingForNewFrame = self.lookingForTextView.frame;
     lookingForNewFrame.size = CGSizeMake(fmaxf(lookingForNewSize.width, lookingForFixedWidth), lookingForNewSize.height);
     self.lookingForTextView.frame = lookingForNewFrame;
+    
+    NSLog(@"looking for textview new frame is %f", self.lookingForTextView.frame.size.height);
+    
+    bottomViewNewFrame.size.height = bottomViewNewFrame.size.height + aboutMeNewFrame.size.height + lookingForNewFrame.size.height;
+    NSLog(@"bottonview height 2 new height is %f", bottomViewNewFrame.size.height);
+    
+    [self.bottomView setFrame:bottomViewNewFrame];
+
     
     self.lookingForTextView.scrollEnabled = NO;
     
