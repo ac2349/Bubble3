@@ -50,7 +50,9 @@
         if (indexPath.row == 1)
         {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            self.checkedIndexPath = indexPath;
         }
+
     }
     else if (([UserParseHelper currentUser].gender = @"Male"))
     {
@@ -60,19 +62,32 @@
             self.checkedIndexPath = indexPath;
         }
     }
-
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-}
+//    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    if(self.checkedIndexPath)
+    {
+        UITableViewCell* uncheckCell = [tableView
+                                        cellForRowAtIndexPath:self.checkedIndexPath];
+        uncheckCell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    self.checkedIndexPath = indexPath;
 
+
+}
+//
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+
 }
 
 
