@@ -42,6 +42,7 @@
     
     self.discoverySettings = [NSMutableArray new];
     
+    self.selectedSex = @"both";
 
 }
 
@@ -99,8 +100,8 @@
     [formatter setMinimumFractionDigits:0];
     
     NSString *result = [formatter stringFromNumber:[NSNumber numberWithFloat:sender.value]];
-    
     self.distanceLabel.text = result;
+
 }
 
 
@@ -112,8 +113,11 @@
 - (void)updateSliderLabels
 {
     self.minAge.text = [NSString stringWithFormat:@"%d", (int)self.ageSlider.lowerValue];
+    NSLog(@"%@", self.minAge.text);
     
     self.maxAge.text = [NSString stringWithFormat:@"%d", (int)self.ageSlider.upperValue];
+    NSLog(@"%@", self.maxAge.text);
+
 }
 
 
@@ -121,12 +125,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+
+    
     [self.discoverySettings addObject:self.distanceLabel.text];
+
     [self.discoverySettings addObject:[NSNumber numberWithInt:self.ageSlider.lowerValue]];
     [self.discoverySettings addObject:[NSNumber numberWithInt:self.ageSlider.upperValue]];
     
-// TODO:  fix bug for nil object
     [self.discoverySettings addObject:self.selectedSex];
+    
+    NSLog(@"%@", self.discoverySettings);
     
     if ([segue.identifier   isEqualToString:@"discoverySettingsSegue"])
     {

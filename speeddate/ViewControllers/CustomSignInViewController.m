@@ -511,7 +511,7 @@
          user[@"username"] = userData[@"id"];
          //user[@"password"] = userData[@"id"];
          user[@"nickname"] = userData[@"first_name"];
-         user[@"distance"] = [NSNumber numberWithInt:100];
+//         user[@"distance"] = [NSNumber numberWithInt:100];
          user[@"sexuality"] = [NSNumber numberWithInt:2];
          
          NSArray *locationArray = [[userData objectForKey:@"location"][@"name"] componentsSeparatedByString:@","];
