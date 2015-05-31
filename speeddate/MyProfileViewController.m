@@ -24,6 +24,12 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *nameAgeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UITextView *aboutMeTextView;
+@property (weak, nonatomic) IBOutlet UITextView *lookingForTextView;
+@property NSMutableArray *interestsArray;
+@property (weak, nonatomic) IBOutlet UILabel *topInterestsLabel;
+@property NSMutableArray *testArray;
+@property NSString *testString;
 
 @end
 
@@ -38,11 +44,53 @@
     self.sidebarButton.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
+    self.testArray = [[NSMutableArray alloc]init];
+    
     self.pageImages = [[PFUser currentUser] objectForKey:@"photosArray"];
     
     self.nameAgeLabel.text = [NSString stringWithFormat:@"%@, %@", [UserParseHelper currentUser].nickname, [UserParseHelper currentUser].age];
     
     self.locationLabel.text = [NSString stringWithFormat:@"Lives in %@", [[PFUser currentUser] objectForKey:@"location"] ];
+
+    self.aboutMeTextView.text = [[PFUser currentUser] objectForKey:@"desc"];
+    
+    self.lookingForTextView.text = [[PFUser currentUser] objectForKey:@"lookingFor"];
+    
+    self.interestsArray = [[PFUser currentUser] objectForKey:@"interests"];
+    
+    if (self.interestsArray.count > 3)
+    {
+        NSArray *tempArray = [self.interestsArray subarrayWithRange:NSMakeRange(0, 3)];
+        for (NSString *interestString in tempArray)
+        {
+            NSString *interestOne = [tempArray objectAtIndex:0];
+            NSString *interestTwo = [tempArray objectAtIndex:1];
+            NSString *interestThree = [tempArray objectAtIndex:2];
+            
+            self.topInterestsLabel.text = [NSString stringWithFormat:@"Top Interests: %@, %@, %@", interestOne, interestTwo, interestThree];
+            
+            NSLog(@"%@", interestString);
+        }
+    }
+    else
+    {
+        for (NSString *interestString in self.interestsArray)
+        {
+            if (self.interestsArray.count == 2)
+            {
+                NSString *interestOne = [self.interestsArray objectAtIndex:0];
+                NSString *interestTwo = [self.interestsArray objectAtIndex:1];
+                self.topInterestsLabel.text = [NSString stringWithFormat:@"Top Interests: %@, %@", interestOne, interestTwo];
+            }
+            else if (self.interestsArray.count == 1)
+            {
+                self.topInterestsLabel.text = [NSString stringWithFormat:@"Top Interests: %@", interestString];
+            }
+
+        }
+
+    }
+
 
     
 }

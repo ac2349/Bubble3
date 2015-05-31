@@ -219,6 +219,9 @@
     
     [self.lookingForTextView setScrollEnabled:NO];
     
+    self.aboutMeTextView.text = [UserParseHelper currentUser].desc;
+    
+    self.lookingForTextView.text = [UserParseHelper currentUser].lookingFor;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -270,6 +273,9 @@
 
 - (IBAction)doneButton:(UIBarButtonItem *)sender
 {
+    [[PFUser currentUser] setObject:self.aboutMeTextView.text forKey:@"desc"];
+    [[PFUser currentUser] setObject:self.lookingForTextView.text forKey:@"lookingFor"];
+
     [[PFUser currentUser] saveInBackground];
     [self performSegueWithIdentifier:@"editProfileToProfileSegue" sender:self];
 }

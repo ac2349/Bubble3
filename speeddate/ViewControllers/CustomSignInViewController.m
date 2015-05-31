@@ -535,7 +535,7 @@
          NSString *userDataGender = userData[@"gender"];
          userDataGender = [NSString stringWithFormat:@"%@%@",[[userDataGender substringToIndex:1] uppercaseString],[userDataGender substringFromIndex:1]];
          user[@"gender"] = userDataGender;
-         user[@"desc"] = @"Hi all))) I am now with you !!!";
+//         user[@"desc"] = @"Hi all))) I am now with you !!!";
          user[@"photo"] = filePicture;
          user[@"membervip"] = @"vip";
          user[PF_USER_FACEBOOKID] = userData[@"id"];

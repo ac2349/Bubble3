@@ -34,6 +34,7 @@
 @property NSString *location;
 @property NSArray *interests;
 @property NSString *gender;
+@property NSString *lookingFor;
 
 ////thumb_photo
 @property PFFile* photo_thumb;
