@@ -866,16 +866,7 @@
 
 - (void)handleTap:(UITapGestureRecognizer *)tap
 {
-    self.profileView.userInteractionEnabled = NO;
-    [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveLinear
-                     animations:^(void) {
-                         self.profileImage.alpha = 0.8;
-                     }
-                     completion:^(BOOL b) {
-                         [self removeOldProfileImage];
-                         [self addNewProfileImage];
-                         self.profileView.userInteractionEnabled = YES;
-                     }];
+    [self performSegueWithIdentifier:@"testSegue" sender:self];
 }
 
 - (void)addNewProfileImage

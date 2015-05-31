@@ -53,7 +53,6 @@
 		42DBCC7B19AC2DE200CE6C93 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DBCC6519AC2B8000CE6C93 /* Social.framework */; };
 		42DBCCC519AC4E4200CE6C93 /* StarterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCC219AC4E4200CE6C93 /* StarterViewController.m */; };
 		42DBCCC819AC4E4B00CE6C93 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCC719AC4E4B00CE6C93 /* MainViewController.m */; };
-		42DBCCD219ACCD9A00CE6C93 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCD119ACCD9A00CE6C93 /* ProfileViewController.m */; };
 		42DBCCD619ACD87000CE6C93 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCD519ACD87000CE6C93 /* MessagesViewController.m */; };
 		42DBCCDD19ACDD9C00CE6C93 /* MessageParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCDC19ACDD9C00CE6C93 /* MessageParse.m */; };
 		42DBCCE019ACDF7000CE6C93 /* UserParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DBCCDF19ACDF7000CE6C93 /* UserParseHelper.m */; };
@@ -165,6 +164,7 @@
 		C2A90ED719F49CE900FC0D04 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A90ED619F49CE900FC0D04 /* UserProfileViewController.m */; };
 		C2CC355819F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CC355719F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
 		C2CC355A19F58ACD00AC86D1 /* mask_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CC355919F58ACD00AC86D1 /* mask_profile.png */; };
+		FB37A9521B1BB287009AB85C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB37A9511B1BB287009AB85C /* ProfileViewController.m */; };
 		FB4DE5CB1AD0C8B000904A7C /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */; };
 		FB6619AE1B02F7A800F4B246 /* GenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6619AD1B02F7A800F4B246 /* GenderViewController.m */; };
 		FB77702A1AF6E90700DDC264 /* EditMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7770291AF6E90700DDC264 /* EditMyProfileViewController.m */; };
@@ -261,8 +261,6 @@
 		42DBCCC219AC4E4200CE6C93 /* StarterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarterViewController.m; path = ViewControllers/StarterViewController.m; sourceTree = "<group>"; };
 		42DBCCC619AC4E4B00CE6C93 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ViewControllers/MainViewController.h; sourceTree = "<group>"; };
 		42DBCCC719AC4E4B00CE6C93 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewControllers/MainViewController.m; sourceTree = "<group>"; };
-		42DBCCD019ACCD9A00CE6C93 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ViewControllers/ProfileViewController.h; sourceTree = "<group>"; };
-		42DBCCD119ACCD9A00CE6C93 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ViewControllers/ProfileViewController.m; sourceTree = "<group>"; };
 		42DBCCD419ACD87000CE6C93 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesViewController.h; path = ViewControllers/MessagesViewController.h; sourceTree = "<group>"; };
 		42DBCCD519ACD87000CE6C93 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessagesViewController.m; path = ViewControllers/MessagesViewController.m; sourceTree = "<group>"; };
 		42DBCCDB19ACDD9C00CE6C93 /* MessageParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageParse.h; path = Model/MessageParse.h; sourceTree = "<group>"; };
@@ -457,6 +455,8 @@
 		C2CC355619F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIActivityIndicatorForSDWebImage.h"; sourceTree = "<group>"; };
 		C2CC355719F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIActivityIndicatorForSDWebImage.m"; sourceTree = "<group>"; };
 		C2CC355919F58ACD00AC86D1 /* mask_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask_profile.png; sourceTree = "<group>"; };
+		FB37A9501B1BB287009AB85C /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		FB37A9511B1BB287009AB85C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		FB4DE5C91AD0C8B000904A7C /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
 		FB6619AC1B02F7A800F4B246 /* GenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenderViewController.h; sourceTree = "<group>"; };
@@ -681,8 +681,8 @@
 				0BA4ECB119AE1EE200302E92 /* SidebarTableViewController.m */,
 				42DBCCC619AC4E4B00CE6C93 /* MainViewController.h */,
 				42DBCCC719AC4E4B00CE6C93 /* MainViewController.m */,
-				42DBCCD019ACCD9A00CE6C93 /* ProfileViewController.h */,
-				42DBCCD119ACCD9A00CE6C93 /* ProfileViewController.m */,
+				FB37A9501B1BB287009AB85C /* ProfileViewController.h */,
+				FB37A9511B1BB287009AB85C /* ProfileViewController.m */,
 				FB4DE5C91AD0C8B000904A7C /* MyProfileViewController.h */,
 				FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */,
 				FB7770281AF6E90700DDC264 /* EditMyProfileViewController.h */,
@@ -1194,7 +1194,6 @@
 				FB4DE5CB1AD0C8B000904A7C /* MyProfileViewController.m in Sources */,
 				C25E763B19EF5C1200779C23 /* UIImageView+WebCache.m in Sources */,
 				C237015A19D974260024F856 /* MBProgressHUD.m in Sources */,
-				42DBCCD219ACCD9A00CE6C93 /* ProfileViewController.m in Sources */,
 				42236F2719B7DEEE00539466 /* CBetterCollectionViewLayoutAttributes.m in Sources */,
 				C2300FB319E27DC80044A4E5 /* VipBuyTableViewController.m in Sources */,
 				42DBCC3B19AC20BB00CE6C93 /* AppDelegate.m in Sources */,
@@ -1209,6 +1208,7 @@
 				C237015C19D974260024F856 /* ProgressHUD.m in Sources */,
 				C25E763119EF5C1200779C23 /* SDWebImageDecoder.m in Sources */,
 				C25E747A19EAEF4200779C23 /* PurchaseHelper.m in Sources */,
+				FB37A9521B1BB287009AB85C /* ProfileViewController.m in Sources */,
 				C25E75F119EF29D500779C23 /* UIImage+AlphaAdditions.m in Sources */,
 				C2A90ED719F49CE900FC0D04 /* UserProfileViewController.m in Sources */,
 				C25E763719EF5C1200779C23 /* UIImage+GIF.m in Sources */,

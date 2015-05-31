@@ -58,7 +58,7 @@
     
     self.interestsArray = [[PFUser currentUser] objectForKey:@"interests"];
     
-    if (self.interestsArray.count > 3)
+    if (self.interestsArray.count >= 3)
     {
         NSArray *tempArray = [self.interestsArray subarrayWithRange:NSMakeRange(0, 3)];
         for (NSString *interestString in tempArray)
