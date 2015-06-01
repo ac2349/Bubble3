@@ -812,10 +812,10 @@
             </objects>
             <point key="canvasLocation" x="568" y="171"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="L8K-FZ-vR3">
             <objects>
-                <viewController id="ngh-iY-3zr" sceneMemberID="viewController">
+                <viewController title="Profile" id="ngh-iY-3zr" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rOw-jE-77F"/>
                         <viewControllerLayoutGuide type="bottom" id="Dco-z8-ObO"/>

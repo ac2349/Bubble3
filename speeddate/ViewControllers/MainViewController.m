@@ -160,6 +160,7 @@
     
     self.navigationController.navigationBar.barTintColor = BLUE_DEEP;
     self.navigationItem.title = @"Discover Settings";
+    
 
     inAnimation = NO;
     waveLayer=[CALayer layer];
@@ -862,11 +863,13 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     [self.profileView addGestureRecognizer:pan];
     [self.profileView addGestureRecognizer:tap];
+    
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)tap
 {
     [self performSegueWithIdentifier:@"testSegue" sender:self];
+    
 }
 
 - (void)addNewProfileImage
