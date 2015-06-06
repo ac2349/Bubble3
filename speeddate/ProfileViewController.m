@@ -31,6 +31,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+//    
+//    if (self.firstChosenUser !=nil)
+//    {
+//        self.chosenUser = self.firstChosenUser;
+//    }
+//    else if (self.otherChosenUser !=nil)
+//    {
+//        self.chosenUser = self.otherChosenUser;
+//        
+//    }
+
     self.navigationItem.title = @"Profile";
     
     self.pageImages = self.chosenUser.photosArray;

@@ -95,8 +95,8 @@
 @property NSString *minAge;
 @property NSString *maxAge;
 @property NSString *preferredSex;
-@property UserParseHelper *chosenUser;
-@property UserParseHelper *aUser;
+@property UserParseHelper *firstChosenUser;
+@property UserParseHelper *otherChosenUser;
 
 
 
@@ -337,11 +337,11 @@
 
 - (void) firstPlacement
 {
-    self.chosenUser = self.posibleMatchesArray.firstObject;
+    self.firstChosenUser = self.posibleMatchesArray.firstObject;
   
     self.arrayOfPhotoDataForeground = [NSMutableArray new];
-    [self.posibleMatchesArray removeObject:self.chosenUser];
-    self.currShowingProfile = self.chosenUser;
+    [self.posibleMatchesArray removeObject:self.firstChosenUser];
+    self.currShowingProfile = self.firstChosenUser;
     self.profileView.tag = profileViewTag;
     if (self.posibleMatchesArray.firstObject != nil) {
         [self placeBackgroundProfile];
@@ -353,9 +353,9 @@
         [self.view bringSubviewToFront:self.profileView];
         self.cyclePhotosButton.userInteractionEnabled = NO;
     }
-    PFFile* file = self.chosenUser.photo;
-    NSString* nickname = self.chosenUser.nickname;
-    NSNumber* age = self.chosenUser.age;
+    PFFile* file = self.firstChosenUser.photo;
+    NSString* nickname = self.firstChosenUser.nickname;
+    NSNumber* age = self.firstChosenUser.age;
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         [self.arrayOfPhotoDataForeground addObject:data];
         self.imageCountLabel.text = [NSString stringWithFormat:@"1 of %lu", (unsigned long)self.arrayOfPhotoDataForeground.count];
@@ -388,8 +388,8 @@
         [self.profileImage bringSubviewToFront:self.imageCountLabel];
         self.foregroundLabel = [[UILabel alloc] initWithFrame:[self createLabelRect]];
         self.matchPhoto = self.profileImage.image;
-        double distance = [self.chosenUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint];
-        if ([self.chosenUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint] < 1) {
+        double distance = [self.firstChosenUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint];
+        if ([self.firstChosenUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint] < 1) {
             distance = 1;
         }
         self.foregroundLabel.text = [NSString stringWithFormat:@"%@", nickname];
@@ -430,37 +430,37 @@
         self.foregroundDescriptionLabel = [[UILabel alloc] initWithFrame:[self createLabelDescription]];
         self.foregroundDescriptionLabel.numberOfLines = 0;
         self.foregroundDescriptionLabel.textAlignment = NSTextAlignmentJustified;
-        self.foregroundDescriptionLabel.text = self.chosenUser.desc;
+        self.foregroundDescriptionLabel.text = self.firstChosenUser.desc;
         self.foregroundDescriptionLabel.textColor = MENU_GRAY_LIGHT;
         [self.foregroundDescriptionLabel setFont:descFont];
         [self.profileView addSubview:self.foregroundDescriptionLabel];
         [self setPanGestureRecognizer];
         self.firstTime = NO;
 
-        if ([self.chosenUser.photo1 isKindOfClass:[PFFile class]]) {
-            PFFile* photo1 = self.chosenUser.photo1;
+        if ([self.firstChosenUser.photo1 isKindOfClass:[PFFile class]]) {
+            PFFile* photo1 = self.firstChosenUser.photo1;
             [photo1 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 [self.arrayOfPhotoDataForeground addObject:data];
                 self.matchPhoto = [UIImage imageWithData:data];
                 self.imageCountLabel.text = [NSString stringWithFormat:@"1 of %lu", (unsigned long)self.arrayOfPhotoDataForeground.count];
         }];
         }
-        if ([self.chosenUser.photo2 isKindOfClass:[PFFile class]]) {
-            PFFile* photo2 = self.chosenUser.photo2;
+        if ([self.firstChosenUser.photo2 isKindOfClass:[PFFile class]]) {
+            PFFile* photo2 = self.firstChosenUser.photo2;
             [photo2 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 [self.arrayOfPhotoDataForeground addObject:data];
                 self.imageCountLabel.text = [NSString stringWithFormat:@"1 of %lu", (unsigned long)self.arrayOfPhotoDataForeground.count];
             }];
         }
-        if ([self.chosenUser.photo3 isKindOfClass:[PFFile class]]) {
-            PFFile* photo3 = self.chosenUser.photo3;
+        if ([self.firstChosenUser.photo3 isKindOfClass:[PFFile class]]) {
+            PFFile* photo3 = self.firstChosenUser.photo3;
             [photo3 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 [self.arrayOfPhotoDataForeground addObject:data];
                 self.imageCountLabel.text = [NSString stringWithFormat:@"1 of %lu", (unsigned long)self.arrayOfPhotoDataForeground.count];
             }];
         }
-        if ([self.chosenUser.photo4 isKindOfClass:[PFFile class]]) {
-            PFFile* photo4 = self.chosenUser.photo4;
+        if ([self.firstChosenUser.photo4 isKindOfClass:[PFFile class]]) {
+            PFFile* photo4 = self.firstChosenUser.photo4;
             [photo4 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 [self.arrayOfPhotoDataForeground addObject:data];
                 self.imageCountLabel.text = [NSString stringWithFormat:@"1 of %lu", (unsigned long)self.arrayOfPhotoDataForeground.count];
@@ -477,13 +477,13 @@
 
 -(void) placeBackgroundProfile
 {
-    self.aUser = self.posibleMatchesArray.firstObject;
-    [self.posibleMatchesArray removeObject:self.aUser];
-    self.backgroundUserProfile = self.aUser;
+    self.otherChosenUser = self.posibleMatchesArray.firstObject;
+    [self.posibleMatchesArray removeObject:self.otherChosenUser];
+    self.backgroundUserProfile = self.otherChosenUser;
     self.arrayOfPhotoDataBackground = [NSMutableArray new];
-    PFFile* file = self.aUser[@"photo"];
-    NSString* nickname = self.aUser[@"nickname"];
-    NSNumber* age = self.aUser[@"age"];
+    PFFile* file = self.otherChosenUser[@"photo"];
+    NSString* nickname = self.otherChosenUser[@"nickname"];
+    NSNumber* age = self.otherChosenUser[@"age"];
    
     
     self.backgroundView = [[UIView alloc] initWithFrame:[self createBackgroundMatchRect]];
@@ -508,8 +508,8 @@
         [self.backgroundImage setContentMode:UIViewContentModeScaleAspectFit];
         [self.backgroundView addSubview:self.backgroundImage];
         self.backgroundLabel = [[UILabel alloc] initWithFrame:[self createBackgroundLabelRect]];
-        double distance = [self.aUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint];
-        if ([self.aUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint] < 1) {
+        double distance = [self.otherChosenUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint];
+        if ([self.otherChosenUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint] < 1) {
             distance = 1;
         }
         self.backgroundLabel.text = [NSString stringWithFormat:@"%@", nickname];
@@ -552,33 +552,33 @@
         self.backgroundDescriptionLabel = [[UILabel alloc] initWithFrame:[self createBackgroundLabelDescription]];
         self.backgroundDescriptionLabel.numberOfLines = 0;
         self.backgroundDescriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.backgroundDescriptionLabel.text = self.aUser.desc;
+        self.backgroundDescriptionLabel.text = self.otherChosenUser.desc;
         self.backgroundDescriptionLabel.textColor = MENU_GRAY_LIGHT;
         [self.backgroundDescriptionLabel setFont:descFont];
         [self.backgroundView addSubview:self.backgroundDescriptionLabel];
         [self.view sendSubviewToBack:self.firstBox];
         [self.view sendSubviewToBack:self.secondBox];
     }];
-    if ([self.aUser[@"photo1"] isKindOfClass:[PFFile class]]) {
-        PFFile* photo1 = self.aUser[@"photo1"];
+    if ([self.otherChosenUser[@"photo1"] isKindOfClass:[PFFile class]]) {
+        PFFile* photo1 = self.otherChosenUser[@"photo1"];
         [photo1 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             [self.arrayOfPhotoDataBackground addObject:data];
         }];
     }
-    if ([self.aUser[@"photo2"] isKindOfClass:[PFFile class]]) {
-        PFFile* photo2 = self.aUser[@"photo2"];
+    if ([self.otherChosenUser[@"photo2"] isKindOfClass:[PFFile class]]) {
+        PFFile* photo2 = self.otherChosenUser[@"photo2"];
         [photo2 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             [self.arrayOfPhotoDataBackground addObject:data];
         }];
     }
-    if ([self.aUser[@"photo3"] isKindOfClass:[PFFile class]]) {
-        PFFile* photo3 = self.aUser[@"photo3"];
+    if ([self.otherChosenUser[@"photo3"] isKindOfClass:[PFFile class]]) {
+        PFFile* photo3 = self.otherChosenUser[@"photo3"];
         [photo3 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             [self.arrayOfPhotoDataBackground addObject:data];
         }];
     }
-    if ([self.aUser[@"photo4"] isKindOfClass:[PFFile class]]) {
-        PFFile* photo4 = self.aUser[@"photo4"];
+    if ([self.otherChosenUser[@"photo4"] isKindOfClass:[PFFile class]]) {
+        PFFile* photo4 = self.otherChosenUser[@"photo4"];
         [photo4 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             [self.arrayOfPhotoDataBackground addObject:data];
         }];
@@ -968,7 +968,7 @@
 
 - (void)dislikeAProfile
 {
-    self.chosenUser = nil;
+    self.firstChosenUser = nil;
    
     self.profileView.gestureRecognizers = [NSArray new];
     [self.profileView removeFromSuperview];
@@ -1029,6 +1029,7 @@
 
 - (void)likeAProfile
 {
+    self.firstChosenUser = nil;
   
     self.profileView.gestureRecognizers = [NSArray new];
     [self.profileView removeFromSuperview];
@@ -1205,14 +1206,17 @@
     {
         ProfileViewController *vc = segue.destinationViewController;
 
-        if (self.chosenUser)
-        {
-            vc.chosenUser = self.chosenUser;
-        }
-        else
-        {
-            vc.aUser = self.aUser;
-        }
+//        if (self.firstChosenUser)
+//        {
+//            vc.firstChosenUser = self.firstChosenUser;
+//            
+//        }
+//        else
+//        {
+//            vc.otherChosenUser = self.otherChosenUser;
+//            
+//        }
+        vc.chosenUser = self.currShowingProfile;
  
         
     }

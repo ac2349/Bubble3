@@ -10,7 +10,8 @@
 #import "UserParseHelper.h"
 
 @interface ProfileViewController : UIViewController
+@property UserParseHelper *firstChosenUser;
+@property UserParseHelper *otherChosenUser;
 @property UserParseHelper *chosenUser;
-@property UserParseHelper *aUser;
 
 @end
