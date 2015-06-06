@@ -11,5 +11,6 @@
 
 @interface ProfileViewController : UIViewController
 @property UserParseHelper *chosenUser;
+@property UserParseHelper *aUser;
 
 @end

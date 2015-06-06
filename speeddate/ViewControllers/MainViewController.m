@@ -96,6 +96,7 @@
 @property NSString *maxAge;
 @property NSString *preferredSex;
 @property UserParseHelper *chosenUser;
+@property UserParseHelper *aUser;
 
 
 
@@ -476,13 +477,13 @@
 
 -(void) placeBackgroundProfile
 {
-    UserParseHelper* aUser = self.posibleMatchesArray.firstObject;
-    [self.posibleMatchesArray removeObject:aUser];
-    self.backgroundUserProfile = aUser;
+    self.aUser = self.posibleMatchesArray.firstObject;
+    [self.posibleMatchesArray removeObject:self.aUser];
+    self.backgroundUserProfile = self.aUser;
     self.arrayOfPhotoDataBackground = [NSMutableArray new];
-    PFFile* file = aUser[@"photo"];
-    NSString* nickname = aUser[@"nickname"];
-    NSNumber* age = aUser[@"age"];
+    PFFile* file = self.aUser[@"photo"];
+    NSString* nickname = self.aUser[@"nickname"];
+    NSNumber* age = self.aUser[@"age"];
    
     
     self.backgroundView = [[UIView alloc] initWithFrame:[self createBackgroundMatchRect]];
@@ -507,8 +508,8 @@
         [self.backgroundImage setContentMode:UIViewContentModeScaleAspectFit];
         [self.backgroundView addSubview:self.backgroundImage];
         self.backgroundLabel = [[UILabel alloc] initWithFrame:[self createBackgroundLabelRect]];
-        double distance = [aUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint];
-        if ([aUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint] < 1) {
+        double distance = [self.aUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint];
+        if ([self.aUser.geoPoint distanceInKilometersTo:self.curUser.geoPoint] < 1) {
             distance = 1;
         }
         self.backgroundLabel.text = [NSString stringWithFormat:@"%@", nickname];
@@ -551,33 +552,33 @@
         self.backgroundDescriptionLabel = [[UILabel alloc] initWithFrame:[self createBackgroundLabelDescription]];
         self.backgroundDescriptionLabel.numberOfLines = 0;
         self.backgroundDescriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.backgroundDescriptionLabel.text = aUser.desc;
+        self.backgroundDescriptionLabel.text = self.aUser.desc;
         self.backgroundDescriptionLabel.textColor = MENU_GRAY_LIGHT;
         [self.backgroundDescriptionLabel setFont:descFont];
         [self.backgroundView addSubview:self.backgroundDescriptionLabel];
         [self.view sendSubviewToBack:self.firstBox];
         [self.view sendSubviewToBack:self.secondBox];
     }];
-    if ([aUser[@"photo1"] isKindOfClass:[PFFile class]]) {
-        PFFile* photo1 = aUser[@"photo1"];
+    if ([self.aUser[@"photo1"] isKindOfClass:[PFFile class]]) {
+        PFFile* photo1 = self.aUser[@"photo1"];
         [photo1 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             [self.arrayOfPhotoDataBackground addObject:data];
         }];
     }
-    if ([aUser[@"photo2"] isKindOfClass:[PFFile class]]) {
-        PFFile* photo2 = aUser[@"photo2"];
+    if ([self.aUser[@"photo2"] isKindOfClass:[PFFile class]]) {
+        PFFile* photo2 = self.aUser[@"photo2"];
         [photo2 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             [self.arrayOfPhotoDataBackground addObject:data];
         }];
     }
-    if ([aUser[@"photo3"] isKindOfClass:[PFFile class]]) {
-        PFFile* photo3 = aUser[@"photo3"];
+    if ([self.aUser[@"photo3"] isKindOfClass:[PFFile class]]) {
+        PFFile* photo3 = self.aUser[@"photo3"];
         [photo3 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             [self.arrayOfPhotoDataBackground addObject:data];
         }];
     }
-    if ([aUser[@"photo4"] isKindOfClass:[PFFile class]]) {
-        PFFile* photo4 = aUser[@"photo4"];
+    if ([self.aUser[@"photo4"] isKindOfClass:[PFFile class]]) {
+        PFFile* photo4 = self.aUser[@"photo4"];
         [photo4 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             [self.arrayOfPhotoDataBackground addObject:data];
         }];
@@ -872,7 +873,6 @@
 - (void)handleTap:(UITapGestureRecognizer *)tap
 {
     [self performSegueWithIdentifier:@"mainToProfileSegue" sender:self];
-    
 }
 
 - (void)addNewProfileImage
@@ -968,6 +968,7 @@
 
 - (void)dislikeAProfile
 {
+    self.chosenUser = nil;
    
     self.profileView.gestureRecognizers = [NSArray new];
     [self.profileView removeFromSuperview];
@@ -1203,7 +1204,16 @@
     else if ([segue.identifier isEqualToString:@"mainToProfileSegue"])
     {
         ProfileViewController *vc = segue.destinationViewController;
-        vc.chosenUser = self.chosenUser;
+
+        if (self.chosenUser)
+        {
+            vc.chosenUser = self.chosenUser;
+        }
+        else
+        {
+            vc.aUser = self.aUser;
+        }
+ 
         
     }
 }
