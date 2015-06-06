@@ -866,6 +866,7 @@
     [self.profileView addGestureRecognizer:pan];
     [self.profileView addGestureRecognizer:tap];
     
+    
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)tap
