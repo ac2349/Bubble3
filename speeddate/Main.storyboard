@@ -755,15 +755,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeO-SB-QWK">
-                                <rect key="frame" x="11" y="473" width="113" height="102"/>
-                                <state key="normal" image="dislike">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dislikeButtonHit:" destination="aqZ-SE-PFE" eventType="touchUpInside" id="UdX-bs-GB3"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Scanning..." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVY-JI-f2V">
                                 <rect key="frame" x="20" y="202" width="280" height="42"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -771,12 +762,21 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1J8-9X-ye5">
-                                <rect key="frame" x="200" y="473" width="113" height="102"/>
+                                <rect key="frame" x="200" y="397" width="113" height="102"/>
                                 <state key="normal" image="like">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="likeButtonHit:" destination="aqZ-SE-PFE" eventType="touchUpInside" id="OWl-VP-99n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeO-SB-QWK">
+                                <rect key="frame" x="11" y="397" width="113" height="102"/>
+                                <state key="normal" image="dislike">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dislikeButtonHit:" destination="aqZ-SE-PFE" eventType="touchUpInside" id="UdX-bs-GB3"/>
                                 </connections>
                             </button>
                         </subviews>

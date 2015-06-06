@@ -40,7 +40,7 @@
 #define profileViewTag 3
 #define likeViewTag 2
 #define dislikeViewTag 1
-#define topMarginView 60
+#define topMarginView 5 //original 60
 #define cornRadius 0
 
 @interface MainViewController () <UIGestureRecognizerDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>{
@@ -370,6 +370,7 @@
         self.profileView.layer.shadowOpacity = 0.5;
         self.profileImage.tag = currentProfileView;
         [self.view addSubview:self.profileView];
+        
         self.profileImage = [[UIImageView alloc] initWithFrame:[self createPhotoRect]];
         self.profileImage.contentMode = UIViewContentModeScaleAspectFill;
         self.profileImage.tag = currentProfileImage;
@@ -378,6 +379,7 @@
         self.profileImage.backgroundColor =[UIColor blackColor];
         self.profileImage.layer.cornerRadius = cornRadius;
         [self.profileView addSubview:self.profileImage];
+        
         self.imageCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(220, 255, 70, 30)];
         self.imageCountLabel.textColor = WHITE_COLOR;
         self.imageCountLabel.textAlignment = NSTextAlignmentCenter;
