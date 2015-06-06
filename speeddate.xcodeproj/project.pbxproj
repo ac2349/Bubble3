@@ -164,6 +164,7 @@
 		C2A90ED719F49CE900FC0D04 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A90ED619F49CE900FC0D04 /* UserProfileViewController.m */; };
 		C2CC355819F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CC355719F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
 		C2CC355A19F58ACD00AC86D1 /* mask_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CC355919F58ACD00AC86D1 /* mask_profile.png */; };
+		FB06B7951B238F7F00E57A78 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB06B7941B238F7F00E57A78 /* ProfileCollectionViewCell.m */; };
 		FB37A9521B1BB287009AB85C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB37A9511B1BB287009AB85C /* ProfileViewController.m */; };
 		FB4DE5CB1AD0C8B000904A7C /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */; };
 		FB6619AE1B02F7A800F4B246 /* GenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6619AD1B02F7A800F4B246 /* GenderViewController.m */; };
@@ -455,6 +456,8 @@
 		C2CC355619F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIActivityIndicatorForSDWebImage.h"; sourceTree = "<group>"; };
 		C2CC355719F5825E00AC86D1 /* UIImageView+UIActivityIndicatorForSDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIActivityIndicatorForSDWebImage.m"; sourceTree = "<group>"; };
 		C2CC355919F58ACD00AC86D1 /* mask_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask_profile.png; sourceTree = "<group>"; };
+		FB06B7931B238F7F00E57A78 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		FB06B7941B238F7F00E57A78 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		FB37A9501B1BB287009AB85C /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		FB37A9511B1BB287009AB85C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		FB4DE5C91AD0C8B000904A7C /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
@@ -677,22 +680,16 @@
 		42DBCC8619AC3DA000CE6C93 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				FB06B7971B238FF300E57A78 /* My Profile */,
+				FB06B7961B238FD600E57A78 /* User Profile */,
 				0BA4ECB019AE1EE200302E92 /* SidebarTableViewController.h */,
 				0BA4ECB119AE1EE200302E92 /* SidebarTableViewController.m */,
 				42DBCCC619AC4E4B00CE6C93 /* MainViewController.h */,
 				42DBCCC719AC4E4B00CE6C93 /* MainViewController.m */,
-				FB37A9501B1BB287009AB85C /* ProfileViewController.h */,
-				FB37A9511B1BB287009AB85C /* ProfileViewController.m */,
-				FB4DE5C91AD0C8B000904A7C /* MyProfileViewController.h */,
-				FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */,
-				FB7770281AF6E90700DDC264 /* EditMyProfileViewController.h */,
-				FB7770291AF6E90700DDC264 /* EditMyProfileViewController.m */,
 				C2300FAE19E26E700044A4E5 /* CategoriesViewController.h */,
 				C2300FAF19E26E700044A4E5 /* CategoriesViewController.m */,
 				FB6619AC1B02F7A800F4B246 /* GenderViewController.h */,
 				FB6619AD1B02F7A800F4B246 /* GenderViewController.m */,
-				FB8C588A1AEC6C860098E997 /* MyProfileCollectionViewCell.h */,
-				FB8C588B1AEC6C860098E997 /* MyProfileCollectionViewCell.m */,
 				4283BD8119B9584300AD1F63 /* MatchViewController.h */,
 				4283BD8219B9584300AD1F63 /* MatchViewController.m */,
 				0BAE8A9819BBBD75009B3A52 /* MatchLocationViewController.h */,
@@ -1031,6 +1028,30 @@
 			name = CollectionView;
 			sourceTree = "<group>";
 		};
+		FB06B7961B238FD600E57A78 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FB37A9501B1BB287009AB85C /* ProfileViewController.h */,
+				FB37A9511B1BB287009AB85C /* ProfileViewController.m */,
+				FB06B7931B238F7F00E57A78 /* ProfileCollectionViewCell.h */,
+				FB06B7941B238F7F00E57A78 /* ProfileCollectionViewCell.m */,
+			);
+			name = "User Profile";
+			sourceTree = "<group>";
+		};
+		FB06B7971B238FF300E57A78 /* My Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FB4DE5C91AD0C8B000904A7C /* MyProfileViewController.h */,
+				FB4DE5CA1AD0C8B000904A7C /* MyProfileViewController.m */,
+				FB7770281AF6E90700DDC264 /* EditMyProfileViewController.h */,
+				FB7770291AF6E90700DDC264 /* EditMyProfileViewController.m */,
+				FB8C588A1AEC6C860098E997 /* MyProfileCollectionViewCell.h */,
+				FB8C588B1AEC6C860098E997 /* MyProfileCollectionViewCell.m */,
+			);
+			name = "My Profile";
+			sourceTree = "<group>";
+		};
 		FBFB1C381AA3FE130068B1D5 /* Slider */ = {
 			isa = PBXGroup;
 			children = (
@@ -1210,6 +1231,7 @@
 				C25E747A19EAEF4200779C23 /* PurchaseHelper.m in Sources */,
 				FB37A9521B1BB287009AB85C /* ProfileViewController.m in Sources */,
 				C25E75F119EF29D500779C23 /* UIImage+AlphaAdditions.m in Sources */,
+				FB06B7951B238F7F00E57A78 /* ProfileCollectionViewCell.m in Sources */,
 				C2A90ED719F49CE900FC0D04 /* UserProfileViewController.m in Sources */,
 				C25E763719EF5C1200779C23 /* UIImage+GIF.m in Sources */,
 				C237019119D974390024F856 /* UIWebView+AFNetworking.m in Sources */,

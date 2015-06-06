@@ -28,8 +28,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *lookingForTextView;
 @property NSMutableArray *interestsArray;
 @property (weak, nonatomic) IBOutlet UILabel *topInterestsLabel;
-@property NSMutableArray *testArray;
-@property NSString *testString;
 
 @end
 
@@ -43,8 +41,6 @@
     self.sidebarButton.target = self.revealViewController;
     self.sidebarButton.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
-    self.testArray = [[NSMutableArray alloc]init];
     
     self.pageImages = [[PFUser currentUser] objectForKey:@"photosArray"];
     
@@ -121,7 +117,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyProfileCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"profileCell" forIndexPath:indexPath];
+    MyProfileCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"myProfileCell" forIndexPath:indexPath];
     NSString *urlJPG = [self.pageImages objectAtIndex:indexPath.row];
     NSURL *url = [NSURL URLWithString:urlJPG];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

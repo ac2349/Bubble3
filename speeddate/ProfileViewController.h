@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserParseHelper.h"
 
 @interface ProfileViewController : UIViewController
+@property UserParseHelper *chosenUser;
 
 @end
