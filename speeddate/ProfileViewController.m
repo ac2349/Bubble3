@@ -39,7 +39,7 @@
 
     self.locationLabel.text = [NSString stringWithFormat:@"Lives in %@", self.chosenUser.location];
     
-    self.aboutMeTextView.text = self.chosenUser.description;
+    self.aboutMeTextView.text = self.chosenUser.desc;
     
     self.lookingForTextView.text = self.chosenUser.lookingFor;
     
