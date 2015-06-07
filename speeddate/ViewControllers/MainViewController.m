@@ -97,6 +97,7 @@
 @property NSString *preferredSex;
 @property UserParseHelper *firstChosenUser;
 @property UserParseHelper *otherChosenUser;
+@property (weak, nonatomic) IBOutlet UIView *matchView;
 
 
 
@@ -316,6 +317,7 @@
             [self.posibleMatchesArray addObjectsFromArray:objects];
        
             self.activityLabel.text = @"No results found";
+      
             
             if (objects == 0) {
                  [waveLayer setHidden:NO];

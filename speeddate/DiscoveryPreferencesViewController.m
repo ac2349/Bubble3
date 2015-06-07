@@ -120,6 +120,12 @@
 
 }
 
+#pragma mark - DONE BUTTON
+
+- (IBAction)doneButtonPressed:(UIBarButtonItem *)sender
+{
+    [self performSegueWithIdentifier:@"discoverySettingsSegue" sender:self];
+}
 
 #pragma mark - SEGUE
 
