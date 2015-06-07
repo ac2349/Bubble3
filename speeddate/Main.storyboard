@@ -1393,8 +1393,8 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pse-Qb-CtH">
                                                 <rect key="frame" x="20" y="0.0" width="320" height="320"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="320" id="adB-Qg-EL1"/>
-                                                    <constraint firstAttribute="height" constant="320" id="emM-HO-cum"/>
+                                                    <constraint firstAttribute="height" constant="320" id="5HH-Dw-JfN"/>
+                                                    <constraint firstAttribute="width" constant="320" id="LeQ-IC-SJy"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hPg-21-OuQ">
                                                     <size key="itemSize" width="50" height="50"/>
@@ -1410,17 +1410,17 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hve-0i-6CB">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hve-0i-6CB">
                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottomMargin" secondItem="Hve-0i-6CB" secondAttribute="bottom" constant="-46" id="8jF-4j-Svo"/>
-                                                            <constraint firstItem="Hve-0i-6CB" firstAttribute="leading" secondItem="ctP-K7-G8p" secondAttribute="leadingMargin" constant="-8" id="DoE-wa-bx6"/>
-                                                            <constraint firstAttribute="trailingMargin" secondItem="Hve-0i-6CB" secondAttribute="trailing" constant="-8" id="EQz-JI-aAL"/>
-                                                            <constraint firstItem="Hve-0i-6CB" firstAttribute="top" secondItem="ctP-K7-G8p" secondAttribute="topMargin" constant="-8" id="RPw-3m-1yF"/>
+                                                            <constraint firstAttribute="bottomMargin" secondItem="Hve-0i-6CB" secondAttribute="bottom" constant="-8" id="0oz-4B-ain"/>
+                                                            <constraint firstItem="Hve-0i-6CB" firstAttribute="top" secondItem="ctP-K7-G8p" secondAttribute="topMargin" constant="-8" id="G5a-Tp-Kol"/>
+                                                            <constraint firstItem="Hve-0i-6CB" firstAttribute="leading" secondItem="ctP-K7-G8p" secondAttribute="leadingMargin" constant="-8" id="ht1-RA-bxs"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="Hve-0i-6CB" secondAttribute="trailing" constant="-8" id="tch-ik-MYK"/>
                                                         </constraints>
                                                         <size key="customSize" width="320" height="320"/>
                                                         <connections>
@@ -1538,7 +1538,6 @@
                                             <constraint firstItem="gGL-Au-Gxm" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="UdH-Wz-bxm"/>
                                             <constraint firstItem="iM4-Pe-gAd" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="WLg-dt-R9G"/>
                                             <constraint firstItem="Veq-vU-hQt" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="X1N-9A-Ucr"/>
-                                            <constraint firstItem="Pse-Qb-CtH" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="Ylb-w3-qy3"/>
                                             <constraint firstItem="ucy-Pr-iTA" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="eqk-Rv-Vd5"/>
                                             <constraint firstItem="gGL-Au-Gxm" firstAttribute="top" secondItem="iM4-Pe-gAd" secondAttribute="bottom" constant="8" id="f2g-nj-W7r"/>
                                             <constraint firstItem="bub-59-hZX" firstAttribute="top" secondItem="LZk-if-mPg" secondAttribute="bottom" constant="-6" id="f3i-HK-hvh"/>
@@ -1546,14 +1545,14 @@
                                             <constraint firstAttribute="trailing" secondItem="Veq-vU-hQt" secondAttribute="trailing" constant="20" id="hg6-gU-cff"/>
                                             <constraint firstItem="ucy-Pr-iTA" firstAttribute="top" secondItem="gGL-Au-Gxm" secondAttribute="bottom" constant="-12" id="hzy-jd-1eZ"/>
                                             <constraint firstItem="LZk-if-mPg" firstAttribute="top" secondItem="6Ac-2Z-zDn" secondAttribute="bottom" constant="-4" id="iMQ-Kq-m51"/>
-                                            <constraint firstAttribute="trailing" secondItem="Pse-Qb-CtH" secondAttribute="trailing" constant="20" id="oHa-23-Tm6"/>
                                             <constraint firstAttribute="trailing" secondItem="gGL-Au-Gxm" secondAttribute="trailing" constant="20" id="pG4-q2-Bne"/>
-                                            <constraint firstItem="Pse-Qb-CtH" firstAttribute="top" secondItem="CTR-zY-bvc" secondAttribute="top" id="pnY-pA-rqN"/>
                                             <constraint firstItem="Zkb-nX-FT7" firstAttribute="top" secondItem="m6U-dv-8a4" secondAttribute="bottom" constant="5" id="psk-aL-v6t"/>
+                                            <constraint firstItem="Pse-Qb-CtH" firstAttribute="leading" secondItem="CTR-zY-bvc" secondAttribute="leading" constant="20" id="qyA-Vv-xBE"/>
                                             <constraint firstAttribute="trailing" secondItem="6Ac-2Z-zDn" secondAttribute="trailing" constant="20" id="s8P-41-thI"/>
                                             <constraint firstAttribute="trailing" secondItem="Zkb-nX-FT7" secondAttribute="trailing" constant="20" id="sZQ-Bk-Mjj"/>
                                             <constraint firstAttribute="trailing" secondItem="iM4-Pe-gAd" secondAttribute="trailing" constant="20" id="t2r-or-BkP"/>
                                             <constraint firstAttribute="trailing" secondItem="LZk-if-mPg" secondAttribute="trailing" constant="20" id="vRu-Vm-78k"/>
+                                            <constraint firstItem="Pse-Qb-CtH" firstAttribute="top" secondItem="CTR-zY-bvc" secondAttribute="top" id="zbw-kS-BSI"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1604,7 +1603,6 @@
                         <outlet property="scrollView" destination="VvM-6u-HLm" id="DHD-Y7-MKx"/>
                         <outlet property="sidebarButton" destination="26j-PY-Sz3" id="5RD-ri-3h5"/>
                         <outlet property="topInterestsLabel" destination="Zkb-nX-FT7" id="V0y-3M-8hF"/>
-                        <outlet property="widthConstraint" destination="0YG-nq-9O7" id="hTy-1Y-yqv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q90-s4-Vqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
