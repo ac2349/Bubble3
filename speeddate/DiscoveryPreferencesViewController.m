@@ -21,6 +21,12 @@
 @property NSMutableArray *discoverySettings;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sexSegmentedControl;
 @property NSString *selectedSex;
+@property (weak, nonatomic) IBOutlet UISwitch *happyHourSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *diningSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *outdoorsSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *travelSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *fitnessSwitch;
+@property NSMutableArray *interestsArray;
 
 
 
@@ -41,12 +47,14 @@
     [self configureSliders];
     
     self.discoverySettings = [NSMutableArray new];
+    self.interestsArray = [NSMutableArray new];
     
     self.selectedSex = @"both";
-
+    
+    [self getInterests];
 }
 
-
+#pragma mark - SEGMENTED CONTROL
 - (IBAction)segmentedControlAction:(UISegmentedControl *)sender
 {
     if (self.sexSegmentedControl.selectedSegmentIndex == 0)
@@ -120,6 +128,15 @@
 
 }
 
+#pragma mark - SWITCHES
+- (void)getInterests
+{
+    if (self.happyHourSwitch.isOn)
+    {
+        [self.interestsArray addObject:@"Happy Hour"];
+    }
+}
+
 #pragma mark - DONE BUTTON
 
 - (IBAction)doneButtonPressed:(UIBarButtonItem *)sender
@@ -131,7 +148,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
     
     [self.discoverySettings addObject:self.distanceLabel.text];
 

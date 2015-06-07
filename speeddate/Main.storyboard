@@ -1384,7 +1384,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VvM-6u-HLm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VvM-6u-HLm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="565"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTR-zY-bvc" userLabel="Content View">
@@ -2457,7 +2457,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cM3-1U-S2m"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Aoy-h0-nfU">
-                        <rect key="frame" x="0.0" y="64" width="320" height="636"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FW2-Mc-F63">
@@ -3218,12 +3218,17 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ageSlider" destination="Lok-44-fkk" id="nBF-VP-WQ4"/>
+                        <outlet property="diningSwitch" destination="aHN-lU-bPY" id="1Me-LJ-2B3"/>
                         <outlet property="distanceLabel" destination="xJ0-QP-fJk" id="Z9J-0b-CFg"/>
                         <outlet property="distanceSlider" destination="53a-TT-KST" id="aau-OV-LCm"/>
+                        <outlet property="fitnessSwitch" destination="Z1l-cz-5rQ" id="hbv-1f-vYE"/>
+                        <outlet property="happyHourSwitch" destination="8xI-Zb-hj7" id="Kje-4c-aOf"/>
                         <outlet property="maxAge" destination="hd4-LR-frU" id="VkJ-0M-wMy"/>
                         <outlet property="minAge" destination="LUR-JE-vcJ" id="UtC-cW-5hr"/>
+                        <outlet property="outdoorsSwitch" destination="dMd-wc-e38" id="ht1-dj-TlH"/>
                         <outlet property="sexSegmentedControl" destination="uXy-64-hin" id="bdp-Fa-9oD"/>
                         <outlet property="sidebarButton" destination="vDZ-md-F6x" id="rba-0M-80r"/>
+                        <outlet property="travelSwitch" destination="u48-JO-Rgb" id="8jN-eD-hTm"/>
                         <segue destination="aqZ-SE-PFE" kind="push" identifier="discoverySettingsSegue" id="77y-ng-4Rh"/>
                     </connections>
                 </viewController>
