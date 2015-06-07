@@ -765,51 +765,54 @@
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1J8-9X-ye5">
-                                <rect key="frame" x="225" y="485" width="75" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="4iU-8B-Oq9"/>
-                                    <constraint firstAttribute="width" constant="75" id="DWm-VN-YdK"/>
-                                </constraints>
-                                <state key="normal" image="like">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="likeButtonHit:" destination="aqZ-SE-PFE" eventType="touchUpInside" id="OWl-VP-99n"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeO-SB-QWK">
-                                <rect key="frame" x="20" y="485" width="75" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="KSw-by-oAY"/>
-                                    <constraint firstAttribute="height" constant="75" id="hIP-no-z94"/>
-                                </constraints>
-                                <state key="normal" image="dislike">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dislikeButtonHit:" destination="aqZ-SE-PFE" eventType="touchUpInside" id="UdX-bs-GB3"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6HO-ht-7Rz">
-                                <rect key="frame" x="0.0" y="64" width="320" height="399"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeO-SB-QWK">
+                                        <rect key="frame" x="8" y="421" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="Dod-r6-tYo"/>
+                                            <constraint firstAttribute="width" constant="75" id="WdL-oa-Khg"/>
+                                        </constraints>
+                                        <state key="normal" image="dislike">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dislikeButtonHit:" destination="aqZ-SE-PFE" eventType="touchUpInside" id="UdX-bs-GB3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1J8-9X-ye5">
+                                        <rect key="frame" x="237" y="421" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="QgW-yD-buc"/>
+                                            <constraint firstAttribute="height" constant="75" id="Wgo-XU-f1E"/>
+                                        </constraints>
+                                        <state key="normal" image="like">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="likeButtonHit:" destination="aqZ-SE-PFE" eventType="touchUpInside" id="OWl-VP-99n"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Ze6-UR-VrR"/>
-                                    <constraint firstAttribute="height" constant="399" id="vCr-RO-dgk"/>
+                                    <constraint firstAttribute="bottom" secondItem="1J8-9X-ye5" secondAttribute="bottom" constant="8" id="32x-Pq-ndl"/>
+                                    <constraint firstAttribute="bottom" secondItem="AeO-SB-QWK" secondAttribute="bottom" constant="8" id="AKh-ni-Jl4"/>
+                                    <constraint firstItem="AeO-SB-QWK" firstAttribute="leading" secondItem="6HO-ht-7Rz" secondAttribute="leading" constant="8" id="OJz-h6-EBC"/>
+                                    <constraint firstAttribute="height" constant="504" id="jgs-hP-eeO"/>
+                                    <constraint firstAttribute="width" constant="320" id="oIE-9X-L3l"/>
+                                    <constraint firstAttribute="trailing" secondItem="1J8-9X-ye5" secondAttribute="trailing" constant="8" id="vV2-7i-GU8"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="aVY-JI-f2V" secondAttribute="centerY" id="0xw-b4-dbH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1J8-9X-ye5" secondAttribute="trailing" constant="4" id="1RB-G4-Pf6"/>
-                            <constraint firstItem="6HO-ht-7Rz" firstAttribute="leading" secondItem="YIb-cp-v2d" secondAttribute="leadingMargin" constant="-16" id="77q-FX-RFI"/>
-                            <constraint firstItem="6HO-ht-7Rz" firstAttribute="top" secondItem="Ztl-fL-sKi" secondAttribute="bottom" id="OYm-1p-CUw"/>
-                            <constraint firstItem="rgK-Ho-hIt" firstAttribute="top" secondItem="AeO-SB-QWK" secondAttribute="bottom" constant="8" id="VLn-OL-V7r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6HO-ht-7Rz" secondAttribute="trailing" constant="-16" id="Cfb-oh-fH0"/>
+                            <constraint firstItem="6HO-ht-7Rz" firstAttribute="top" secondItem="Ztl-fL-sKi" secondAttribute="bottom" id="F55-Ph-vMs"/>
+                            <constraint firstItem="6HO-ht-7Rz" firstAttribute="leading" secondItem="YIb-cp-v2d" secondAttribute="leadingMargin" constant="-16" id="jI5-t5-S8z"/>
                             <constraint firstAttribute="centerX" secondItem="aVY-JI-f2V" secondAttribute="centerX" id="jiq-Rk-Rmw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6HO-ht-7Rz" secondAttribute="trailing" constant="-16" id="lcM-7t-E99"/>
-                            <constraint firstItem="AeO-SB-QWK" firstAttribute="leading" secondItem="YIb-cp-v2d" secondAttribute="leadingMargin" constant="4" id="mdJ-iU-pTa"/>
-                            <constraint firstItem="rgK-Ho-hIt" firstAttribute="top" secondItem="1J8-9X-ye5" secondAttribute="bottom" constant="8" id="pkP-Ys-VLV"/>
+                            <constraint firstItem="rgK-Ho-hIt" firstAttribute="top" secondItem="6HO-ht-7Rz" secondAttribute="bottom" id="kXo-5N-gxD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xce-6S-nEr">
@@ -1564,6 +1567,9 @@
                                     <constraint firstAttribute="bottom" secondItem="CTR-zY-bvc" secondAttribute="bottom" constant="8" id="d6e-sZ-bFb"/>
                                     <constraint firstItem="CTR-zY-bvc" firstAttribute="leading" secondItem="VvM-6u-HLm" secondAttribute="leading" id="kBz-96-HnM"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="LeE-9H-J1M" id="vPc-L9-fFe"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
