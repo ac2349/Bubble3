@@ -40,7 +40,7 @@
 #define profileViewTag 3
 #define likeViewTag 2
 #define dislikeViewTag 1
-#define topMarginView 5 //original 60
+#define topMarginView 0 //original 60
 #define cornRadius 0
 
 @interface MainViewController () <UIGestureRecognizerDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>{
@@ -352,7 +352,7 @@
         [self removeBackgroundMatchCards];
         self.activityLabel.hidden = NO;
         [self.activityIndicator startAnimating];
-        [self.view bringSubviewToFront:self.profileView];
+        [self.matchView bringSubviewToFront:self.profileView];
         self.cyclePhotosButton.userInteractionEnabled = NO;
     }
     PFFile* file = self.firstChosenUser.photo;
@@ -371,7 +371,7 @@
         self.profileView.layer.shadowRadius = 5;
         self.profileView.layer.shadowOpacity = 0.5;
         self.profileImage.tag = currentProfileView;
-        [self.view addSubview:self.profileView];
+        [self.matchView addSubview:self.profileView];
         
         self.profileImage = [[UIImageView alloc] initWithFrame:[self createPhotoRect]];
         self.profileImage.contentMode = UIViewContentModeScaleAspectFill;
@@ -500,9 +500,9 @@
     self.backgroundView.layer.shadowRadius = 5;
     self.backgroundView.layer.shadowOpacity = 0.5;
     
-    [self.view addSubview:self.backgroundView];
-    [self.view sendSubviewToBack:self.backgroundView];
-    [self.view sendSubviewToBack:self.background];
+    [self.matchView addSubview:self.backgroundView];
+    [self.matchView sendSubviewToBack:self.backgroundView];
+    [self.matchView sendSubviewToBack:self.background];
    
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         [self.arrayOfPhotoDataBackground addObject:data];
@@ -560,8 +560,8 @@
         self.backgroundDescriptionLabel.textColor = MENU_GRAY_LIGHT;
         [self.backgroundDescriptionLabel setFont:descFont];
         [self.backgroundView addSubview:self.backgroundDescriptionLabel];
-        [self.view sendSubviewToBack:self.firstBox];
-        [self.view sendSubviewToBack:self.secondBox];
+        [self.matchView sendSubviewToBack:self.firstBox];
+        [self.matchView sendSubviewToBack:self.secondBox];
     }];
     if ([self.otherChosenUser[@"photo1"] isKindOfClass:[PFFile class]]) {
         PFFile* photo1 = self.otherChosenUser[@"photo1"];
@@ -613,10 +613,10 @@
     self.secondBox.layer.shadowColor = [UIColor grayColor].CGColor;
     self.secondBox.layer.shadowRadius = 5;
     self.secondBox.layer.shadowOpacity = 0.5;
-    [self.view addSubview:self.firstBox];
-    [self.view sendSubviewToBack:self.firstBox];
-    [self.view addSubview:self.secondBox];
-    [self.view sendSubviewToBack:self.secondBox];
+    [self.matchView addSubview:self.firstBox];
+    [self.matchView sendSubviewToBack:self.firstBox];
+    [self.matchView addSubview:self.secondBox];
+    [self.matchView sendSubviewToBack:self.secondBox];
     
    
     

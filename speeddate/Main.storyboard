@@ -792,8 +792,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6HO-ht-7Rz">
-                                <rect key="frame" x="0.0" y="72" width="320" height="399"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="399"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="Ze6-UR-VrR"/>
                                     <constraint firstAttribute="height" constant="399" id="vCr-RO-dgk"/>
@@ -805,7 +804,7 @@
                             <constraint firstAttribute="centerY" secondItem="aVY-JI-f2V" secondAttribute="centerY" id="0xw-b4-dbH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1J8-9X-ye5" secondAttribute="trailing" constant="4" id="1RB-G4-Pf6"/>
                             <constraint firstItem="6HO-ht-7Rz" firstAttribute="leading" secondItem="YIb-cp-v2d" secondAttribute="leadingMargin" constant="-16" id="77q-FX-RFI"/>
-                            <constraint firstItem="6HO-ht-7Rz" firstAttribute="top" secondItem="Ztl-fL-sKi" secondAttribute="bottom" constant="8" id="OYm-1p-CUw"/>
+                            <constraint firstItem="6HO-ht-7Rz" firstAttribute="top" secondItem="Ztl-fL-sKi" secondAttribute="bottom" id="OYm-1p-CUw"/>
                             <constraint firstItem="rgK-Ho-hIt" firstAttribute="top" secondItem="AeO-SB-QWK" secondAttribute="bottom" constant="8" id="VLn-OL-V7r"/>
                             <constraint firstAttribute="centerX" secondItem="aVY-JI-f2V" secondAttribute="centerX" id="jiq-Rk-Rmw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6HO-ht-7Rz" secondAttribute="trailing" constant="-16" id="lcM-7t-E99"/>
