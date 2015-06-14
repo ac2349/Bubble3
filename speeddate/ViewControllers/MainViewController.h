@@ -19,5 +19,6 @@
 
 @property(nonatomic, strong) GADBannerView *adBanner;
 @property NSMutableArray *discoverySettingsArray;
+@property NSMutableArray *interestsArray;
 
 @end

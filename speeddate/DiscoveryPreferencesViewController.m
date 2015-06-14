@@ -51,7 +51,6 @@
     
     self.selectedSex = @"both";
     
-    [self getInterests];
 }
 
 #pragma mark - SEGMENTED CONTROL
@@ -134,13 +133,32 @@
     if (self.happyHourSwitch.isOn)
     {
         [self.interestsArray addObject:@"Happy Hour"];
+        
     }
+    if (self.diningSwitch.isOn)
+    {
+        [self.interestsArray addObject:@"Dining"];
+    }
+    if (self.outdoorsSwitch.isOn)
+    {
+        [self.interestsArray addObject:@"Outdoors"];
+    }
+    if (self.travelSwitch.isOn)
+    {
+        [self.interestsArray addObject:@"Travel"];
+    }
+    if (self.fitnessSwitch.isOn)
+    {
+        [self.interestsArray addObject:@"Fitness"];
+    }
+    
 }
 
 #pragma mark - DONE BUTTON
 
 - (IBAction)doneButtonPressed:(UIBarButtonItem *)sender
 {
+    [self getInterests];
     [self performSegueWithIdentifier:@"discoverySettingsSegue" sender:self];
 }
 
@@ -162,6 +180,8 @@
     {
         MainViewController *vc = segue.destinationViewController;
         vc.discoverySettingsArray = self.discoverySettings;
+        vc.interestsArray = self.interestsArray;
+        
     }
     
 }

@@ -11,6 +11,7 @@
 #import <StoreKit/StoreKit.h>
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
+#import "UserParseHelper.h"
 
 @interface CategoriesViewController ()<UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>{
     
@@ -26,6 +27,12 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSIndexPath *lastIndexPath;
 @property NSArray *retrievedIndexPaths;
+@property NSString *happyHour;
+@property NSString *outdoors;
+@property NSString *dining;
+@property NSString *travelers;
+@property NSString *fitness;
+
 
 @end
 
@@ -45,6 +52,13 @@
     
     self.selectedIndexPathsMutableArray = [NSMutableArray new];
     self.retrievedIndexPaths = [NSArray new];
+    
+
+    self.happyHour = @"";
+    self.dining = @"";
+    self.outdoors = @"";
+    self.fitness = @"";
+    self.travelers = @"";
     
     
     
@@ -133,6 +147,54 @@
 
     [[PFUser currentUser] setObject:self.selectedRowsArray forKey:@"interests"];
     [[PFUser currentUser] saveInBackground];
+
+    
+    for (NSString *interest in self.selectedRowsArray)
+    {
+        if ([interest isEqualToString:@"Happy Hour"])
+        {
+            self.happyHour = @"hasHappyHour";
+        }
+        
+        if ([interest isEqualToString:@"Fitness"])
+        {
+            self.fitness = @"hasFitness";
+        }
+        
+        if ([interest isEqualToString:@"Dining"])
+        {
+            self.dining = @"hasDining";
+        }
+        
+        if ([interest isEqualToString:@"Outdoors"])
+        {
+            self.outdoors = @"hasOutdoors";
+        }
+
+        if ([interest isEqualToString:@"Travelers"])
+        {
+            self.travelers = @"hasTravelers";
+        }
+
+
+    }
+    
+    
+    [[PFUser currentUser] setObject:self.happyHour forKey:@"happyHour"];
+    [[PFUser currentUser] saveInBackground];
+    
+    [[PFUser currentUser] setObject:self.fitness forKey:@"fitness"];
+    [[PFUser currentUser] saveInBackground];
+    
+    [[PFUser currentUser] setObject:self.outdoors forKey:@"outdoors"];
+    [[PFUser currentUser] saveInBackground];
+    
+    [[PFUser currentUser] setObject:self.travelers forKey:@"travelers"];
+    [[PFUser currentUser] saveInBackground];
+    
+    [[PFUser currentUser] setObject:self.dining forKey:@"dining"];
+    [[PFUser currentUser] saveInBackground];
+    
     
     [self performSegueWithIdentifier:@"chooseCategoriesToEditInfo" sender:self];
     
