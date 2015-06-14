@@ -20,5 +20,11 @@
 @property(nonatomic, strong) GADBannerView *adBanner;
 @property NSMutableArray *discoverySettingsArray;
 @property NSMutableArray *interestsArray;
+@property NSString *happyHour;
+@property NSString *travel;
+@property NSString *dining;
+@property NSString *fitness;
+@property NSString *outdoors;
+
 
 @end

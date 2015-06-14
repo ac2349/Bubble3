@@ -682,12 +682,8 @@
 			children = (
 				FB06B7971B238FF300E57A78 /* My Profile */,
 				FB06B7961B238FD600E57A78 /* User Profile */,
-				0BA4ECB019AE1EE200302E92 /* SidebarTableViewController.h */,
-				0BA4ECB119AE1EE200302E92 /* SidebarTableViewController.m */,
-				42DBCCC619AC4E4B00CE6C93 /* MainViewController.h */,
-				42DBCCC719AC4E4B00CE6C93 /* MainViewController.m */,
-				C2300FAE19E26E700044A4E5 /* CategoriesViewController.h */,
-				C2300FAF19E26E700044A4E5 /* CategoriesViewController.m */,
+				FB44FC9A1B2D1E12006572CC /* Sidebar */,
+				FB44FC9B1B2D1E1A006572CC /* Match */,
 				FB6619AC1B02F7A800F4B246 /* GenderViewController.h */,
 				FB6619AD1B02F7A800F4B246 /* GenderViewController.m */,
 				4283BD8219B9584300AD1F63 /* MatchViewController.m */,
@@ -704,8 +700,6 @@
 				C2A90ED619F49CE900FC0D04 /* UserProfileViewController.m */,
 				C254F8A119F6C4B000473836 /* WhoSeeViewController.h */,
 				C254F8A219F6C4B000473836 /* WhoSeeViewController.m */,
-				FBB67E9B1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.h */,
-				FBB67E9C1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -1048,8 +1042,30 @@
 				FB7770291AF6E90700DDC264 /* EditMyProfileViewController.m */,
 				FB8C588A1AEC6C860098E997 /* MyProfileCollectionViewCell.h */,
 				FB8C588B1AEC6C860098E997 /* MyProfileCollectionViewCell.m */,
+				C2300FAE19E26E700044A4E5 /* CategoriesViewController.h */,
+				C2300FAF19E26E700044A4E5 /* CategoriesViewController.m */,
 			);
 			name = "My Profile";
+			sourceTree = "<group>";
+		};
+		FB44FC9A1B2D1E12006572CC /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				0BA4ECB019AE1EE200302E92 /* SidebarTableViewController.h */,
+				0BA4ECB119AE1EE200302E92 /* SidebarTableViewController.m */,
+			);
+			name = Sidebar;
+			sourceTree = "<group>";
+		};
+		FB44FC9B1B2D1E1A006572CC /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				FBB67E9B1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.h */,
+				FBB67E9C1AAA2B7800ED53A2 /* DiscoveryPreferencesViewController.m */,
+				42DBCCC619AC4E4B00CE6C93 /* MainViewController.h */,
+				42DBCCC719AC4E4B00CE6C93 /* MainViewController.m */,
+			);
+			name = Match;
 			sourceTree = "<group>";
 		};
 		FBFB1C381AA3FE130068B1D5 /* Slider */ = {

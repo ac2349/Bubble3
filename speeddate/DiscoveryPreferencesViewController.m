@@ -27,6 +27,11 @@
 @property (weak, nonatomic) IBOutlet UISwitch *travelSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *fitnessSwitch;
 @property NSMutableArray *interestsArray;
+@property NSString *happyHour;
+@property NSString *travel;
+@property NSString *dining;
+@property NSString *fitness;
+@property NSString *outdoors;
 
 
 
@@ -133,23 +138,28 @@
     if (self.happyHourSwitch.isOn)
     {
         [self.interestsArray addObject:@"Happy Hour"];
+        self.happyHour = @"hasHappyHour";
         
     }
     if (self.diningSwitch.isOn)
     {
         [self.interestsArray addObject:@"Dining"];
+        self.dining = @"hasDining";
     }
     if (self.outdoorsSwitch.isOn)
     {
         [self.interestsArray addObject:@"Outdoors"];
+        self.outdoors = @"hasOutdoors";
     }
     if (self.travelSwitch.isOn)
     {
         [self.interestsArray addObject:@"Travel"];
+        self.travel = @"hasTravel";
     }
     if (self.fitnessSwitch.isOn)
     {
         [self.interestsArray addObject:@"Fitness"];
+        self.fitness = @"hasFitness";
     }
     
 }
@@ -181,6 +191,11 @@
         MainViewController *vc = segue.destinationViewController;
         vc.discoverySettingsArray = self.discoverySettings;
         vc.interestsArray = self.interestsArray;
+        vc.dining = self.dining;
+        vc.fitness = self.fitness;
+        vc.happyHour = self.happyHour;
+        vc.outdoors = self.outdoors;
+        vc.travel = self.travel;
         
     }
     

@@ -295,6 +295,7 @@
         [userQuery whereKey:@"objectId" notEqualTo:[UserParseHelper currentUser].objectId];
         [userQuery whereKey:@"email" doesNotMatchKey:@"toUserEmail" inQuery:query];
         [checkQuery whereKey:@"email" matchesKey:@"fromUserEmail" inQuery:queryTwo];
+        
 
 
         [userQuery whereKey:@"objectId" doesNotMatchKey:@"objectId" inQuery:checkQuery];
@@ -307,9 +308,34 @@
         {
             [userQuery whereKey:@"gender" equalTo:@"female"];
         }
+        
+        if (self.fitness)
+        {
+            [userQuery whereKey:@"fitness" equalTo:@"hasFitness"];
+        }
+        if (self.happyHour)
+        {
+            [userQuery whereKey:@"happyHour" equalTo:@"hasHappyHour"];
+        }
+        if (self.travel)
+        {
+            [userQuery whereKey:@"travelers" equalTo:@"hasTravelers"];
+        }
+        if (self.outdoors)
+        {
+            [userQuery whereKey:@"outdoors" equalTo:@"hasOutdoors"];
+        }
+        if (self.dining)
+        {
+            [userQuery whereKey:@"dining" equalTo:@"hasDining"];
+        }
+        
         [userQuery whereKey:@"age" greaterThanOrEqualTo:self.minAge];
         [userQuery whereKey:@"age" lessThanOrEqualTo:self.maxAge];
         [userQuery whereKey:@"geoPoint" nearGeoPoint:point withinKilometers:(double)value];
+        
+        
+    
         
 
     
